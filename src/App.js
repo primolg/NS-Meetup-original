@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AllCampuses from "./components/allCampuses";
-import AllStudents from "./components/allStudents"; 
+import AllCampuses from "./components/campuses/allCampuses";
+import AllStudents from "./components/students/allStudents"; 
 import { BrowserRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 
 function App(){
     return(

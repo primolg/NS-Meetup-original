@@ -10,7 +10,7 @@ const syncAndSeed = async () => {
     const students = await Promise.all([
       Student.create({firstName: 'Primo', lastName: 'Gill', email: 'primo@gmail.com', gpa: 3.5}),
       Student.create({firstName: 'Manegbe', lastName: 'Eben', email: 'eben@gmail.com', gpa: 3.9}),
-      Student.create({firstName: 'Oskar', lastName: 'Gill', email: 'oskar@gmail.com', gpa: 4.0})
+      Student.create({firstName: 'Oskarr', lastName: 'Gill', email: 'oskar@gmail.com', gpa: 4.0})
     ])
     const campuses = await Promise.all([
       Campus.create({name: 'CCNY', address: 'amsterdam ave 142nd st', description:'STAY AWAY FROM NAC ):'}),
@@ -21,7 +21,8 @@ const syncAndSeed = async () => {
   `);
 };
 
-
+Student.belongsTo(Campus, { as: 'student', foreignKey: 'campusID'});
+Campus.hasMany(Student, { as: 'campus'});
 
 module.exports = {
     // Include your models in this exports object as well!

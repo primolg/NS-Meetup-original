@@ -1,15 +1,15 @@
 import {createStore, applyMiddleware, combineReducers} from "redux";
+import loggingMiddleWare from 'redux-logger';
 import thunk from "redux-thunk";
+import campusesReducer from './Campuses';
+import studentsReducer from './students';
 
+const rootReducer = combineReducers({
+    campuses: campusesReducer,
+    students: studentsReducer,
+});
 
-// function configureStore() {
-//     // return createStore(########, applyMiddleware(thunk));
-// }
-
-// export default configureStore;
-const initialState = [{name:"primo", school:"CCNY"}, {name:'Manegbe', school:"CCNY"}];
-const store = createStore((state = initialState, action) => {
-    switch(action.type) {
-        case 
-    }
-})
+export default createStore(
+    rootReducer,
+    applyMiddleware(thunk, loggingMiddleWare)
+);

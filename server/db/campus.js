@@ -10,6 +10,7 @@ module.exports = db.define('campuses', {
     imageUrl: {
         type: Sequelize.STRING,
         defaultValue: "https://www.appropedia.org/w/images/8/82/Nac_boundary.png",
+        allowNull: false,
     },
     address: {
         type: Sequelize.STRING,

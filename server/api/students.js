@@ -12,6 +12,20 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+router.get('/:id', async (req, res, next) => {
+    const id = Number(req.params.id)
+    try {
+        const student = await Student.findAll({
+            where : {
+                id: id
+            }
+        })
+        res.send(student)
+    } catch (error) {
+        next(error);
+    }
+})
+
 router.use((req, res, next) => {
     const err = new Error('API route not found!')
     err.status = 404

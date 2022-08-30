@@ -10,8 +10,8 @@ The requirements below are broken into separate **tiers**, which model the way w
 
 - [x] Write a component to display a list of all campuses (at least their names and images)
 - [x] Write a component to display a list of all students (at least their names)
-- [ ] Write a campuses sub-reducer to manage campuses in your Redux store
-- [ ] Write a students sub-reducer to manage students in your Redux store
+- [x] Write a campuses sub-reducer to manage campuses in your Redux store
+- [x] Write a students sub-reducer to manage students in your Redux store
 - [x] Display the all-campuses component when the url matches `/campuses`
 - [x] Display the all-students component when the url matches `/students`
 - [x] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
@@ -32,7 +32,7 @@ The requirements below are broken into separate **tiers**, which model the way w
   - [x] email - not empty or null; must be a valid email
   - [x] imageUrl - with a default value
   - [x] gpa - decimal between 0.0 and 4.0
-  - [ ] Students may be associated with at most one campus. Likewise, campuses may be associated with many students
+  - [x] Students may be associated with at most one campus. Likewise, campuses may be associated with many students
 
 #### Seed
 
