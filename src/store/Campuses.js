@@ -19,17 +19,17 @@ const _setSingleCampus = (campus) => {
     }
 }
 
-export const fetchCampuses = (id = 0) => {
-    if (id > 0){
-        return async (dispatch) => {
-            const {data: campus} = await axios.get(`/api/campuses/${id}`);
-            dispatch(_setSingleCampus(campus))
-        }
-    } else {
+export const fetchCampuses = (id) => {
+    if (id == undefined){
         return async (dispatch) => {
             const { data: campuses } = await axios.get('/api/campuses');
             dispatch(_setCampuses(campuses));
         };
+    } else {
+        return async (dispatch) => {
+            const {data: campus} = await axios.get(`/api/campuses/${id}`);
+            dispatch(_setSingleCampus(campus))
+        }
     }
 };
 

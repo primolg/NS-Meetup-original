@@ -3,32 +3,42 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchStudents } from '../../store/students';
+import { fetchCampuses } from "../../store/Campuses";
+import { Link } from "react-router-dom";
 
 const SingleStudent = () => {
 
     const {id} = useParams();
-    const student = useSelector(state => state.students);
     const dispatch = useDispatch();
+
+    const getStudent = useSelector(state => state.students);
+    const student = getStudent[0];
+
+    const getCampus = useSelector(state => state.campuses);
+    let campusName = "No campus found.";
+    let campusId = ''
     
     useEffect(()=> {
-        dispatch(fetchStudents(id))
+        dispatch(fetchStudents(id));
+        dispatch(fetchCampuses());
     }, [])
 
-
-    // full name, email, image, and gpa
+    getCampus.map((campus) => {
+        if (campus.id === student.campusId){
+            campusName = campus.name;
+            campusId = campus.id;
+        }
+    })
 
     return (
         <div>
-            {student.map((student) => {
-                    return (
-                        <div key={student.id}>
-                        <p>{student.lastName}, {student.firstName}</p>
-                        <img width="100px" src={student.imageUrl} />
-                        <p>gpa: {student.gpa}</p>
-                        <p>contact: {student.email}</p>
-                        </div>
-                    );
-                })}
+            <div key={student.id}>
+            <p>{student.lastName}, {student.firstName}</p>
+            <img width="100px" src={student.imageUrl} />
+            <p>GPA: {student.gpa}</p>
+            <p>Contact: {student.email}</p>
+            <p>Campus: <Link to={'/campuses/'+ campusId}>{campusName}</Link></p>
+            </div>
         </div>
     )
 }
