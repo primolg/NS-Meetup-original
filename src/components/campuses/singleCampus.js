@@ -1,33 +1,34 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import { fetchCampuses } from "../../store/Campuses";
 
-const AllCampuses = () => {
-    const campuses = useSelector(state => state.campuses);
+const SingleCampus = () => {
+
+    const {id} = useParams();
+    const campus = useSelector(state => state.campuses);
     const dispatch = useDispatch();
     
     useEffect(()=> {
-        dispatch(fetchCampuses())
+        dispatch(fetchCampuses(id))
     }, [])
+    console.log(campus)
 
     return (
         <div>
-            <h1>Campuses:</h1>
-            <ul>
-                {campuses.map((campus) => {
+            {campus.map((campus) => {
                     return (
-                        <li key={campus.id}>
-                        <p>{campus.name}</p>
+                        <div key={campus.id}>
+                        <p>{campus.name}, {campus.address}</p>
                         <p>{campus.description}</p>
                         <img width="100px" src={campus.imageUrl}/>
-                        </li>
+                        </div>
                     );
                 })}
-            </ul>
         </div>
     )
 }
 
-export default AllCampuses;
+export default SingleCampus;
 

@@ -4,6 +4,9 @@ const {
     models: {Campus},
 } = require('../db')
 
+
+//allcampuses
+
 router.get('/', async (req, res, next) => {
     try {
         const campuses = await Campus.findAll();
@@ -12,6 +15,8 @@ router.get('/', async (req, res, next) => {
         next(error);
     }
 })
+
+//singleCampuses 
 
 router.get('/:id', async (req, res, next) => {
     const id = Number(req.params.id)
@@ -26,6 +31,7 @@ router.get('/:id', async (req, res, next) => {
         next(error);
     }
 })
+
 
 router.use((req, res, next) => {
     const err = new Error('API route not found!')
