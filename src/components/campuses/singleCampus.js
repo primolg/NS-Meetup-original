@@ -10,6 +10,7 @@ const SingleCampus = () => {
 
     const {id} = useParams();
     const dispatch = useDispatch();
+    console.log(id)
 
     const getCampus = useSelector(state => state.campuses);
     const campus = getCampus[0]

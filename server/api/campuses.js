@@ -16,7 +16,13 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-//singleCampuses 
+router.post('/', async (req, res, next) => {
+    try {
+        res.status(201).send(await Campus.create(req.body))
+    } catch (error) {
+        next (error)
+    }
+})
 
 router.get('/:id', async (req, res, next) => {
     const id = Number(req.params.id)

@@ -20,11 +20,13 @@ const AllCampuses = () => {
                     return (
                         <li key={campus.id}>
                         <Link to={campusLink}>{campus.name}</Link>
+                        <br></br>
                         <img width="100px" src={campus.imageUrl}/>
                         </li>
                     );
                 })}
             </ul>
+            <Link to="/campuses/create">Create New Campus</Link>
         </div>
     )
 };
