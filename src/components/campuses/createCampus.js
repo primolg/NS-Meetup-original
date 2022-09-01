@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { createCampus } from "../../store/Campuses";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CreateCampus = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
-    const [ campusName, setCampusName ] = useState('vu');
-    const [ campusAddress, setCampusAddress ] = useState('amsterdam');
+    const [ campusName, setCampusName ] = useState('');
+    const [ campusAddress, setCampusAddress ] = useState('');
 
     const handleChangeName = event => {
         setCampusName(event.target.value);
@@ -17,22 +16,25 @@ const CreateCampus = () => {
     const handleChangeAddress = event => {
         setCampusAddress(event.target.value);
     };
+    
     const handleSubmit = (evnt) => {
         evnt.preventDefault();
         dispatch(createCampus({ campusName, campusAddress }));
-        navigate('/campuses')
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <label>Campus Name:</label>
             <input name="campusName" value={campusName} onChange={ handleChangeName } placeholder="name"/>
-
+            <br></br>
+            <br></br>
             <label>Campus Address:</label>
             <input name="campusAddress" value={campusAddress} onChange={ handleChangeAddress } placeholder="address"/>
-
+            <br></br>
+            <br></br>
             <button type='submit'>Submit</button>
-            <Link to='/'>Cancel</Link>
+            <br></br>
+            <br></br>
         </form>
     );
 }

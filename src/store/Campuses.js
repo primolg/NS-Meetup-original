@@ -62,7 +62,7 @@ export default (state = [], action) => {
         case SET_SINGLE_CAMPUS:
             return action.campus;
         case CREATE_CAMPUS:
-            return [...state, action.campus]
+            return [...state, action.campus];
         default:
             return state;
     }

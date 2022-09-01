@@ -16,7 +16,6 @@ function App(){
                     <Link to="/students">students</Link>
                 </nav>
                 <Routes>
-                    <Route exact path='/campuses/create' element={<CreateCampus />} />
                     <Route exact path="/campuses" element={<AllCampuses />} />
                     <Route exact path="/campuses/:id" element={<SingleCampus />} />
                     <Route exact path="/students" element={<AllStudents />} />

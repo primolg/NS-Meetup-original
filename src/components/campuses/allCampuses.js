@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCampuses } from "../../store/Campuses";
 import { Link } from "react-router-dom";
+import CreateCampus from "./createCampus";
 
 const AllCampuses = () => {
     const campuses = useSelector(state => state.campuses);
@@ -26,8 +27,12 @@ const AllCampuses = () => {
                     );
                 })}
             </ul>
-            <Link to="/campuses/create">Create New Campus</Link>
+            <div className="creatorDiv">
+                <h4>Create New Campus:</h4>
+                <CreateCampus />
+            </div>
         </div>
+    
     )
 };
 

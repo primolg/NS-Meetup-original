@@ -3,6 +3,7 @@ import axios from "axios";
 //action types
 const SET_STUDENTS = 'SET_STUDENTS';
 const SET_SINGLE_STUDENT = 'SET_SINGLE_STUDENT';
+const CREATE_STUDENT = 'CREATE_STUDENT';
 
 // action creators
 const _setStudents = (students) => {
@@ -11,6 +12,13 @@ const _setStudents = (students) => {
         students,
     };
 };
+
+const _createStudent = (student) => {
+    return {
+        type: CREATE_STUDENT,
+        student,
+    }
+}
 
 const _setSingleStudent = (student) => {
     return {
@@ -34,6 +42,20 @@ export const fetchStudents = (id = 0) => {
     }
 };
 
+export const createStudent = (student) => {
+    const studentFirstName = student.studentFirstName;
+    const studentLastName = student.studentLastName;
+    const studentEmail = student.studentEmail;
+    return async (dispatch) => {
+        const { data: created } = await axios.post('/api/students', {
+            firstName: studentFirstName,
+            lastName: studentLastName,
+            email: studentEmail,
+        });
+        dispatch(_createStudent(created));
+    };
+};
+
 
 export default (state = [], action) => {
     switch (action.type) {
@@ -41,6 +63,8 @@ export default (state = [], action) => {
             return action.students;
         case SET_SINGLE_STUDENT:
             return action.student;
+        case CREATE_STUDENT:
+            return [...state, action.student];
         default:
             return state;
     }
