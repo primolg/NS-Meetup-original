@@ -106,7 +106,9 @@ Congrats! You have completed your third vertical slice! Make sure to `commit -m 
 
 #### Frontend
 
-- [ ] In the all-campuses view, include an `X` button next to each campus
+//would it be worth making each list item a component, and pass through an Id, then inside of that component it might be easier to pass the delete params
+
+- [x] In the all-campuses view, include an `X` button next to each campus
 - Clicking the `X` button should:
 
   - [ ] Make an AJAX request that causes that campus to be removed from database

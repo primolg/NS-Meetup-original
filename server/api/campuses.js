@@ -24,6 +24,22 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+router.delete('/:id', async (req, res, next) => {
+    try {
+        const campus1 = await Campus.findAll({
+            where: {
+                id: req.params.id
+            }
+        }
+        );
+        const campus = campus1[0]
+        await campus.destroy();
+        res.send(campus);
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.get('/:id', async (req, res, next) => {
     const id = Number(req.params.id)
     try {

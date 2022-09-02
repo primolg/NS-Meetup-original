@@ -1,9 +1,11 @@
 import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 //action types
 const SET_CAMPUSES = 'SET_CAMPUSES';
 const SET_SINGLE_CAMPUS = 'SET_SINGLE_CAMPUS'
 const CREATE_CAMPUS = 'CREATE_CAMPUS';
+const DELETE_CAMPUS = 'DELETE_CAMPUS';
 
 // action creators
 const _setCampuses = (campuses) => {
@@ -20,12 +22,20 @@ const _createCampus = (campus) => {
     }
 }
 
+const _deleteCampus = (campus) => {
+    return {
+        type: DELETE_CAMPUS,
+        campus
+    }
+}
+
 const _setSingleCampus = (campus) => {
     return {
         type: SET_SINGLE_CAMPUS,
         campus,
     }
 }
+
 
 //thunk
 
@@ -55,6 +65,17 @@ export const createCampus = (campus) => {
     };
 };
 
+export const deleteCampus = (campus) => {
+    const campusId = campus.campusId;
+    console.log(campusId)
+    return async (dispatch) => {
+        const {data: deleted } = await axios.delete(`/api/campuses/${campusId}`);
+        dispatch(_deleteCampus(deleted));
+    }
+}
+
+
+
 export default (state = [], action) => {
     switch (action.type) {
         case SET_CAMPUSES:
@@ -63,6 +84,11 @@ export default (state = [], action) => {
             return action.campus;
         case CREATE_CAMPUS:
             return [...state, action.campus];
+        case DELETE_CAMPUS:
+            const newState = state.filter(campus => 
+                campus.id !== action.campus.id
+            )
+            return [...newState];
         default:
             return state;
     }
