@@ -51,6 +51,17 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
+router.put('/:id', async (req, res, next) => {
+    try {
+        const student = await Student.findByPk(req.params.id);
+        res.send(await student.update(req.body));
+    } catch (error) {
+        next(error);
+    }
+});
+
+
+
 router.use((req, res, next) => {
     const err = new Error('API route not found!')
     err.status = 404

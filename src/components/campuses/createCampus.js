@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createCampus } from "../../store/Campuses";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 const CreateCampus = () => {
     const dispatch = useDispatch();

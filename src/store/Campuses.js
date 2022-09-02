@@ -6,6 +6,7 @@ const SET_CAMPUSES = 'SET_CAMPUSES';
 const SET_SINGLE_CAMPUS = 'SET_SINGLE_CAMPUS'
 const CREATE_CAMPUS = 'CREATE_CAMPUS';
 const DELETE_CAMPUS = 'DELETE_CAMPUS';
+const EDIT_CAMPUS = 'EDIT_CAMPUS';
 
 // action creators
 const _setCampuses = (campuses) => {
@@ -32,6 +33,13 @@ const _deleteCampus = (campus) => {
 const _setSingleCampus = (campus) => {
     return {
         type: SET_SINGLE_CAMPUS,
+        campus,
+    }
+}
+
+const _editCampus = (campus) => {
+    return {
+        type: EDIT_CAMPUS,
         campus,
     }
 }
@@ -73,7 +81,18 @@ export const deleteCampus = (campus) => {
     }
 }
 
-
+export const editCampus = (campus) => {
+    const campusId = campus.campusId;
+    const name = campus.name;
+    const address = campus.address;
+    return async (dispatch) => {
+        const { data: edited } = await axios.put(`/api/campuses/${campusId}`, {
+            name,
+            address,
+        }) 
+        dispatch(_editCampus(edited))
+    }
+}
 
 export default (state = [], action) => {
     switch (action.type) {
@@ -88,6 +107,11 @@ export default (state = [], action) => {
                 campus.id !== action.campus.id
             )
             return [...newState];
+        case EDIT_CAMPUS:
+            const newEditedState = state.map(campus=>
+                (campus.id === action.campus.id ? action.campus : campus)
+            )
+            return [...newEditedState];
         default:
             return state;
     }

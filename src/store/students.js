@@ -5,6 +5,7 @@ const SET_STUDENTS = 'SET_STUDENTS';
 const SET_SINGLE_STUDENT = 'SET_SINGLE_STUDENT';
 const CREATE_STUDENT = 'CREATE_STUDENT';
 const DELETE_STUDENT = 'DELETE_STUDENT';
+const EDIT_STUDENT = 'EDIT_STUDENT';
 
 // action creators
 const _setStudents = (students) => {
@@ -35,7 +36,14 @@ const _setSingleStudent = (student) => {
     }
 }
 
+const _editStudent = (student) => {
+    return {
+        type: EDIT_STUDENT,
+        student,
+    }
+}
 
+//thunk
 export const fetchStudents = (id = 0) => {
     if (id > 0){
         return async (disbatch) => {
@@ -72,6 +80,20 @@ export const deleteStudent = (student) => {
     }
 }
 
+export const editStudent = (student) => {
+    const studentId = student.studentId;
+    const firstName = student.firstName;
+    const lastName = student.lastName;
+    const email = student.email;
+    return async (dispatch) => {
+        const { data: edited } = await axios.put(`/api/students/${studentId}`, {
+            firstName,
+            lastName,
+            email,
+        }) 
+        dispatch(_editStudent(edited))
+    }
+}
 
 export default (state = [], action) => {
     switch (action.type) {
@@ -86,6 +108,11 @@ export default (state = [], action) => {
                 student.id !== action.student.id
             )
             return [...newState]
+        case EDIT_STUDENT:
+            const newEditedState = state.map(student=>
+                (student.id === action.student.id ? action.student : student)
+            )
+            return [...newEditedState];
         default:
             return state;
     }

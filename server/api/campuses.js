@@ -41,11 +41,10 @@ router.delete('/:id', async (req, res, next) => {
 });
 
 router.get('/:id', async (req, res, next) => {
-    const id = Number(req.params.id)
     try {
         const campus = await Campus.findAll({
             where : {
-                id: id
+                id: req.params.id
             }
         })
         res.send(campus)
@@ -53,6 +52,15 @@ router.get('/:id', async (req, res, next) => {
         next(error);
     }
 })
+
+router.put('/:id', async (req, res, next) => {
+    try {
+        const campus = await Campus.findByPk(req.params.id);
+        res.send(await campus.update(req.body));
+    } catch (error) {
+        next(error);
+    }
+});
 
 
 router.use((req, res, next) => {

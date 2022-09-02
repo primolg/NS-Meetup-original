@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 import { fetchCampuses } from "../../store/Campuses";
 import { fetchStudents } from "../../store/students";
 import { Link } from "react-router-dom";
+import EditCampus from "./editCampus";
 
 const SingleCampus = () => {
 
     const {id} = useParams();
     const dispatch = useDispatch();
-    console.log(id)
 
     const getCampus = useSelector(state => state.campuses);
     const campus = getCampus[0]
@@ -52,6 +52,10 @@ const SingleCampus = () => {
                     )
                 })) : <li>No Students Found</li>}
             </ul>
+            </div>
+            <div className="creatorDiv">
+                <h4>Edit Campus:</h4>
+                <EditCampus />
             </div>
         </div>
     )

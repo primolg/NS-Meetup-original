@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchStudents } from '../../store/students';
 import { fetchCampuses } from "../../store/Campuses";
 import { Link } from "react-router-dom";
+import EditStudent from "./editStudent";
 
 const SingleStudent = () => {
 
@@ -38,6 +39,10 @@ const SingleStudent = () => {
             <p>GPA: {student.gpa}</p>
             <p>Contact: {student.email}</p>
             <p>Campus: <Link to={'/campuses/'+ campusId}>{campusName}</Link></p>
+            </div>
+            <div className="creatorDiv">
+                <h4>Edit Student:</h4>
+                <EditStudent />
             </div>
         </div>
     )
