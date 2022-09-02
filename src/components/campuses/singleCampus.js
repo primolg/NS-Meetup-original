@@ -6,6 +6,7 @@ import { fetchCampuses } from "../../store/Campuses";
 import { fetchStudents } from "../../store/students";
 import { Link } from "react-router-dom";
 import EditCampus from "./editCampus";
+import { changeStudentStatus } from "../../store/students";
 
 const SingleCampus = () => {
 
@@ -45,9 +46,16 @@ const SingleCampus = () => {
             <p>students:</p>
             <ul>
                 {studentList.length ? (studentList.map((student)=>{
+                    const studentId = student.id
+                    const handleSubmit = (evnt) => {
+                        evnt.preventDefault();
+                        dispatch(changeStudentStatus({ studentId }));
+                    }
+                    
                     return (
                         <li key={student.id}>
-                        <Link to={'/students/'+student.id}>{student.firstName}</Link>
+                        <Link to={'/students/'+student.id}>{student.firstName}   </Link>
+                        <button onClick={handleSubmit} >X</button>
                         </li>
                     )
                 })) : <li>No Students Found</li>}

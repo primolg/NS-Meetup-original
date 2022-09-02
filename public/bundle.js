@@ -2800,6 +2800,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var SingleCampus = function SingleCampus() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
       id = _useParams.id;
@@ -2839,11 +2840,22 @@ var SingleCampus = function SingleCampus() {
     width: "100px",
     src: campus.imageUrl
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", null, "students:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("ul", null, studentList.length ? studentList.map(function (student) {
+    var studentId = student.id;
+
+    var handleSubmit = function handleSubmit(evnt) {
+      evnt.preventDefault();
+      dispatch((0,_store_students__WEBPACK_IMPORTED_MODULE_4__.changeStudentStatus)({
+        studentId: studentId
+      }));
+    };
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", {
       key: student.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
       to: '/students/' + student.id
-    }, student.firstName));
+    }, student.firstName, "   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
+      onClick: handleSubmit
+    }, "X"));
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, "No Students Found"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "creatorDiv"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h4", null, "Edit Campus:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_editCampus__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
@@ -3520,6 +3532,7 @@ var rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "changeStudentStatus": () => (/* binding */ changeStudentStatus),
 /* harmony export */   "createStudent": () => (/* binding */ createStudent),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "deleteStudent": () => (/* binding */ deleteStudent),
@@ -3554,7 +3567,8 @@ var SET_STUDENTS = 'SET_STUDENTS';
 var SET_SINGLE_STUDENT = 'SET_SINGLE_STUDENT';
 var CREATE_STUDENT = 'CREATE_STUDENT';
 var DELETE_STUDENT = 'DELETE_STUDENT';
-var EDIT_STUDENT = 'EDIT_STUDENT'; // action creators
+var EDIT_STUDENT = 'EDIT_STUDENT';
+var CHANGE_STUDENT_STATUS = 'CHANGE_STUDENT_STATUS'; // action creators
 
 var _setStudents = function _setStudents(students) {
   return {
@@ -3587,6 +3601,13 @@ var _setSingleStudent = function _setSingleStudent(student) {
 var _editStudent = function _editStudent(student) {
   return {
     type: EDIT_STUDENT,
+    student: student
+  };
+};
+
+var _changeStudentStatus = function _changeStudentStatus(student) {
+  return {
+    type: CHANGE_STUDENT_STATUS,
     student: student
   };
 }; //thunk
@@ -3761,6 +3782,39 @@ var editStudent = function editStudent(student) {
     };
   }();
 };
+var changeStudentStatus = function changeStudentStatus(student) {
+  var studentId = student.studentId;
+  return /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(dispatch) {
+      var _yield$axios$put2, edited;
+
+      return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              _context6.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/students/".concat(studentId), {
+                campusId: null
+              });
+
+            case 2:
+              _yield$axios$put2 = _context6.sent;
+              edited = _yield$axios$put2.data;
+              dispatch(_changeStudentStatus(edited));
+
+            case 5:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
+    }));
+
+    return function (_x6) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -3786,6 +3840,12 @@ var editStudent = function editStudent(student) {
         return student.id === action.student.id ? action.student : student;
       });
       return _toConsumableArray(newEditedState);
+
+    case CHANGE_STUDENT_STATUS:
+      var statusChangedState = state.map(function (student) {
+        return student.id === action.student.id ? action.student : student;
+      });
+      return _toConsumableArray(statusChangedState);
 
     default:
       return state;

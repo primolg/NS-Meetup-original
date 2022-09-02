@@ -6,6 +6,7 @@ const SET_SINGLE_STUDENT = 'SET_SINGLE_STUDENT';
 const CREATE_STUDENT = 'CREATE_STUDENT';
 const DELETE_STUDENT = 'DELETE_STUDENT';
 const EDIT_STUDENT = 'EDIT_STUDENT';
+const CHANGE_STUDENT_STATUS = 'CHANGE_STUDENT_STATUS';
 
 // action creators
 const _setStudents = (students) => {
@@ -43,6 +44,12 @@ const _editStudent = (student) => {
     }
 }
 
+const _changeStudentStatus = (student) => {
+    return {
+        type: CHANGE_STUDENT_STATUS,
+        student
+    }
+}
 //thunk
 export const fetchStudents = (id = 0) => {
     if (id > 0){
@@ -95,6 +102,16 @@ export const editStudent = (student) => {
     }
 }
 
+export const changeStudentStatus = (student) => {
+    const studentId = student.studentId;
+    return async (dispatch) => {
+        const { data: edited } = await axios.put(`/api/students/${studentId}`, {
+            campusId: null
+        }) 
+        dispatch(_changeStudentStatus(edited))
+    }
+}
+
 export default (state = [], action) => {
     switch (action.type) {
         case SET_STUDENTS:
@@ -113,6 +130,11 @@ export default (state = [], action) => {
                 (student.id === action.student.id ? action.student : student)
             )
             return [...newEditedState];
+        case CHANGE_STUDENT_STATUS:
+            const statusChangedState = state.map(student=>
+                (student.id === action.student.id ? action.student : student)
+            )
+            return [...statusChangedState]
         default:
             return state;
     }
