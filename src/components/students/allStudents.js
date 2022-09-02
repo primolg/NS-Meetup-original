@@ -3,7 +3,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchStudents } from "../../store/students";
 import { Link } from "react-router-dom";
-import CreateStudent, { createStudent } from "./createStudent";
+import CreateStudent from "./createStudent";
+import { deleteStudent } from "../../store/students";
+
 
 const AllStudents = () => {
     const students = useSelector(state => state.students);
@@ -20,10 +22,18 @@ const AllStudents = () => {
             <ul>
                 {students.map((student) => {
                     const studentLink = `/students/${student.id}`
+
+                    const handleDelete = (evnt) => {
+                        const studentId = student.id
+                        evnt.preventDefault();
+                        dispatch(deleteStudent({ studentId }))
+                    }
+
                     return (
                         <div key={student.id}>
                         <Link to={studentLink}>{student.firstName} {student.lastName}</Link>
                         <img width="100px" src={student.imageUrl}/>
+                        <button onClick={handleDelete}>x</button>
                         </div>
                     );
                 })}

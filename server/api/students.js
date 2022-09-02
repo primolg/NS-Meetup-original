@@ -20,6 +20,23 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+router.delete('/:id', async (req, res, next) => {
+    try {
+        const student1 = await Student.findAll({
+            where: {
+                id: req.params.id
+            }
+        }
+        );
+        const student = student1[0]
+        await student.destroy();
+        res.send(student);
+    } catch (error) {
+        next(error);
+    }
+});
+
+
 router.get('/:id', async (req, res, next) => {
     const id = Number(req.params.id)
     try {

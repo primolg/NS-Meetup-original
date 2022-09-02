@@ -2,14 +2,13 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCampuses } from "../../store/Campuses";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CreateCampus from "./createCampus";
 import { deleteCampus } from "../../store/Campuses";
 
 const AllCampuses = () => {
     const campuses = useSelector(state => state.campuses);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     useEffect(()=> {
         dispatch(fetchCampuses())

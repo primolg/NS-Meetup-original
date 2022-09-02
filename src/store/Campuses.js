@@ -67,7 +67,6 @@ export const createCampus = (campus) => {
 
 export const deleteCampus = (campus) => {
     const campusId = campus.campusId;
-    console.log(campusId)
     return async (dispatch) => {
         const {data: deleted } = await axios.delete(`/api/campuses/${campusId}`);
         dispatch(_deleteCampus(deleted));
