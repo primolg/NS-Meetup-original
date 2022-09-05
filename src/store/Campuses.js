@@ -105,12 +105,12 @@ export default (state = [], action) => {
         case DELETE_CAMPUS:
             const newState = state.filter(campus => 
                 campus.id !== action.campus.id
-            )
+            );
             return [...newState];
         case EDIT_CAMPUS:
             const newEditedState = state.map(campus=>
                 (campus.id === action.campus.id ? action.campus : campus)
-            )
+            );
             return [...newEditedState];
         default:
             return state;

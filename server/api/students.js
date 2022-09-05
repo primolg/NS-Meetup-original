@@ -3,6 +3,9 @@ const {
     models: {Student},
 } = require('../db')
 
+
+//all students
+
 router.get('/', async (req, res, next) => {
     try {
         const students = await Student.findAll();
@@ -20,6 +23,8 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+//single students
+
 router.delete('/:id', async (req, res, next) => {
     try {
         const student1 = await Student.findAll({
@@ -28,7 +33,7 @@ router.delete('/:id', async (req, res, next) => {
             }
         }
         );
-        const student = student1[0]
+        const student = student1[0];
         await student.destroy();
         res.send(student);
     } catch (error) {
@@ -38,14 +43,14 @@ router.delete('/:id', async (req, res, next) => {
 
 
 router.get('/:id', async (req, res, next) => {
-    const id = Number(req.params.id)
+    const id = Number(req.params.id);
     try {
         const student = await Student.findAll({
             where : {
                 id: id
             }
         })
-        res.send(student)
+        res.send(student);
     } catch (error) {
         next(error);
     }
@@ -63,9 +68,9 @@ router.put('/:id', async (req, res, next) => {
 
 
 router.use((req, res, next) => {
-    const err = new Error('API route not found!')
-    err.status = 404
-    next(err)
+    const err = new Error('API route not found!');
+    err.status = 404;
+    next(err);
 })
 
-module.exports = router
+module.exports = router;

@@ -23,11 +23,13 @@ const CreateCampus = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Campus Name:</label>
+            <label>Name:</label>
+            <br></br>
             <input name="campusName" value={campusName} onChange={ handleChangeName } placeholder="name"/>
             <br></br>
             <br></br>
-            <label>Campus Address:</label>
+            <label>Address:</label>
+            <br></br>
             <input name="campusAddress" value={campusAddress} onChange={ handleChangeAddress } placeholder="address"/>
             <br></br>
             <br></br>

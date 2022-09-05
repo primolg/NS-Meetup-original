@@ -10,7 +10,7 @@ const EditCampus = () => {
     //Retrieving Campus
     const {id} = useParams();
     const getCampus = useSelector(state => state.campuses);
-    const campus = getCampus[0]
+    const campus = getCampus[0];
     let campusId = undefined;
 
     useEffect(()=> {

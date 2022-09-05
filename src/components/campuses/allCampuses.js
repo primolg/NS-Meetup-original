@@ -12,39 +12,43 @@ const AllCampuses = () => {
 
     useEffect(()=> {
         dispatch(fetchCampuses())
-    }, [])
+    }, []);
 
 
     return (
-        <div>
-            <h1>Campuses:</h1>
-            <ul>
-                {campuses.map((campus) => {
-                    const campusLink = `/campuses/${campus.id}`
+        <div className="outer-div">
+            <div className="left-div">
+                <h1 className="list-title">Campuses</h1>
+                    {campuses.map((campus) => {
+                        const campusLink = `/campuses/${campus.id}`
 
-                    const handleDelete = (evnt) => {
-                        const campusId = campus.id
-                        evnt.preventDefault();
-                        dispatch(deleteCampus({ campusId }))
-                    }
-                    
-                    return (
-                        <li key={campus.id}>
-                        <Link to={campusLink}>{campus.name}</Link>
-                        <br></br>
-                        <img width="100px" src={campus.imageUrl}/>
-                        <button onClick={handleDelete}>x</button>
-                        </li>
-                    );
-                })}
-            </ul>
-            <div className="creatorDiv">
-                <h4>Create New Campus:</h4>
+                        const handleDelete = (evnt) => {
+                            const campusId = campus.id
+                            evnt.preventDefault();
+                            dispatch(deleteCampus({ campusId }))
+                        }
+                        
+                        return (
+                            <div className="list-item" key={campus.id}>
+                                <div className="name-img">
+                                    <Link className='text-link' to={campusLink}>{campus.name}</Link>
+                                    <br></br>
+                                    <img className="profile-images" src={campus.imageUrl}/>
+                                </div>
+                                <div className="delete-button">
+                                    <button onClick={handleDelete}>x</button>
+                                </div>
+                            </div>
+                        );
+                    })}
+            </div>
+            <div className="right-div">
+                <h4>Add Campus</h4>
                 <CreateCampus />
             </div>
         </div>
     
-    )
+    );
 };
 
 export default AllCampuses;

@@ -14,8 +14,8 @@ const SingleCampus = () => {
     const dispatch = useDispatch();
 
     const getCampus = useSelector(state => state.campuses);
-    const campus = getCampus[0]
-    let campusId = undefined
+    const campus = getCampus[0];
+    let campusId = undefined;
 
     const getStudents = useSelector(state => state.students);
     const studentList = [];
@@ -23,51 +23,60 @@ const SingleCampus = () => {
     useEffect(()=> {
         dispatch(fetchCampuses(id))
         dispatch(fetchStudents())
-    }, [])
+    }, []);
 
     if (getCampus.length === 1){
-        campusId = getCampus[0].id
+        campusId = getCampus[0].id;
     };
 
     if (campusId) {
         for (let i = 0; i < getStudents.length; i++){
             if (getStudents[i].campusId === campusId){
-                studentList.push(getStudents[i])
+                studentList.push(getStudents[i]);
             }
         }
-    }
+    };
 
     return (
-        <div>
-            <div key={campus.id}>
-            <p>{campus.name}, {campus.address}</p>
-            <p>{campus.description}</p>
-            <img width="100px" src={campus.imageUrl}/>
-            <p>students:</p>
-            <ul>
-                {studentList.length ? (studentList.map((student)=>{
-                    const studentId = student.id
-                    const handleSubmit = (evnt) => {
-                        evnt.preventDefault();
-                        dispatch(changeStudentStatus({ studentId }));
-                    }
-                    
-                    return (
-                        <li key={student.id}>
-                        <Link to={'/students/'+student.id}>{student.firstName}   </Link>
-                        <button onClick={handleSubmit} >X</button>
-                        </li>
-                    )
-                })) : <li>No Students Found</li>}
-            </ul>
+        <div className="outer-div">
+            <div className="left-div">
+                <div className="single-item-div" key={campus.id}>
+                    <div className="single-item-info">
+                        <p className="single-item-name">{campus.name}</p>
+                        <p>{campus.address}</p>
+                        <p>{campus.description}</p>
+                        <p>students:</p>
+                        <ul>
+                            {studentList.length ? (studentList.map((student)=>{
+                                const studentId = student.id
+                                const handleSubmit = (evnt) => {
+                                    evnt.preventDefault();
+                                    dispatch(changeStudentStatus({ studentId }));
+                                }
+                                
+                                return (
+                                    <li key={student.id}>
+                                    <Link to={'/students/'+student.id}>{student.firstName}   </Link>
+                                    <button onClick={handleSubmit} >X</button>
+                                    </li>
+                                )
+                            })) : <li>No Students Found</li>}
+                        </ul>   
+                    </div>
+                    <div className="single-item-img">
+                        <img width="100px" src={campus.imageUrl}/>
+                    </div>
+                </div>
             </div>
-            <div className="creatorDiv">
-                <h4>Edit Campus:</h4>
-                <EditCampus />
+            <div className="right-div">
+                <div className="creatorDiv">
+                    <h4>Edit Campus:</h4>
+                    <EditCampus />
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default SingleCampus;
 

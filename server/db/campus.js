@@ -19,4 +19,4 @@ module.exports = db.define('campuses', {
     description: {
         type: Sequelize.TEXT,
     }
-})
+});

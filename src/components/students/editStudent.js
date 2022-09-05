@@ -10,15 +10,15 @@ const EditStudent = () => {
     //Retrieving Campus
     const {id} = useParams();
     const getStudent = useSelector(state => state.students);
-    const student = getStudent[0]
+    const student = getStudent[0];
     let studentId = undefined;
 
     useEffect(()=> {
         dispatch(fetchStudents(id))
-    }, [])
+    }, []);
 
     if (getStudent.length === 1){
-        studentId = getStudent[0].id
+        studentId = getStudent[0].id;
     };
 
     //Retrieving and submitting form inputs
@@ -40,8 +40,7 @@ const EditStudent = () => {
     const handleSubmit = (evnt) => {
         evnt.preventDefault();
         dispatch(editStudent({ studentId, firstName, lastName, email }));
-
-    }
+    };
 
 
     return (
@@ -63,6 +62,6 @@ const EditStudent = () => {
             <br></br>
         </form>
     );
-}
+};
 
 export default EditStudent;

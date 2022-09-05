@@ -17,34 +17,38 @@ const AllStudents = () => {
 
 
     return (
-        <div>
-            <h1>Students:</h1>
-            <ul>
-                {students.map((student) => {
-                    const studentLink = `/students/${student.id}`
+        <div className="outer-div">
+            <div className="left-div">
+                <h1 className="list-title">Students</h1>
+                    {students.map((student) => {
+                        const studentLink = `/students/${student.id}`
 
-                    const handleDelete = (evnt) => {
-                        const studentId = student.id
-                        evnt.preventDefault();
-                        dispatch(deleteStudent({ studentId }))
-                    }
+                        const handleDelete = (evnt) => {
+                            const studentId = student.id
+                            evnt.preventDefault();
+                            dispatch(deleteStudent({ studentId }))
+                        }
 
-                    return (
-                        <div key={student.id}>
-                        <Link to={studentLink}>{student.firstName} {student.lastName}</Link>
-                        <img width="100px" src={student.imageUrl}/>
-                        <button onClick={handleDelete}>x</button>
-                        </div>
-                    );
-                })}
-            </ul>
-            <div className="creatorDiv">
-                <h4>Create New Student:</h4>
+                        return (
+                            <div className="list-item" key={student.id}>
+                                <div className="name-img">
+                                    <Link className='text-link' to={studentLink}>{student.firstName} {student.lastName}</Link>
+                                    <img className="profile-images" src={student.imageUrl}/>
+                                </div>
+                                <div className="delete-button">
+                                    <button onClick={handleDelete}>x</button>
+                                </div>
+                            </div>
+                        );
+                    })}
+            </div>
+            <div className="right-div">
+                <h4>Add Student</h4>
                 <CreateStudent />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default AllStudents;
 

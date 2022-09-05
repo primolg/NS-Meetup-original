@@ -26,8 +26,7 @@ module.exports = db.define('students', {
     },
     gpa: {
         type: Sequelize.FLOAT(0, 4),
-    },
-    
-})
+    },  
+});
 
 

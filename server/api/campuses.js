@@ -5,7 +5,7 @@ const {
 } = require('../db')
 
 
-//allcampuses
+//all campuses
 
 router.get('/', async (req, res, next) => {
     try {
@@ -18,12 +18,13 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        res.status(201).send(await Campus.create(req.body))
+        res.status(201).send(await Campus.create(req.body));
     } catch (error) {
-        next (error)
+        next (error);
     }
 });
 
+//single campuses
 router.delete('/:id', async (req, res, next) => {
     try {
         const campus1 = await Campus.findAll({
@@ -32,7 +33,7 @@ router.delete('/:id', async (req, res, next) => {
             }
         }
         );
-        const campus = campus1[0]
+        const campus = campus1[0];
         await campus.destroy();
         res.send(campus);
     } catch (error) {
@@ -47,7 +48,7 @@ router.get('/:id', async (req, res, next) => {
                 id: req.params.id
             }
         })
-        res.send(campus)
+        res.send(campus);
     } catch (error) {
         next(error);
     }
@@ -64,9 +65,9 @@ router.put('/:id', async (req, res, next) => {
 
 
 router.use((req, res, next) => {
-    const err = new Error('API route not found!')
-    err.status = 404
-    next(err)
+    const err = new Error('API route not found!');
+    err.status = 404;
+    next(err);
 })
 
-module.exports = router
+module.exports = router;

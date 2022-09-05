@@ -1,11 +1,102 @@
+ /* NAV BAR */
 .navBar {
-    background-color:blanchedalmond;
+    background-color: rgb(119, 91, 173);
     display: flex;
     justify-content: space-evenly;
     padding: 20px 25%;
-    font-size: large;
 }
 
-.creatorDiv {
-    background-color: antiquewhite;
+.nav-links {
+    font-size: 3vh;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* home page */
+.home-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+ /* ALL VIEW PAGES */
+.outer-div {
+    min-height: 100vh;
+    display: flex;
+    font-family:'Franklin Gothic Medium';
+    background-color:rgb(253, 250, 239);
+}
+
+.left-div {
+    width: 70%;
+}
+.right-div {
+    width: 20vw;
+    height: 50vh;
+    border-style: solid;
+    border-color: rgb(119, 91, 173);
+    border-width: 5px;
+    background-color: white;
+    margin: 11vh 10vw 60vh 0vw;
+    padding: 5px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;
+    border-color: rgb(119, 91, 173);
+    border-width: 5px;
+    background-color: rgb(247, 247, 247);
+    width: 70%;
+    margin: 5px 60% 5px 10%;
+}
+
+.list-title {
+    margin: 20px 37.5%;
+    color: rgb(51, 23, 74);
+}
+.text-link{
+    text-decoration: none;
+    color: black;
+}
+.name-img{
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    width: 80%;
+    padding: 2% 10%;
+    font-size: x-large;
+    text-decoration: none;
+    color:aqua
+}
+
+.profile-images {
+    height: 5vw;
+}
+
+.delete-button {
+    padding: 5px;
+}
+
+
+.single-item-div {
+    display: flex;
+    justify-content: space-around;
+    border-style: solid;
+    border-color: rgb(119, 91, 173);
+    border-width: 5px;
+    background-color: rgb(247, 247, 247);
+    width: 70%;
+    margin: 20% 60% 5px 10%;
+}
+
+.single-item-img {
+    margin-top: 3%;
+}
+
+.single-item-name {
+    font-size: larger;
+    font-weight: bold;
 }

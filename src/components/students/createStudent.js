@@ -25,19 +25,22 @@ const CreateStudent = () => {
     const handleSubmit = (evnt) => {
         evnt.preventDefault();
         dispatch(createStudent({ studentFirstName, studentLastName, studentEmail }));
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Student First Name:</label>
+            <label>First Name:</label>
+            <br></br>
             <input name="studentFirstName" value={studentFirstName} onChange={ handleChangeFirstName } placeholder="first name"/>
             <br></br>
             <br></br>
-            <label>Student Last Name:</label>
+            <label>Last Name:</label>
+            <br></br>
             <input name="studentLasstName" value={studentLastName} onChange={ handleChangeLastName } placeholder="last name"/>
             <br></br>
             <br></br>
-            <label>Student Email:</label>
+            <label>Email:</label>
+            <br></br>
             <input name="studentEmail" value={studentEmail} onChange={ handleChangeEmail } placeholder="email"/>
             <br></br>
             <br></br>
@@ -46,6 +49,6 @@ const CreateStudent = () => {
             <br></br>
         </form>
     );
-}
+};
 
 export default CreateStudent;
