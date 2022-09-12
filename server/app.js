@@ -15,8 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.use("/api/campuses", require("./api/campuses"));
-app.use("/api/students", require("./api/students"));
 
 app.use('/api/*', (req, res) => {
     res.status(404).send({ message: 'Not Found' });
@@ -24,7 +22,7 @@ app.use('/api/*', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use('/', (req, res) => {
+app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public/index.html'));
 });
 
