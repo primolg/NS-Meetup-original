@@ -2475,11 +2475,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _components_campuses_Maintenance__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/campuses/Maintenance */ "./src/components/campuses/Maintenance.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _components_Maintenance__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Maintenance */ "./src/components/Maintenance.js");
 /* harmony import */ var _components_schedules_Schedule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/schedules/Schedule */ "./src/components/schedules/Schedule.js");
-/* harmony import */ var _components_campuses_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/campuses/Home */ "./src/components/campuses/Home.js");
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Home */ "./src/components/Home.js");
+/* harmony import */ var _components_schedules_StationScreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/schedules/StationScreen */ "./src/components/schedules/StationScreen.js");
+
 
 
 
@@ -2490,27 +2492,30 @@ __webpack_require__.r(__webpack_exports__);
 function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "navBar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
     className: "nav-links",
     to: "/"
-  }, "home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+  }, "home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
     className: "nav-links",
     to: "/maintenance"
-  }, "maintenance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+  }, "maintenance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
     className: "nav-links",
     to: "/schedule"
   }, "schedule")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "all-else"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     index: true,
     path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_campuses_Home__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Home__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/maintenance",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_campuses_Maintenance__WEBPACK_IMPORTED_MODULE_1__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Maintenance__WEBPACK_IMPORTED_MODULE_1__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/schedule",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_Schedule__WEBPACK_IMPORTED_MODULE_2__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    path: "/station/:stationcode",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_StationScreen__WEBPACK_IMPORTED_MODULE_4__["default"], null)
   }))));
 }
 
@@ -2519,10 +2524,10 @@ function App() {
 
 /***/ }),
 
-/***/ "./src/components/campuses/Home.js":
-/*!*****************************************!*\
-  !*** ./src/components/campuses/Home.js ***!
-  \*****************************************/
+/***/ "./src/components/Home.js":
+/*!********************************!*\
+  !*** ./src/components/Home.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2547,10 +2552,10 @@ var HomePage = function HomePage() {
 
 /***/ }),
 
-/***/ "./src/components/campuses/Maintenance.js":
-/*!************************************************!*\
-  !*** ./src/components/campuses/Maintenance.js ***!
-  \************************************************/
+/***/ "./src/components/Maintenance.js":
+/*!***************************************!*\
+  !*** ./src/components/Maintenance.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2562,6 +2567,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../secretKey */ "./src/secretKey.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2577,6 +2583,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var SinglePage = function SinglePage() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -2587,7 +2594,7 @@ var SinglePage = function SinglePage() {
     method: 'GET',
     headers: {
       'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': 'de3e222ab2c444809fbe2ba4d048df77'
+      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
     }
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
@@ -2638,6 +2645,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../secretKey */ "./src/secretKey.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2653,21 +2662,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 var Arrivals = function Arrivals() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       data = _useState2[0],
       setData = _useState2[1];
 
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+      stationcode = _useParams.stationcode;
+
   var myRequest = {
     method: 'GET',
     headers: {
       'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': 'de3e222ab2c444809fbe2ba4d048df77'
+      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
     }
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=RAI', myRequest).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=".concat(stationcode), myRequest).then(function (response) {
       setData(response.data.payload.arrivals);
     });
   }, []);
@@ -2682,9 +2696,9 @@ var Arrivals = function Arrivals() {
     }, "Arrivals"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), data.map(function (train) {
       var arrivalTime = train.actualDateTime.slice(11, 16);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: train.arrivalStatus === "INCOMING" ? "single-train incoming" : "single-train on-station",
+        className: train.arrivalStatus === "INCOMING" ? "single-train incoming" : train.arrivalStatus === "ON_STATION" ? "single-train on-station" : "single-train departed",
         key: train.actualDateTime
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " vanaf ", train.origin), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.arrivalStatus === "INCOMING" ? "".concat(train.arrivalStatus, " om ").concat(arrivalTime) : train.arrivalStatus, " op Spoor ", train.plannedTrack));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " uit ", train.origin), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.arrivalStatus === "INCOMING" ? "".concat(train.arrivalStatus, " om ").concat(arrivalTime) : train.arrivalStatus, " op Spoor ", train.plannedTrack));
     }));
   }
 };
@@ -2708,6 +2722,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../secretKey */ "./src/secretKey.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2723,21 +2739,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 var Departures = function Departures() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       data = _useState2[0],
       setData = _useState2[1];
 
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+      stationcode = _useParams.stationcode;
+
   var myRequest = {
     method: 'GET',
     headers: {
       'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': 'de3e222ab2c444809fbe2ba4d048df77'
+      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
     }
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=RAI', myRequest).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=".concat(stationcode), myRequest).then(function (response) {
       setData(response.data.payload.departures);
     });
   }, []);
@@ -2755,7 +2776,7 @@ var Departures = function Departures() {
         return item.mediumName;
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: train.departureStatus === "INCOMING" ? "single-train incoming" : "single-train on-station",
+        className: train.departureStatus === "INCOMING" ? "single-train incoming" : train.departureStatus === "ON_STATION" ? "single-train on-station" : "single-train departed",
         key: train.actualDateTime
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " richting ", train.direction), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.departureStatus === "INCOMING" ? "".concat(train.departureStatus, " at ").concat(departureTime) : train.departureStatus, " op Spoor ", train.plannedTrack), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "stops: ", routeStations.join(', ')));
     }));
@@ -2779,19 +2800,128 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Departures__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Departures */ "./src/components/schedules/Departures.js");
-/* harmony import */ var _Arrivals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Arrivals */ "./src/components/schedules/Arrivals.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../secretKey */ "./src/secretKey.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
 
 var Schedule = function Schedule() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "center-text"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Departures__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Arrivals__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("amsterdam"),
+      _useState2 = _slicedToArray(_useState, 2),
+      stationOptions = _useState2[0],
+      setStationOptions = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      allStations = _useState4[0],
+      setAllStations = _useState4[1];
+
+  var myRequest = {
+    method: 'GET',
+    headers: {
+      'X-Host-Override': 'gateway.apiportal.ns.nl',
+      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
+    }
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (stationOptions) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/places-api/v2/places?type=stationV2&q=".concat(stationOptions), myRequest).then(function (response) {
+        setAllStations(response.data.payload[0].locations);
+      });
+    }
+  }, [stationOptions]);
+
+  function stationSetter() {
+    setStationOptions(document.getElementById('stationInput').value);
+  }
+
+  if (stationOptions) {
+    console.log(allStations);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      id: "stationInput"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: stationSetter,
+      type: "submit"
+    }, "search")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, allStations.map(function (station) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+        key: station.EVACode,
+        href: "/station/" + station.stationCode
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "station-results"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Station ", station.name, ", ", station.land)));
+    })));
+  } else {
+    //PRE SEARCH
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      id: "stationInput"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: stationSetter,
+      type: "submit"
+    }, "search")));
+  }
+
+  ;
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Schedule);
+
+/***/ }),
+
+/***/ "./src/components/schedules/StationScreen.js":
+/*!***************************************************!*\
+  !*** ./src/components/schedules/StationScreen.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Departures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Departures */ "./src/components/schedules/Departures.js");
+/* harmony import */ var _Arrivals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Arrivals */ "./src/components/schedules/Arrivals.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var StationScreen = function StationScreen() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", {
+    className: "center-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_Departures__WEBPACK_IMPORTED_MODULE_0__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_Arrivals__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StationScreen);
+
+/***/ }),
+
+/***/ "./src/secretKey.js":
+/*!**************************!*\
+  !*** ./src/secretKey.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("7c643ada022942a59cb4930840c59af6");
 
 /***/ }),
 

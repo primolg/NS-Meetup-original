@@ -2,9 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Maintenance from "./components/campuses/Maintenance";
+import Maintenance from "./components/Maintenance";
 import Schedule from "./components/schedules/Schedule";
-import HomePage from "./components/campuses/Home";
+import HomePage from "./components/Home";
+import StationScreen from "./components/schedules/StationScreen";
 
 function App(){
     return(
@@ -19,6 +20,7 @@ function App(){
                         <Route index path="/" element={<HomePage />} />
                         <Route path="/maintenance" element={<Maintenance />} />
                         <Route path="/schedule" element={<Schedule />} />
+                        <Route path="/station/:stationcode" element={<StationScreen />} />
                     </Routes>
                 </div>
             </div>

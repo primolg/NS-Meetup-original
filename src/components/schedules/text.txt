@@ -1,8 +1,9 @@
     
     STATIONGETTER
-    
-    
-    const [allData, setAllData] = useState(null);
+
+    <select>
+    <option>
+
     const [allStations, setAllStations] = useState(null);
 
     const myRequest = {
@@ -16,7 +17,6 @@
     useEffect(() => {
         axios.get('https://gateway.apiportal.ns.nl/places-api/v2/places', myRequest
         ).then(response => {
-            setAllData(response.data.payload)
             setAllStations(response.data.payload[0].locations)
         })
     }, [])
