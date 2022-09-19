@@ -3,17 +3,17 @@ import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Maintenance from "./components/Maintenance";
-import Schedule from "./components/schedules/Schedule";
-import HomePage from "./components/Home";
-import StationScreen from "./components/schedules/StationScreen";
+import Schedule from "./components/schedules/stationScreen/Schedule";
+import HomePage from "./components/schedules/trainLookup/TrainPlanner";
+import StationScreen from "./components/schedules/stationScreen/StationScreen";
 
 function App(){
     return(
-            <div>
-                <nav className="navBar">
-                    <Link className="nav-links" to="/">home</Link>
-                    <Link className="nav-links" to="/maintenance">maintenance</Link>
-                    <Link className="nav-links" to="/schedule">schedule</Link>
+            <div className="outer-div">
+                <nav className="navBar">    
+                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/maintenance">Maintenance</Link>
+                        <Link className="nav-link" to="/schedule">Schedule</Link>
                 </nav>
                 <div className="all-else">
                     <Routes>
