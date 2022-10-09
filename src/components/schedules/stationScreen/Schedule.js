@@ -1,19 +1,10 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import secretKey from "../../../secretKey";
-
+import {myRequest}  from "../../../secretKey";
 const Schedule = () => {
 
     const [stationOptions, setStationOptions] = useState(null);
     const [allStations, setAllStations] = useState([]);
-
-        const myRequest = {
-            method: 'GET',
-            headers: {
-                'X-Host-Override': 'gateway.apiportal.ns.nl',
-                'Ocp-Apim-Subscription-Key': secretKey
-            }
-        };
     
     useEffect(() => {
         if(stationOptions){
@@ -29,7 +20,7 @@ const Schedule = () => {
     function stationSetter(){
         setStationOptions(document.getElementById('stationInput').value)
     }
-
+    console.log(allStations)
     if (stationOptions){
         return (
             <div>

@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import secretKey from "../secretKey";
+import {myRequest}  from "../secretKey";
 
 const SinglePage = () => {
 
     const [data, setData] = useState(null);
-    const myRequest = {
-        method: 'GET',
-        headers: {
-            'X-Host-Override': 'gateway.apiportal.ns.nl',
-            'Ocp-Apim-Subscription-Key': secretKey
-        }
-    };
+
     
     useEffect(() => {
         axios.get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions?isActive=false', myRequest

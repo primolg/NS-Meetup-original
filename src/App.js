@@ -11,7 +11,7 @@ function App(){
     return(
             <div className="outer-div">
                 <nav className="navBar">    
-                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/">Trip Planner</Link>
                         <Link className="nav-link" to="/maintenance">Maintenance</Link>
                         <Link className="nav-link" to="/schedule">Schedule</Link>
                 </nav>

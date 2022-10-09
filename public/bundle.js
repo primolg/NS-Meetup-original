@@ -5680,7 +5680,7 @@ function App() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
     className: "nav-link",
     to: "/"
-  }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+  }, "Trip Planner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
     className: "nav-link",
     to: "/maintenance"
   }, "Maintenance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
@@ -5747,15 +5747,8 @@ var SinglePage = function SinglePage() {
       data = _useState2[0],
       setData = _useState2[1];
 
-  var myRequest = {
-    method: 'GET',
-    headers: {
-      'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
-    }
-  };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions?isActive=false', myRequest).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions?isActive=false', _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
       setData(response.data);
     });
   }, []);
@@ -5830,15 +5823,8 @@ var Arrivals = function Arrivals() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
       stationcode = _useParams.stationcode;
 
-  var myRequest = {
-    method: 'GET',
-    headers: {
-      'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
-    }
-  };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=".concat(stationcode), myRequest).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=".concat(stationcode), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
       setData(response.data.payload.arrivals);
     });
   }, []);
@@ -5907,15 +5893,8 @@ var Departures = function Departures() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
       stationcode = _useParams.stationcode;
 
-  var myRequest = {
-    method: 'GET',
-    headers: {
-      'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
-    }
-  };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=".concat(stationcode), myRequest).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=".concat(stationcode), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
       setData(response.data.payload.departures);
     });
   }, []);
@@ -5987,16 +5966,9 @@ var Schedule = function Schedule() {
       allStations = _useState4[0],
       setAllStations = _useState4[1];
 
-  var myRequest = {
-    method: 'GET',
-    headers: {
-      'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
-    }
-  };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (stationOptions) {
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/places-api/v2/places?type=stationV2&q=".concat(stationOptions), myRequest).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/places-api/v2/places?type=stationV2&q=".concat(stationOptions), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
         if (response.data.payload.length) {
           setAllStations(response.data.payload[0].locations);
         }
@@ -6007,6 +5979,8 @@ var Schedule = function Schedule() {
   function stationSetter() {
     setStationOptions(document.getElementById('stationInput').value);
   }
+
+  console.log(allStations);
 
   if (stationOptions) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
@@ -6083,12 +6057,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-datepicker */ "./node_modules/react-datepicker/dist/react-datepicker.min.js");
-/* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_datepicker__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-datepicker */ "./node_modules/react-datepicker/dist/react-datepicker.min.js");
+/* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_datepicker__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../secretKey */ "./src/secretKey.js");
-/* harmony import */ var _timeTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timeTable */ "./src/components/schedules/trainLookup/timeTable.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+/* harmony import */ var _tripsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tripsList */ "./src/components/schedules/trainLookup/tripsList.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6107,11 +6082,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var HomePage = function HomePage() {
   var date = new Date();
   var time = date.getHours() + ":" + (date.getMinutes().toString().length === 1 ? "0" + date.getMinutes() : date.getMinutes());
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["loading.."]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
       _useState2 = _slicedToArray(_useState, 2),
       allStations = _useState2[0],
       setAllStations = _useState2[1];
@@ -6121,7 +6097,7 @@ var HomePage = function HomePage() {
       selectedDate = _useState4[0],
       setSelectedDate = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(time),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(time.length > 4 ? time : "0" + time),
       _useState6 = _slicedToArray(_useState5, 2),
       selectedTime = _useState6[0],
       setSelectedTime = _useState6[1];
@@ -6131,58 +6107,89 @@ var HomePage = function HomePage() {
       arrivalBool = _useState8[0],
       setArrivalBool = _useState8[1];
 
-  var stationCodes = {};
-  var timesArray = [];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState10 = _slicedToArray(_useState9, 2),
+      arrivalStation = _useState10[0],
+      setArrivalStation = _useState10[1];
 
-  for (var i = 0; i < 24; i++) {
-    timesArray.push(i + ":00", i + ":15", i + ":30", i + ":45");
-  }
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState12 = _slicedToArray(_useState11, 2),
+      departureStation = _useState12[0],
+      setDepartureStation = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      submitBool = _useState14[0],
+      setSubmitBool = _useState14[1];
+
+  var stationCodes = {};
+  var lookupItems = {
+    "rfcTime": timeSorter(),
+    "arrivalBool": arrivalBool,
+    "stations": allStations,
+    "departureStation": departureStation,
+    "arrivalStation": arrivalStation
+  };
 
   function setTimeFunc() {
     var timeVal = document.getElementById("timeSelector").value;
-    console.log(timeVal);
+    setSelectedTime(timeVal);
   }
 
-  function setArrivalTrue() {
-    setArrivalBool(true);
+  function setDateFunc(date) {
+    setSelectedDate(date);
   }
 
-  function setArrivalFalse() {
-    setArrivalBool(false);
+  function setDepartureFunc() {
+    var departureVal = document.getElementById("departureStation").value;
+    setDepartureStation(stationCodes[departureVal]);
   }
 
-  var myRequest = {
-    method: 'GET',
-    headers: {
-      'X-Host-Override': 'gateway.apiportal.ns.nl',
-      'Ocp-Apim-Subscription-Key': _secretKey__WEBPACK_IMPORTED_MODULE_2__["default"]
-    }
-  };
+  function setArrivalFunc() {
+    var arrivalVal = document.getElementById("arrivalStation").value;
+    setArrivalStation(stationCodes[arrivalVal]);
+  }
+
+  function setSearchBool() {
+    setSubmitBool(false);
+    setTimeout(function () {
+      setSubmitBool(true);
+    }, 1);
+  }
+
+  function timeSorter() {
+    return selectedDate.toString().slice(11, 15) + "-" + _plannerFunctions__WEBPACK_IMPORTED_MODULE_3__.monthsToNum[selectedDate.toString().slice(4, 7)] + "-" + selectedDate.toString().slice(8, 10) + "T" + selectedTime + ":00Z";
+  }
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations', myRequest).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations', _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
       setAllStations(response.data.payload);
     });
   }, []);
 
-  if (allStations.length) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
+  if (allStations) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("link", {
       rel: "stylesheet",
       href: "https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "center-text"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Van:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-      list: "station1"
+      list: "station1",
+      id: "departureStation",
+      onChange: setDepartureFunc
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("datalist", {
       id: "station1"
     }, allStations.map(function (station) {
       if (station.namen && station.land === "NL") {
         stationCodes[station.namen.lang] = station.code;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
-          key: station.EVACode
+          key: station.code
         }, station.namen.lang);
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Naar:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-      list: "station2"
+      list: "station2",
+      id: "arrivalStation",
+      onChange: setArrivalFunc
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("datalist", {
       id: "station2"
     }, allStations.map(function (station) {
@@ -6196,27 +6203,34 @@ var HomePage = function HomePage() {
       className: "center-text"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Tijd van  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
       className: arrivalBool ? "selected-arrival-inactive arrivalBoolbtn" : "selected-arrival-active arrivalBoolbtn",
-      onClick: setArrivalFalse
+      onClick: function onClick() {
+        return setArrivalBool(false);
+      }
     }, "Vertrek"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
       className: arrivalBool ? "selected-arrival-active arrivalBoolbtn" : "selected-arrival-inactive arrivalBoolbtn",
-      onClick: setArrivalTrue
+      onClick: function onClick() {
+        return setArrivalBool(true);
+      }
     }, "Aankomst"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
       id: "timeSelector",
       className: "selector",
       onChange: setTimeFunc
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", null, selectedTime), timesArray.map(function (time) {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", null, selectedTime), _plannerFunctions__WEBPACK_IMPORTED_MODULE_3__.timesArray.map(function (time) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
         key: time
       }, time);
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react_datepicker__WEBPACK_IMPORTED_MODULE_4___default()), {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react_datepicker__WEBPACK_IMPORTED_MODULE_5___default()), {
       className: "selector2",
       selected: selectedDate,
       onChange: function onChange(date) {
-        return setSelectedDate(date);
+        return setDateFunc(date);
       }
-    })));
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: setSearchBool
+    }, "submit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, submitBool ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_tripsList__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      prop: lookupItems
+    }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null)));
   } else {
-    console.log("loading");
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "loading..."));
   }
 };
@@ -6225,9 +6239,57 @@ var HomePage = function HomePage() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/timeTable.js":
+/***/ "./src/components/schedules/trainLookup/plannerFunctions.js":
+/*!******************************************************************!*\
+  !*** ./src/components/schedules/trainLookup/plannerFunctions.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "minToHrString": () => (/* binding */ minToHrString),
+/* harmony export */   "monthsToNum": () => (/* binding */ monthsToNum),
+/* harmony export */   "timesArray": () => (/* binding */ timesArray)
+/* harmony export */ });
+function timeTables() {
+  var arr = [];
+
+  for (var i = 0; i < 24; i++) {
+    var currentHr = i.toString().length > 1 ? i : "0" + i;
+    arr.push(currentHr + ":00", currentHr + ":15", currentHr + ":30", currentHr + ":45");
+  }
+
+  return arr;
+}
+
+var timesArray = timeTables();
+var monthsToNum = {
+  "Jan": "01",
+  "Feb": "02",
+  "Mar": "03",
+  "Apr": "04",
+  "May": "05",
+  "Jun": "06",
+  "Jul": "07",
+  "Aug": "08",
+  "Sep": "09",
+  "Oct": "10",
+  "Nov": "11",
+  "Dec": "12"
+};
+function minToHrString(time) {
+  var hours = time / 60;
+  var rhours = Math.floor(time / 60);
+  var mins = Math.round((hours - rhours) * 60);
+  return rhours + ':' + (mins.toString().length > 1 ? mins : "0" + mins);
+}
+
+/***/ }),
+
+/***/ "./src/components/schedules/trainLookup/tripsList.js":
 /*!***********************************************************!*\
-  !*** ./src/components/schedules/trainLookup/timeTable.js ***!
+  !*** ./src/components/schedules/trainLookup/tripsList.js ***!
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -6236,13 +6298,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var timesArray = [];
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../secretKey */ "./src/secretKey.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-for (var i = 0; i < 24; i++) {
-  timesArray.push(i + ":00", i + ":15", i + ":30", i + ":45");
-}
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (timesArray);
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var TripsList = function TripsList(_ref) {
+  var prop = _ref.prop;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      trips = _useState2[0],
+      setTrips = _useState2[1];
+
+  if (trips) {
+    console.log('sort by trip length (kinda default?):', trips.sort(function (a, b) {
+      return a.actualDurationInMinutes - b.actualDurationInMinutes;
+    }));
+    console.log('sort by least transfers (trip length secondary):', trips.sort(function (a, b) {
+      return a.transfers - b.transfers;
+    }).sort(function (a, b) {
+      return a.legs.length - b.legs.length;
+    }));
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=".concat(prop.departureStation, "&toStation=").concat(prop.arrivalStation, "&dateTime=").concat(prop.rfcTime, "&searchForArrival=").concat(prop.arrivalBool), _secretKey__WEBPACK_IMPORTED_MODULE_3__.myRequest).then(function (response) {
+      setTrips(response.data.trips);
+    });
+  }, []);
+  return trips ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, trips.map(function (trip) {
+    var time = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.minToHrString)(trip.actualDurationInMinutes);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      key: trip.idx
+    }, "trip ", trip.idx, " duurt : ", time);
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "all-cards-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    stroke: "#0b1d65",
+    strokeWidth: "2"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripsList);
 
 /***/ }),
 
@@ -6255,9 +6373,15 @@ for (var i = 0; i < 24; i++) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "myRequest": () => (/* binding */ myRequest)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("67fff64661a34fac95e6029927411585");
+var myRequest = {
+  method: 'GET',
+  headers: {
+    'X-Host-Override': 'gateway.apiportal.ns.nl',
+    'Ocp-Apim-Subscription-Key': "67fff64661a34fac95e6029927411585"
+  }
+};
 
 /***/ }),
 
@@ -49216,6 +49340,55 @@ module.exports = function isEqual(a, b) {
     throw error;
   }
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-loading-icons/dist/esm/components/tail-spin.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ TailSpin)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function TailSpin(props) {
+    var _a, _b, _c, _d, _e;
+    var speed = Number(String((_a = props.speed) !== null && _a !== void 0 ? _a : 1));
+    var stroke = (_b = props.stroke) !== null && _b !== void 0 ? _b : '#fff';
+    var strokeWidth = (_c = props.strokeWidth) !== null && _c !== void 0 ? _c : 2;
+    var strokeOpacity = props.strokeOpacity;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", __assign({}, __assign(__assign({}, props), { className: props.className
+            ? "icon-loading ".concat(props.className)
+            : 'icon-loading', fill: undefined, fillOpacity: undefined, height: (_d = props.height) !== null && _d !== void 0 ? _d : 38, speed: undefined, stroke: undefined, strokeOpacity: undefined, strokeWidth: undefined, width: (_e = props.width) !== null && _e !== void 0 ? _e : 38 }), { viewBox: "0 0 38 38" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("defs", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("linearGradient", { x1: "8.042%", y1: "0%", x2: "65.682%", y2: "23.865%", id: "prefix__a" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("stop", { stopOpacity: 0, offset: "0%" }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("stop", { stopOpacity: 0.631, offset: "63.146%" }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("stop", { offset: "100%" }))),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("g", { transform: "translate(1 1)", fill: "none", fillRule: "evenodd" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", __assign({ d: "M36 18c0-9.94-8.06-18-18-18" }, { stroke: stroke, strokeWidth: strokeWidth, strokeOpacity: strokeOpacity }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("animateTransform", { attributeName: "transform", type: "rotate", from: "0 18 18", to: "360 18 18", dur: "".concat(0.9 / speed, "s"), repeatCount: "indefinite" })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", { cx: 36, cy: 18, r: 1 },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("animateTransform", { attributeName: "transform", type: "rotate", from: "0 18 18", to: "360 18 18", dur: "".concat(0.9 / speed, "s"), repeatCount: "indefinite" })))));
+}
 
 
 /***/ }),
