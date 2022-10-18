@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import axios from "axios";
-import { myRequest } from "../../../secretKey";
+import { myRequest } from "../../../../secretKey";
 
 import { minToHrString } from "./plannerFunctions";
 
