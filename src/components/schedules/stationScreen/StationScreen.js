@@ -1,6 +1,7 @@
+import React from "react";
+//components
 import Departures from "./Departures";
 import Arrivals from "./Arrivals";
-import React from "react";
 
 const StationScreen = () => {
     return (

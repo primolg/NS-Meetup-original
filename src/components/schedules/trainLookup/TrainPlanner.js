@@ -8,10 +8,12 @@ import {myRequest} from "../../../../secretKey"
 import {timesArray, monthsToNum, timeSorter} from "./plannerFunctions"
 
 const HomePage = () => {
+    //time grab
     const date = new Date();
     const time = (date.getHours().toString().length === 1 ? "0" + date.getHours() : date.getHours()) 
                 + ":" 
                 + (date.getMinutes().toString().length === 1 ? "0"+date.getMinutes() : date.getMinutes());
+    //form setters
     const [allStations, setAllStations] = useState(undefined);
     const [selectedDate, setSelectedDate] = useState(date);
     const [selectedTime, setSelectedTime] = useState(time)
@@ -19,8 +21,12 @@ const HomePage = () => {
     const [arrivalStation, setArrivalStation] = useState(undefined)
     const [departureStation, setDepartureStation] = useState(undefined)
     const [submitBool, setSubmitBool] = useState(false)
+
+    //object to be populated alongside station options in form with station codes 
+    //and their full length name. Example: {"Amsterdam Centraal" : "ASD"}
     let stationCodes = {}
 
+    
     //items to be passed into tripsList
     const lookupItems = {
         "rfcTime": timeSorter(selectedDate, selectedTime),
@@ -71,7 +77,6 @@ const HomePage = () => {
                             <datalist id="station2">
                                 {allStations.map(station => {
                                     if (station.namen && station.land==="NL"){
-                                        stationCodes[station.namen.lang] = station.code
                                         return (
                                             <option key={station.EVACode}>{station.namen.lang}</option>
                                         )

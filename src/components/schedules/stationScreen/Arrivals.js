@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import {myRequest}  from "../../../../secretKey"
 import { useParams } from "react-router-dom";
+import axios from "axios";
+//other
+import {myRequest} from "../../../../secretKey"
 
 const Arrivals = () => {
     
     const [data, setData] = useState(null);
     let {stationcode} = useParams()
 
-    
     useEffect(() => {
         axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=${stationcode}`, myRequest
         ).then(response => {

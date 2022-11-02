@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import axios from "axios";
+//other
 import {myRequest}  from "../../../../secretKey"
+
 const Schedule = () => {
 
     const [stationOptions, setStationOptions] = useState(null);
@@ -20,7 +22,7 @@ const Schedule = () => {
     function stationSetter(){
         setStationOptions(document.getElementById('stationInput').value)
     }
-    console.log(allStations)
+    
     if (stationOptions){
         return (
             <div>

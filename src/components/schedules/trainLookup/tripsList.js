@@ -1,19 +1,21 @@
 import React, {useState, useEffect} from "react";
-import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import axios from "axios";
+//other
+import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import { myRequest } from "../../../../secretKey";
-
 import { minToHrString } from "./plannerFunctions";
-
-
 
 
 const TripsList = ({prop}) => {
     const [trips, setTrips] = useState(undefined);
+
+    //trip sorting options testing
+    //will probably just use built in api sorting, with visual indication of transfers
     if (trips){
         console.log('sort by trip length (kinda default?):', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
         console.log('sort by least transfers (trip length secondary):', trips.sort((a,b) => a.transfers - b.transfers).sort((a,b) => a.legs.length - b.legs.length));
     }
+    
     useEffect(() => {
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
             ).then(response => {
