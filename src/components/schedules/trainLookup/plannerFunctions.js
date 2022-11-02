@@ -1,3 +1,4 @@
+//func returns an array of each quarter of the hour in a day military time
 function timeTables () {
     let arr = []
     for (let i = 0; i < 24; i++){
@@ -9,6 +10,7 @@ function timeTables () {
 
 export const timesArray = timeTables()
 
+//months to num for api call.
 export const monthsToNum = {
     "Jan": "01",
     "Feb": "02",
@@ -24,9 +26,21 @@ export const monthsToNum = {
     "Dec": "12"
 }
 
+//converts js internal Date() time to military time
 export function  minToHrString (time) {
     const hours = (time / 60);
     const rhours = Math.floor(time / 60);
     const mins = Math.round((hours - rhours) * 60);
     return (rhours + ':' + (mins.toString().length > 1 ? mins : "0" + mins))
+}
+
+//converts date to RFC3339 time string
+export function timeSorter(date, time){
+    return  (
+        date.toString().slice(11,15) 
+        + "-" + monthsToNum[date.toString().slice(4,7)] 
+        + "-" + date.toString().slice(8, 10)
+        + "T" + time
+        + ":00Z" 
+    )
 }

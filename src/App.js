@@ -2,10 +2,12 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+//components
 import Maintenance from "./components/Maintenance";
 import Schedule from "./components/schedules/stationScreen/Schedule";
 import HomePage from "./components/schedules/trainLookup/TrainPlanner";
 import StationScreen from "./components/schedules/stationScreen/StationScreen";
+
 
 function App(){
     return(

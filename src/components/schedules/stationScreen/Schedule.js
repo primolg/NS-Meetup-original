@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {myRequest}  from "../../../secretKey";
+import {myRequest}  from "../../../../secretKey"
 const Schedule = () => {
 
     const [stationOptions, setStationOptions] = useState(null);

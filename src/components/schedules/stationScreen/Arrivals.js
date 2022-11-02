@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {myRequest}  from "../../../secretKey"
+import {myRequest}  from "../../../../secretKey"
 import { useParams } from "react-router-dom";
 
 const Arrivals = () => {

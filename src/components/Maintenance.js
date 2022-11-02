@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {myRequest}  from "../secretKey";
+import {myRequest}  from "../../secretKey";
 
 const SinglePage = () => {
 
@@ -24,6 +24,7 @@ const SinglePage = () => {
         return (
             <div>
                 {data.map(item => {
+                    //check for maintenence type and lists accordingly
                     if (item.type === "DISRUPTION"){
                         return (
                             <div key={item.id}>
