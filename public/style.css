@@ -1,5 +1,3 @@
-@import "./tripPlanner.css";
-
 *{
     padding: 0px;
     margin: 0px;
@@ -30,8 +28,17 @@
 }
 
 
-/* HOME PAGE  */
 
+
+
+
+
+/* Below is some old css work, when I started this project I was working in one css file and writing everything for desktop view, 
+now I work in seperate less files and develop in mobile view, so this is outdated. Keeping it in here for style and color refrence */
+
+
+/* HOME PAGE  */
+/* 
 .all-else {
     height: 100vh;
     overflow: hidden;
@@ -74,3 +81,29 @@
 .departed {
     background-color: rgb(226, 184, 181);
 }   
+
+.selector{
+    min-width: 60px !important;
+    min-height: 30px !important;
+    max-height: 30px !important;
+}
+.selector2{
+    min-height: 24px !important;
+}
+
+.arrivalBoolbtn{
+    background-color: aliceblue;
+    border-style: solid;
+    border-color:rgb(229, 238, 246);
+    padding:6px;
+    margin: 0px;
+    text-decoration: underline;
+}
+
+.selected-arrival-active{
+    color:rgb(11, 29, 101);
+}
+
+.selected-arrival-inactive{
+    color:rgb(139, 139, 139);
+} */
