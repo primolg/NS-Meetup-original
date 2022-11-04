@@ -10,7 +10,7 @@ import StationScreen from "./components/schedules/stationScreen/StationScreen";
 
 function App(){
     return(
-            <div className="outer-div">
+            <div>
                 <nav className="navBar">    
                         <Link className="nav-link" to="/">Trip Planner</Link>
                         <Link className="nav-link" to="/maintenance">Maintenance</Link>
