@@ -6118,7 +6118,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _tripsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tripsList */ "./src/components/schedules/trainLookup/tripsList.js");
+/* harmony import */ var _TripsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripsList */ "./src/components/schedules/trainLookup/TripsList.js");
 /* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-datepicker */ "./node_modules/react-datepicker/dist/react-datepicker.min.js");
 /* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_datepicker__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
@@ -6285,7 +6285,7 @@ var HomePage = function HomePage() {
       }
     }, "Arrival")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: setSearchBool
-    }, "submit"))), submitBool ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_tripsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, "submit"))), submitBool ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
       prop: lookupItems
     }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
   } else {
@@ -6294,6 +6294,90 @@ var HomePage = function HomePage() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomePage);
+
+/***/ }),
+
+/***/ "./src/components/schedules/trainLookup/TripsList.js":
+/*!***********************************************************!*\
+  !*** ./src/components/schedules/trainLookup/TripsList.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+ //other
+
+
+
+
+
+var TripsList = function TripsList(_ref) {
+  var prop = _ref.prop;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      trips = _useState2[0],
+      setTrips = _useState2[1]; //trip sorting options testing
+  //will probably just use built in api sorting, with visual indication of transfers
+
+
+  if (trips) {
+    console.log(trips);
+    console.log('sort by trip length (kinda default?):', trips.sort(function (a, b) {
+      return a.actualDurationInMinutes - b.actualDurationInMinutes;
+    }));
+    console.log('sort by least transfers (trip length secondary):', trips.sort(function (a, b) {
+      return a.transfers - b.transfers;
+    }).sort(function (a, b) {
+      return a.legs.length - b.legs.length;
+    }));
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=".concat(prop.departureStation, "&toStation=").concat(prop.arrivalStation, "&dateTime=").concat(prop.rfcTime, "&searchForArrival=").concat(prop.arrivalBool), _secretKey__WEBPACK_IMPORTED_MODULE_3__.myRequest).then(function (response) {
+      setTrips(response.data.trips);
+    });
+  }, []);
+  return trips ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "trip-list"
+  }, trips.map(function (trip) {
+    var time = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.minToHrString)(trip.actualDurationInMinutes);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "single-trip",
+      key: trip.idx
+    }, trip.actualDurationInMinutes);
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "all-cards-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    stroke: "#0b1d65",
+    strokeWidth: "2"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripsList);
 
 /***/ }),
 
@@ -6350,86 +6434,6 @@ function minToHrString(time) {
 function timeSorter(date, time) {
   return date.toString().slice(11, 15) + "-" + monthsToNum[date.toString().slice(4, 7)] + "-" + date.toString().slice(8, 10) + "T" + time + ":00Z";
 }
-
-/***/ }),
-
-/***/ "./src/components/schedules/trainLookup/tripsList.js":
-/*!***********************************************************!*\
-  !*** ./src/components/schedules/trainLookup/tripsList.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
- //other
-
-
-
-
-
-var TripsList = function TripsList(_ref) {
-  var prop = _ref.prop;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
-      _useState2 = _slicedToArray(_useState, 2),
-      trips = _useState2[0],
-      setTrips = _useState2[1]; //trip sorting options testing
-  //will probably just use built in api sorting, with visual indication of transfers
-
-
-  if (trips) {
-    console.log('sort by trip length (kinda default?):', trips.sort(function (a, b) {
-      return a.actualDurationInMinutes - b.actualDurationInMinutes;
-    }));
-    console.log('sort by least transfers (trip length secondary):', trips.sort(function (a, b) {
-      return a.transfers - b.transfers;
-    }).sort(function (a, b) {
-      return a.legs.length - b.legs.length;
-    }));
-  }
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=".concat(prop.departureStation, "&toStation=").concat(prop.arrivalStation, "&dateTime=").concat(prop.rfcTime, "&searchForArrival=").concat(prop.arrivalBool), _secretKey__WEBPACK_IMPORTED_MODULE_3__.myRequest).then(function (response) {
-      setTrips(response.data.trips);
-    });
-  }, []);
-  return trips ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, trips.map(function (trip) {
-    var time = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.minToHrString)(trip.actualDurationInMinutes);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-      key: trip.idx
-    }, "trip ", trip.idx, " duurt : ", time);
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "all-cards-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    stroke: "#0b1d65",
-    strokeWidth: "2"
-  }));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripsList);
 
 /***/ }),
 

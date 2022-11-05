@@ -3,6 +3,46 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+#sidebar {
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  background: #000;
+  left: -300px;
+  transition: 0.4s;
+  z-index: 1;
+  top: 0;
+}
+#sidebar .toggle-btn {
+  position: absolute;
+  top: 30px;
+  left: 330px;
+}
+#sidebar .toggle-btn span {
+  width: 45px;
+  height: 4px;
+  background: #000;
+  display: block;
+  margin-top: 4px;
+}
+#sidebar .links {
+  display: flex;
+  flex-direction: column;
+}
+#sidebar .links a:link {
+  text-decoration: none;
+  color: white;
+}
+#sidebar .links a:link:visited {
+  text-decoration: none;
+  color: white;
+}
+#sidebar .links a:link:hover {
+  cursor: pointer;
+}
+#sidebar.active {
+  left: 0;
+}
 #train-planner {
   height: 100%;
   width: 100%;
@@ -80,39 +120,80 @@
 #train-planner #form button {
   max-width: min-content;
 }
-#sidebar {
-  position: absolute;
-  width: 300px;
-  height: 100vh;
-  background: #000;
-  left: -300px;
-  transition: 0.4s;
-  z-index: 1;
-  top: 0;
-}
-#sidebar .toggle-btn {
-  position: absolute;
-  top: 30px;
-  left: 330px;
-}
-#sidebar .toggle-btn span {
-  width: 45px;
-  height: 4px;
-  background: #000;
-  display: block;
-  margin-top: 4px;
-}
-#sidebar .links {
+#train-planner {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
 }
-#sidebar .links a:link {
-  text-decoration: none;
-  color: white;
+#train-planner #form {
+  display: flex;
+  justify-content: center;
+  width: min-content;
+  height: min-content;
+  padding: 2em;
+  border: #4b5ea7 5px solid;
+  background-color: whitesmoke;
+  flex-direction: column;
 }
-#sidebar .links a:link:hover {
+#train-planner #form .station-input {
+  margin-bottom: 10px;
+  min-width: 15em;
+  max-width: 15em;
+}
+#train-planner #form .date-and-time {
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+  margin-bottom: 10px;
+}
+#train-planner #form .date-and-time .selector {
+  margin-right: 0.5em;
+}
+#train-planner #form .date-and-time .selector:hover {
   cursor: pointer;
 }
-#sidebar.active {
+#train-planner #form .date-and-time .selector2 {
+  max-width: 12em;
   left: 0;
+}
+#train-planner #form .date-and-time .selector2:hover {
+  cursor: pointer;
+}
+#train-planner #form .arrival-departure-submit-btn {
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+}
+#train-planner #form .arrival-departure-submit-btn .dep-arr {
+  display: flex;
+  align-items: center;
+  margin-right: 1.3em;
+}
+#train-planner #form .arrival-departure-submit-btn .dep-arr .arrivalBoolbtn {
+  max-width: min-content;
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: #9eb5c8;
+  padding: 6px;
+  margin-right: 0.2em;
+  text-decoration: underline;
+}
+#train-planner #form .arrival-departure-submit-btn .dep-arr .arrivalBoolbtn:hover {
+  cursor: pointer;
+}
+#train-planner #form .arrival-departure-submit-btn .dep-arr .selected-arrival-active {
+  color: #0b1d65;
+}
+#train-planner #form .arrival-departure-submit-btn .dep-arr .selected-arrival-inactive {
+  color: #8c8c8c;
+}
+#train-planner #form .arrival-departure-submit-btn button:hover {
+  cursor: pointer;
+}
+#train-planner #form button {
+  max-width: min-content;
 }

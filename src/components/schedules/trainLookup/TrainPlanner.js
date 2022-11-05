@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 //components
-import TripsList from "./tripsList";
+import TripsList from "./TripsList";
 //other
 import DatePicker from 'react-datepicker'
 import {myRequest} from "../../../../secretKey"

@@ -12,6 +12,7 @@ const TripsList = ({prop}) => {
     //trip sorting options testing
     //will probably just use built in api sorting, with visual indication of transfers
     if (trips){
+        console.log(trips);
         console.log('sort by trip length (kinda default?):', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
         console.log('sort by least transfers (trip length secondary):', trips.sort((a,b) => a.transfers - b.transfers).sort((a,b) => a.legs.length - b.legs.length));
     }
@@ -24,15 +25,15 @@ const TripsList = ({prop}) => {
     }, [])
 
         return trips ? (
-            <div>
-                <ul>
+            <div className="trip-list">
                 {trips.map(trip => {
                     const time = minToHrString(trip.actualDurationInMinutes)
                     return (
-                        <li key={trip.idx}>trip {trip.idx} duurt : {time}</li>
+                        <div className="single-trip" key={trip.idx}>
+                            {trip.actualDurationInMinutes}
+                        </div>
                     )
                 })}
-                </ul>
             </div>
         ) : (
             <div className="all-cards-container">
