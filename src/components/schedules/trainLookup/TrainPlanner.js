@@ -57,8 +57,7 @@ const HomePage = () => {
             <div id="train-planner">
                 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css" />
                 <div id="form">
-                    <div className="two-stations">
-                        <input list="station1" id="departureStation" placeholder="from" onChange={(event)=>{setDepartureStation(stationCodes[event.target.value])}}></input>
+                        <input list="station1" className="station-input" id="departureStation" placeholder="from" onChange={(event)=>{setDepartureStation(stationCodes[event.target.value])}}></input>
                             <datalist id="station1">
                                 {allStations.map(station => {
                                     if (station.namen && station.land==="NL"){
@@ -69,7 +68,7 @@ const HomePage = () => {
                                         }
                                     })}
                             </datalist>
-                        <input list="station2" id="arrivalStation" placeholder="to" onChange={(event)=>{setArrivalStation(stationCodes[event.target.value])}}></input>
+                        <input list="station2" className="station-input" id="arrivalStation" placeholder="to" onChange={(event)=>{setArrivalStation(stationCodes[event.target.value])}}></input>
                         <datalist id="station2">
                             {allStations.map(station => {
                                 if (station.namen && station.land==="NL"){
@@ -79,7 +78,6 @@ const HomePage = () => {
                                     }
                                 })}
                         </datalist>
-                    </div>
                     <div className="date-and-time">
                         <select id="time-selector" className="selector" onChange={(event)=>{setSelectedTime(event.target.value)}}>
                             <option>{selectedTime}</option>
@@ -88,13 +86,16 @@ const HomePage = () => {
                                         <option key={time}>{time}</option>
                                         )
                                     })}
-                            </select> 
-                            <DatePicker className="selector2" selected={selectedDate} onChange={(event)=>{setSelectedDate(event)}}/>
+                        </select> 
+                        <DatePicker className="selector2" selected={selectedDate} onChange={(event)=>{setSelectedDate(event)}}/>
                     </div>
-                    <h5>Tijd van  </h5>
-                    <h5 className={arrivalBool ? "selected-arrival-inactive arrivalBoolbtn" : "selected-arrival-active arrivalBoolbtn"} onClick={()=>setArrivalBool(false)}>Vertrek</h5>
-                    <h5 className={arrivalBool ? "selected-arrival-active arrivalBoolbtn" : "selected-arrival-inactive arrivalBoolbtn"} onClick={()=>setArrivalBool(true)}>Aankomst</h5>
-                    <button onClick={setSearchBool}>submit</button>
+                    <div className="arrival-departure-submit-btn">
+                        <div className="dep-arr">
+                            <h5 className={arrivalBool ? "selected-arrival-inactive arrivalBoolbtn" : "selected-arrival-active arrivalBoolbtn"} onClick={()=>setArrivalBool(false)}>Departure</h5>
+                            <h5 className={arrivalBool ? "selected-arrival-active arrivalBoolbtn" : "selected-arrival-inactive arrivalBoolbtn"} onClick={()=>setArrivalBool(true)}>Arrival</h5>
+                        </div>
+                        <button onClick={setSearchBool}>submit</button>
+                    </div>
                     
                 </div>
                 {submitBool ? 

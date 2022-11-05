@@ -1,0 +1,44 @@
+//out: false
+#sidebar {
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    background: #000;
+    left: -300px;
+    transition: .4s;
+    z-index: 1;
+    top: 0;
+
+    .toggle-btn {
+        position: absolute;
+        top: 30px;
+        left: 330px;
+    }
+    
+    .toggle-btn span {
+        width: 45px;
+        height: 4px;
+        background: #000;
+        display: block;
+        margin-top: 4px;
+    }
+    .links{
+        display: flex;
+        flex-direction: column;
+        
+        a:link{
+            text-decoration: none;
+            color:white;
+        }
+        a:visited{
+            // text-decoration: none;
+        }
+        a:link:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+#sidebar.active {
+    left: 0;
+}

@@ -2,33 +2,91 @@
 #train-planner{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
     
     #form{
-        min-width: 350px;
-        max-width: 400px;
-        border: red 5px solid;
         display: flex;
+        justify-content: center;
+        width: min-content;
+        height: min-content;
+        padding: 2em;
+        border: rgb(75, 94, 167) 5px solid;
+        background-color: whitesmoke;
         flex-direction:column;
 
-        .two-stations{
+        .station-input{
+            margin-bottom: 10px;
+            min-width: 15em;
+            max-width: 15em;
+        }
+
+
+        .date-and-time{
             display: flex;
+            flex-direction: row;
+            width: min-content;
+            margin-bottom: 10px;
+
+            .selector{
+                margin-right: 0.5em;
+            }
+            .selector:hover{
+                cursor: pointer;
+            }
+
+            .selector2{
+                max-width: 12em;
+                left:0;
+            }
+            .selector2:hover{
+                cursor: pointer;
+            }
         }
-        .arrivalBoolbtn{
-            background-color: aliceblue;
-            border-style: solid;
-            border-color:rgb(229, 238, 246);
-            padding:6px;
-            margin: 0px;
-            text-decoration: underline;
+        .arrival-departure-submit-btn{
+            display: flex;
+            flex-direction: row;
+            width: min-content;
+            
+            .dep-arr{
+                display: flex;
+                align-items: center;
+                margin-right: 1.3em;
+
+                .arrivalBoolbtn{
+                    max-width:min-content;
+                    background-color: aliceblue;
+                    border-style: solid;
+                    border-color:rgb(158, 181, 200);
+                    padding:6px;
+                    margin-right: 0.2em;
+                    text-decoration: underline;
+                }
+                
+                .arrivalBoolbtn:hover{
+                    cursor: pointer;
+                }
+                
+                .selected-arrival-active{
+                    color:rgb(11, 29, 101);
+                }
+                
+                .selected-arrival-inactive{
+                    color:rgb(140, 140, 140);
+                }
+            }
+
+            button:hover{
+                cursor: pointer;
+            }
         }
         
-        .selected-arrival-active{
-            color:rgb(11, 29, 101);
+
+        button{
+            max-width:min-content;
         }
-        
-        .selected-arrival-inactive{
-            color:rgb(139, 139, 139);
-        } 
     }
 }
