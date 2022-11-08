@@ -3,7 +3,7 @@ import axios from "axios";
 //other
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import { myRequest } from "../../../../secretKey";
-import { minToHrString } from "./plannerFunctions";
+import { minToHrString, dateToTime } from "./plannerFunctions";
 
 
 const TripsList = ({prop}) => {
@@ -27,10 +27,22 @@ const TripsList = ({prop}) => {
         return trips ? (
             <div className="trip-list">
                 {trips.map(trip => {
-                    const time = minToHrString(trip.actualDurationInMinutes)
+                    const travelTime = minToHrString(trip.actualDurationInMinutes);
+                    const departureTime = dateToTime(trip.legs[0].origin.plannedDateTime);
+                    const arrivalTime = dateToTime(trip.legs[trip.legs.length - 1].destination.plannedDateTime);
                     return (
                         <div className="single-trip" key={trip.idx}>
-                            {trip.actualDurationInMinutes}
+                            <div className="travel-time">
+                                <div>
+                                    {departureTime} to {arrivalTime}
+                                </div>
+                                <div>
+                                    {travelTime}
+                                </div>
+                            </div>
+                            <div>
+                                transfers: {trip.transfers}
+                            </div>
                         </div>
                     )
                 })}

@@ -120,80 +120,30 @@
 #train-planner #form button {
   max-width: min-content;
 }
-#train-planner {
-  height: 100%;
-  width: 100%;
+.trip-list {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: 10vh;
-}
-#train-planner #form {
-  display: flex;
-  justify-content: center;
-  width: min-content;
-  height: min-content;
-  padding: 2em;
-  border: #4b5ea7 5px solid;
-  background-color: whitesmoke;
   flex-direction: column;
-}
-#train-planner #form .station-input {
-  margin-bottom: 10px;
   min-width: 15em;
   max-width: 15em;
+  min-height: 30em;
+  max-height: 30em;
+  overflow: scroll;
+  border: black 5px solid;
+  padding: 15px;
+  margin-top: 2em;
 }
-#train-planner #form .date-and-time {
-  display: flex;
-  flex-direction: row;
-  width: min-content;
-  margin-bottom: 10px;
-}
-#train-planner #form .date-and-time .selector {
-  margin-right: 0.5em;
-}
-#train-planner #form .date-and-time .selector:hover {
-  cursor: pointer;
-}
-#train-planner #form .date-and-time .selector2 {
+.trip-list .single-trip {
+  min-width: 12em;
   max-width: 12em;
-  left: 0;
+  min-height: 5em;
+  max-height: 5em;
+  border: black 5px solid;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
-#train-planner #form .date-and-time .selector2:hover {
-  cursor: pointer;
-}
-#train-planner #form .arrival-departure-submit-btn {
+.trip-list .single-trip .travel-time {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  width: min-content;
-}
-#train-planner #form .arrival-departure-submit-btn .dep-arr {
-  display: flex;
-  align-items: center;
-  margin-right: 1.3em;
-}
-#train-planner #form .arrival-departure-submit-btn .dep-arr .arrivalBoolbtn {
-  max-width: min-content;
-  background-color: aliceblue;
-  border-style: solid;
-  border-color: #9eb5c8;
-  padding: 6px;
-  margin-right: 0.2em;
-  text-decoration: underline;
-}
-#train-planner #form .arrival-departure-submit-btn .dep-arr .arrivalBoolbtn:hover {
-  cursor: pointer;
-}
-#train-planner #form .arrival-departure-submit-btn .dep-arr .selected-arrival-active {
-  color: #0b1d65;
-}
-#train-planner #form .arrival-departure-submit-btn .dep-arr .selected-arrival-inactive {
-  color: #8c8c8c;
-}
-#train-planner #form .arrival-departure-submit-btn button:hover {
-  cursor: pointer;
-}
-#train-planner #form button {
-  max-width: min-content;
+  justify-content: space-between;
 }

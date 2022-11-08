@@ -5,7 +5,7 @@ import TripsList from "./TripsList";
 //other
 import DatePicker from 'react-datepicker'
 import {myRequest} from "../../../../secretKey"
-import {timesArray, monthsToNum, timeSorter} from "./plannerFunctions"
+import {timesArray, monthsToNum, timeSorter, dateToTime} from "./plannerFunctions"
 
 const HomePage = () => {
     //time grab

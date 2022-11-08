@@ -44,3 +44,7 @@ export function timeSorter(date, time){
         + ":00Z" 
     )
 }
+
+export function dateToTime(date){
+    return date.slice(11,16);
+}

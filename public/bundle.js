@@ -6364,11 +6364,15 @@ var TripsList = function TripsList(_ref) {
   return trips ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "trip-list"
   }, trips.map(function (trip) {
-    var time = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.minToHrString)(trip.actualDurationInMinutes);
+    var travelTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.minToHrString)(trip.actualDurationInMinutes);
+    var departureTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.dateToTime)(trip.legs[0].origin.plannedDateTime);
+    var arrivalTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.dateToTime)(trip.legs[trip.legs.length - 1].destination.plannedDateTime);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "single-trip",
       key: trip.idx
-    }, trip.actualDurationInMinutes);
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "travel-time"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, departureTime, " to ", arrivalTime), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, travelTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "transfers: ", trip.transfers));
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "all-cards-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -6390,6 +6394,7 @@ var TripsList = function TripsList(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dateToTime": () => (/* binding */ dateToTime),
 /* harmony export */   "minToHrString": () => (/* binding */ minToHrString),
 /* harmony export */   "monthsToNum": () => (/* binding */ monthsToNum),
 /* harmony export */   "timeSorter": () => (/* binding */ timeSorter),
@@ -6433,6 +6438,9 @@ function minToHrString(time) {
 
 function timeSorter(date, time) {
   return date.toString().slice(11, 15) + "-" + monthsToNum[date.toString().slice(4, 7)] + "-" + date.toString().slice(8, 10) + "T" + time + ":00Z";
+}
+function dateToTime(date) {
+  return date.slice(11, 16);
 }
 
 /***/ }),
