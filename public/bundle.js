@@ -6372,7 +6372,9 @@ var TripsList = function TripsList(_ref) {
       key: trip.idx
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "travel-time"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, departureTime, " to ", arrivalTime), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, travelTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "transfers: ", trip.transfers));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, departureTime, " to ", arrivalTime), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, travelTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "travel-time"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "transfers: ", trip.transfers), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, trip.type)));
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "all-cards-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__["default"], {

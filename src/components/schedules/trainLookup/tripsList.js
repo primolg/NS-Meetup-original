@@ -40,8 +40,13 @@ const TripsList = ({prop}) => {
                                     {travelTime}
                                 </div>
                             </div>
-                            <div>
-                                transfers: {trip.transfers}
+                            <div className="travel-time">
+                                <div>
+                                    transfers: {trip.transfers}
+                                </div>
+                                <div>
+                                    {trip.type}
+                                </div>
                             </div>
                         </div>
                     )
