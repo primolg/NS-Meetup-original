@@ -6284,8 +6284,9 @@ var HomePage = function HomePage() {
         return setArrivalBool(true);
       }
     }, "Arrival")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: "submit-btn",
       onClick: setSearchBool
-    }, "submit"))), submitBool ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, "search"))), submitBool ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
       prop: lookupItems
     }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
   } else {

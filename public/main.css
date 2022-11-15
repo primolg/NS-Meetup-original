@@ -55,33 +55,49 @@
 #train-planner #form {
   display: flex;
   justify-content: center;
-  width: min-content;
+  width: 80vw;
+  max-width: 20em;
   height: min-content;
-  padding: 2em;
-  border: #4b5ea7 5px solid;
-  background-color: whitesmoke;
+  padding: 1em;
+  background-color: #2560B7;
+  border-radius: 1.5em;
   flex-direction: column;
 }
 #train-planner #form .station-input {
-  margin-bottom: 10px;
-  min-width: 15em;
-  max-width: 15em;
+  font-size: large;
+  width: 75%;
+  height: 1.5em;
+  border-radius: 0.5em;
+  outline: none;
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
 }
 #train-planner #form .date-and-time {
   display: flex;
   flex-direction: row;
-  width: min-content;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 0.8em;
 }
 #train-planner #form .date-and-time .selector {
-  margin-right: 0.5em;
+  margin-right: 0.7em;
+  font-size: large;
+  width: 40%;
+  height: 1.5em;
+  margin-top: 0.1em;
+  border-radius: 0.5em;
+  outline: none;
+  padding-left: 0.5em;
 }
 #train-planner #form .date-and-time .selector:hover {
   cursor: pointer;
 }
 #train-planner #form .date-and-time .selector2 {
-  max-width: 12em;
-  left: 0;
+  font-size: large;
+  width: 93%;
+  height: 1.5em;
+  border-radius: 0.5em;
+  outline: none;
+  padding-left: 0.5em;
 }
 #train-planner #form .date-and-time .selector2:hover {
   cursor: pointer;
@@ -89,36 +105,40 @@
 #train-planner #form .arrival-departure-submit-btn {
   display: flex;
   flex-direction: row;
-  width: min-content;
+  width: 100%;
+  justify-content: space-between;
 }
 #train-planner #form .arrival-departure-submit-btn .dep-arr {
   display: flex;
   align-items: center;
   margin-right: 1.3em;
+  margin-left: 0.5em;
 }
 #train-planner #form .arrival-departure-submit-btn .dep-arr .arrivalBoolbtn {
   max-width: min-content;
-  background-color: aliceblue;
-  border-style: solid;
-  border-color: #9eb5c8;
-  padding: 6px;
-  margin-right: 0.2em;
+  margin-right: 0.5em;
   text-decoration: underline;
+  font-size: large;
 }
 #train-planner #form .arrival-departure-submit-btn .dep-arr .arrivalBoolbtn:hover {
   cursor: pointer;
 }
 #train-planner #form .arrival-departure-submit-btn .dep-arr .selected-arrival-active {
-  color: #0b1d65;
+  color: #ffffff;
 }
 #train-planner #form .arrival-departure-submit-btn .dep-arr .selected-arrival-inactive {
-  color: #8c8c8c;
+  color: #A5BFE4;
+}
+#train-planner #form .arrival-departure-submit-btn .submit-btn {
+  width: 30%;
+  height: 1.8em;
+  font-size: large;
+  color: #1C3F73;
+  background-color: #C8DAF3;
+  border-radius: 0.5em;
 }
 #train-planner #form .arrival-departure-submit-btn button:hover {
   cursor: pointer;
-}
-#train-planner #form button {
-  max-width: min-content;
 }
 .trip-list {
   display: flex;

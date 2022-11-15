@@ -94,7 +94,7 @@ const HomePage = () => {
                             <h5 className={arrivalBool ? "selected-arrival-inactive arrivalBoolbtn" : "selected-arrival-active arrivalBoolbtn"} onClick={()=>setArrivalBool(false)}>Departure</h5>
                             <h5 className={arrivalBool ? "selected-arrival-active arrivalBoolbtn" : "selected-arrival-inactive arrivalBoolbtn"} onClick={()=>setArrivalBool(true)}>Arrival</h5>
                         </div>
-                        <button onClick={setSearchBool}>submit</button>
+                        <button className="submit-btn" onClick={setSearchBool}>search</button>
                     </div>
                     
                 </div>
