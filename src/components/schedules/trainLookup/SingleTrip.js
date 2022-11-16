@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const SingleTrip = ({prop}) => {
+    console.log(prop)
 
     function show() {
         document.getElementById('sidebar').classList.toggle('active');
     }
-
+    
     return (
         <div id="sidebar">
-            <div className="toggle-btn" onClick ={show}>
+            <div onClick={show} className="toggle-btn">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <div className="links">
-                <Link onClick={show} to="/">Trip Planner</Link>
-                <Link onClick={show} to="/maintenance">Maintenance</Link>
-                <Link onClick={show} to="/schedule">Schedule</Link>
+                hello
             </div>
         </div>
     )
 }
 
-export default NavBar;
+
+export default SingleTrip;
+

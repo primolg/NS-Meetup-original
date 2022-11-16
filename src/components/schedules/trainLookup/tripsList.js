@@ -11,10 +11,14 @@ const TripsList = ({prop}) => {
 
     //trip sorting options testing
     //will probably just use built in api sorting, with visual indication of transfers
-    if (trips){
-        console.log(trips);
-        console.log('sort by trip length (kinda default?):', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
-        console.log('sort by least transfers (trip length secondary):', trips.sort((a,b) => a.transfers - b.transfers).sort((a,b) => a.legs.length - b.legs.length));
+
+    // if (trips){
+    //     console.log(trips);
+    //     console.log('sort by trip length (kinda default?):', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
+    //     console.log('sort by least transfers (trip length secondary):', trips.sort((a,b) => a.transfers - b.transfers).sort((a,b) => a.legs.length - b.legs.length));
+    // }
+    function show() {
+        document.getElementById('sidebar').classList.toggle('active');
     }
     
     useEffect(() => {
@@ -31,24 +35,21 @@ const TripsList = ({prop}) => {
                     const departureTime = dateToTime(trip.legs[0].origin.plannedDateTime);
                     const arrivalTime = dateToTime(trip.legs[trip.legs.length - 1].destination.plannedDateTime);
                     return (
-                        <div className="single-trip" key={trip.idx}>
-                            <div className="travel-time">
-                                <div>
-                                    {departureTime} to {arrivalTime}
+                            <div onClick={show} className="single-trip" key={trip.idx}>
+                                <div className="travel-time">
+                                    <div>
+                                        {departureTime} - {arrivalTime}
+                                    </div>
+                                    <div>
+                                        {travelTime}
+                                    </div>
                                 </div>
-                                <div>
-                                    {travelTime}
-                                </div>
-                            </div>
-                            <div className="travel-time">
-                                <div>
-                                    transfers: {trip.transfers}
-                                </div>
-                                <div>
-                                    {trip.type}
+                                <div className="travel-time">
+                                    <div>
+                                        {trip.transfers} {trip.transfers > 1 ? " transfers" : " transfer"} 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     )
                 })}
             </div>

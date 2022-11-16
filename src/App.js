@@ -6,13 +6,11 @@ import Maintenance from "./components/Maintenance";
 import Schedule from "./components/schedules/stationScreen/Schedule";
 import HomePage from "./components/schedules/trainLookup/TrainPlanner";
 import StationScreen from "./components/schedules/stationScreen/StationScreen";
-import NavBar from "./components/nav-bar/NavBar";
 
 
 function App(){
     return(
             <div>
-                <NavBar />
                 <div className="all-else">
                     <Routes>
                         <Route index path="/" element={<HomePage />} />

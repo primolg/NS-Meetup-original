@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 //components
 import TripsList from "./TripsList";
+import SingleTrip from "./SingleTrip";
 //other
 import DatePicker from 'react-datepicker'
 import {myRequest} from "../../../../secretKey"
@@ -18,15 +19,14 @@ const HomePage = () => {
     const [selectedDate, setSelectedDate] = useState(date);
     const [selectedTime, setSelectedTime] = useState(time)
     const [arrivalBool, setArrivalBool] = useState(false)
-    const [arrivalStation, setArrivalStation] = useState(undefined)
-    const [departureStation, setDepartureStation] = useState(undefined)
+    const [arrivalStation, setArrivalStation] = useState("AMRN")
+    const [departureStation, setDepartureStation] = useState("AC")
     const [submitBool, setSubmitBool] = useState(false)
 
     //object to be populated alongside station options in form with station codes 
     //and their full length name. Example: {"Amsterdam Centraal" : "ASD"}
     let stationCodes = {}
 
-    
     //items to be passed into tripsList
     const lookupItems = {
         "rfcTime": timeSorter(selectedDate, selectedTime),
@@ -51,10 +51,13 @@ const HomePage = () => {
             setAllStations(response.data.payload)
         })
     }, [])
-
+    
     if (allStations){
         return (
             <div id="train-planner">
+                <div>
+                    <SingleTrip />
+                </div>
                 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css" />
                 <div id="form">
                         <input list="station1" className="station-input" id="departureStation" placeholder="from" onChange={(event)=>{setDepartureStation(stationCodes[event.target.value])}}></input>
