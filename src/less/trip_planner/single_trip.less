@@ -1,29 +1,39 @@
 //out: false
-#sidebar {
+#single-trip{
+    display: flex;
     position: absolute;
-    width: 300px;
+    width: 0;
     height: 100vh;
-    background: #000;
-    left: -300px;
     transition: .4s;
     z-index: 1;
     top: 0;
+    right: -100vw;
+    overflow: hidden;
 
-    .toggle-btn {
-        position: absolute;
-        top: 30px;
-        left: 330px;
+    #sidebar {
+        width: 80vw;
+        height:100vh;
+        background-color: white;
+        z-index: 2;
+
+        #trip-legs{
+            margin: 20px;
+        }
     }
-    
-    .toggle-btn span {
-        width: 45px;
-        height: 4px;
-        background: #000;
-        display: block;
-        margin-top: 4px;
+    #background-fade {
+        width:20vw;
+        height:100vh;
+        background-color: black;
+        transition: .35s;
+        opacity: 0.0;
+    }
+
+    #background-fade.active{
+        opacity: 0.3;
     }
 }
-
-#sidebar.active {
-    left: 0;
+    
+#single-trip.active {
+    width: 100vw;
+    right: 0;
 }

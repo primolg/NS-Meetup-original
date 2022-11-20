@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 //components
 import TripsList from "./TripsList";
-import SingleTrip from "./SingleTrip";
 //other
 import DatePicker from 'react-datepicker'
 import {myRequest} from "../../../../secretKey"
@@ -17,11 +16,17 @@ const HomePage = () => {
     //form setters
     const [allStations, setAllStations] = useState(undefined);
     const [selectedDate, setSelectedDate] = useState(date);
-    const [selectedTime, setSelectedTime] = useState(time)
-    const [arrivalBool, setArrivalBool] = useState(false)
-    const [arrivalStation, setArrivalStation] = useState("AMRN")
-    const [departureStation, setDepartureStation] = useState("AC")
-    const [submitBool, setSubmitBool] = useState(false)
+    const [selectedTime, setSelectedTime] = useState(time);
+    const [arrivalBool, setArrivalBool] = useState(false);
+    const [arrivalStation, setArrivalStation] = useState(undefined);
+    const [departureStation, setDepartureStation] = useState(undefined);
+    const [submitBool, setSubmitBool] = useState(false);
+    
+    //Testing purposes, delete when done testing single trip features!! these gives the form a default trip search
+    if (!departureStation){
+        setDepartureStation("AC")
+        setArrivalStation("AMRN")
+    }
 
     //object to be populated alongside station options in form with station codes 
     //and their full length name. Example: {"Amsterdam Centraal" : "ASD"}
@@ -33,7 +38,7 @@ const HomePage = () => {
         "arrivalBool": arrivalBool,
         "stations": allStations,
         "departureStation": departureStation,
-        "arrivalStation": arrivalStation
+        "arrivalStation": arrivalStation,
     }
 
     //on click to renew tripsList
@@ -51,13 +56,10 @@ const HomePage = () => {
             setAllStations(response.data.payload)
         })
     }, [])
-    
+
     if (allStations){
         return (
             <div id="train-planner">
-                <div>
-                    <SingleTrip />
-                </div>
                 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css" />
                 <div id="form">
                         <input list="station1" className="station-input" id="departureStation" placeholder="from" onChange={(event)=>{setDepartureStation(stationCodes[event.target.value])}}></input>

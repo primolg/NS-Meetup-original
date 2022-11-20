@@ -48,3 +48,7 @@ export function timeSorter(date, time){
 export function dateToTime(date){
     return date.slice(11,16);
 }
+
+export function dateToTimeNum(date){
+    return Number(date.slice(11,13) + date.slice(14,16))
+}

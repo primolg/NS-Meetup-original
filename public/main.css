@@ -4,49 +4,10 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #062655;
 }
-#sidebar {
-  position: absolute;
-  width: 300px;
-  height: 100vh;
-  background: #000;
-  left: -300px;
-  transition: 0.4s;
-  z-index: 1;
-  top: 0;
-}
-#sidebar .toggle-btn {
-  position: absolute;
-  top: 30px;
-  left: 330px;
-}
-#sidebar .toggle-btn span {
-  width: 45px;
-  height: 4px;
-  background: #000;
-  display: block;
-  margin-top: 4px;
-}
-#sidebar .links {
-  display: flex;
-  flex-direction: column;
-}
-#sidebar .links a:link {
-  text-decoration: none;
-  color: white;
-}
-#sidebar .links a:link:visited {
-  text-decoration: none;
-  color: white;
-}
-#sidebar .links a:link:hover {
-  cursor: pointer;
-}
-#sidebar.active {
-  left: 0;
-}
 #train-planner {
   height: 100%;
   width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,28 +131,40 @@
   display: flex;
   justify-content: space-between;
 }
-#sidebar {
+#loading-wheel {
+  margin-top: 10vh;
+}
+#single-trip {
+  display: flex;
   position: absolute;
-  width: 300px;
+  width: 0;
   height: 100vh;
-  background: #000;
-  left: -300px;
   transition: 0.4s;
   z-index: 1;
   top: 0;
+  right: -100vw;
+  overflow: hidden;
 }
-#sidebar .toggle-btn {
-  position: absolute;
-  top: 30px;
-  left: 330px;
+#single-trip #sidebar {
+  width: 80vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 2;
 }
-#sidebar .toggle-btn span {
-  width: 45px;
-  height: 4px;
-  background: #000;
-  display: block;
-  margin-top: 4px;
+#single-trip #sidebar #trip-legs {
+  margin: 20px;
 }
-#sidebar.active {
-  left: 0;
+#single-trip #background-fade {
+  width: 20vw;
+  height: 100vh;
+  background-color: black;
+  transition: 0.35s;
+  opacity: 0;
+}
+#single-trip #background-fade.active {
+  opacity: 0.3;
+}
+#single-trip.active {
+  width: 100vw;
+  right: 0;
 }
