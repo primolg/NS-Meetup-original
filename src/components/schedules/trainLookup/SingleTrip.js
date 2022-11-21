@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 //other
-import { dateToTime } from "./plannerFunctions";
+import { dateToTime, listLocations, stationSorter } from "./plannerFunctions";
 import { myRequest } from "../../../../secretKey";
 
 const SingleTrip = ({trip, locations}) => {
 
-    console.log(trip, locations)
+    //splits trip legs into main and side stops.
+    let tripLegs;
+    if (trip) tripLegs = stationSorter(trip.legs)
 
     //to close slide out component when clicked outside of component.
     function show() {
@@ -17,23 +19,27 @@ const SingleTrip = ({trip, locations}) => {
         }, 200
         );
     }
-    
-    
-    return trip ? (
+    if (trip) console.log(trip.legs);
+    return tripLegs ? (
         <div id="single-trip">
             <div onClick={show} id="background-fade"></div>
             <div id="sidebar">
                 <div id="trip-legs">
-                    <h2>{trip.legs[0].stops[0].name} {dateToTime(trip.legs[0].stops[0].plannedDepartureDateTime)}</h2>
-                    {trip.legs.map(leg => {
+                    {tripLegs.mainStops.map(station => {
+                        const inBetweenStations = tripLegs.sideStops.splice(0, 1);
                         return (
-                            <div key={leg.idx}>
-                                {leg.stops.map(stop => {
-                                    return (
-                                        <h5 key={stop.uicCode}>{stop.name} {stop.plannedDepartureDateTime ? dateToTime(stop.plannedDepartureDateTime) : dateToTime(stop.plannedArrivalDateTime)}</h5>
-                                        )
-                                    })}
-                                <h2>{leg.stops[leg.stops.length - 1].name} {leg.stops[leg.stops.length - 1].plannedDepartureDateTime ? dateToTime(leg.stops[leg.stops.length - 1].plannedDepartureDateTime) : dateToTime(leg.stops[leg.stops.length - 1].plannedArrivalDateTime)}</h2>
+                            <div key={station.name}>
+                                <h3>{station.name} {station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
+                                {inBetweenStations.length ? 
+                                    <div className="inbetween-stations">
+                                        {inBetweenStations[0].map(tinyStation => {
+                                            //add "no in between alternative"
+                                            return (
+                                                <h5 key={tinyStation.name}>{tinyStation.name} {dateToTime(tinyStation.plannedDepartureDateTime)}</h5>
+                                            )
+                                        })}
+                                    </div> :
+                                    <></>}
                             </div>
                         )
                     })}

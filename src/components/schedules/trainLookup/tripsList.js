@@ -5,7 +5,7 @@ import SingleTrip from "./SingleTrip";
 //other
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import { myRequest } from "../../../../secretKey";
-import { minToHrString, dateToTime, dateToTimeNum} from "./plannerFunctions";
+import { minToHrString, dateToTime, listLocations, stationSorter} from "./plannerFunctions";
 
 
 const TripsList = ({prop}) => {
@@ -20,7 +20,7 @@ const TripsList = ({prop}) => {
     if (trips){
         console.log(trips);
         console.log('sort by trip length :', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
-        console.log('sort by least transfers (trip length secondary):', trips.sort((a,b) => a.transfers - b.transfers).sort((a,b) => a.legs.length - b.legs.length));
+        console.log('sort by least transfers:', trips.sort((a,b) => a.transfers - b.transfers);
         console.log('sort by departure time (default?)', trips.sort((a,b) => dateToTimeNum(a.legs[0].origin.plannedDateTime) - dateToTimeNum(b.legs[0].origin.plannedDateTime)));
     }
     */
@@ -37,19 +37,20 @@ const TripsList = ({prop}) => {
             )
         }, 1);
     }
-    
     useEffect(() => {
+        //GET trips
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
             ).then(response => {
             setTrips(response.data.trips)
             })
+        //GET station locations (displayed in single trips)
             axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, myRequest
             ).then(response => {
-                setStationLocations(response.data.payload);
+                setStationLocations(listLocations(response.data.payload));
             })
     }, [])
 
-        return trips ? (
+        return trips && stationLocations? (
             <div className="trip-list">
                 <div>
                     <SingleTrip 
