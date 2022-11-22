@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 //other
-import { dateToTime, listLocations, stationSorter } from "../plannerFunctions";
+import { dateToTime, stationSorter } from "../plannerFunctions";
 
 const TripLegs = ({tripLegs}) => {
 

@@ -5,7 +5,7 @@ import SingleTrip from "./singleTrip/SingleTrip";
 //other
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import { myRequest } from "../../../../secretKey";
-import { minToHrString, dateToTime, listLocations, stationSorter} from "./plannerFunctions";
+import { minToHrString, dateToTime, listLocations } from "./plannerFunctions";
 
 
 const TripsList = ({prop}) => {

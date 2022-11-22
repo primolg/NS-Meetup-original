@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
 //other
-import { listLocations } from "../plannerFunctions";
-
 const Locations = ({locations}) => {
-
-    //splits trip legs into main and side stops.
-    let legs;
-    if (tripLegs) legs = stationSorter(tripLegs)
     
+    const [coordinates, setCoordinates] = useState(undefined)
+    console.log(coordinates)
     return (
-        <div>
-                    
+        <div id="locations-list">
+            {locations.map(location => {
+                const [flip, setFlip] = useState(false)
+                return (
+                    <div key={location.name}>
+                        <button onClick={()=>{setCoordinates(location.lat + "-" + location.lng)}}> </button>
+                        <h3>{location.name}</h3>
+                        <button onClick={()=>{setFlip(!flip)}}>+</button>
+                        {flip ? <h4>{location.lat}, {location.lng}</h4> : ""}
+                    </div>
+                )
+            })}
         </div>
     )
 }

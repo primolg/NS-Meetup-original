@@ -6165,6 +6165,68 @@ function listLocations(locations) {
 
 /***/ }),
 
+/***/ "./src/components/schedules/trainLookup/singleTrip/Locations.js":
+/*!**********************************************************************!*\
+  !*** ./src/components/schedules/trainLookup/singleTrip/Locations.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+ //other
+
+var Locations = function Locations(_ref) {
+  var locations = _ref.locations;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      coordinates = _useState2[0],
+      setCoordinates = _useState2[1];
+
+  console.log(coordinates);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "locations-list"
+  }, locations.map(function (location) {
+    var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+        _useState4 = _slicedToArray(_useState3, 2),
+        flip = _useState4[0],
+        setFlip = _useState4[1];
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: location.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: function onClick() {
+        setCoordinates(location.lat + "-" + location.lng);
+      }
+    }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: function onClick() {
+        setFlip(!flip);
+      }
+    }, "+"), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Locations);
+
+/***/ }),
+
 /***/ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js":
 /*!***********************************************************************!*\
   !*** ./src/components/schedules/trainLookup/singleTrip/SingleTrip.js ***!
@@ -6181,13 +6243,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripLegs */ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js");
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _Locations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Locations */ "./src/components/schedules/trainLookup/singleTrip/Locations.js");
 
 
  //components
-
- //other
 
 
 
@@ -6196,7 +6255,6 @@ var SingleTrip = function SingleTrip(_ref) {
   var trip = _ref.trip,
       locations = _ref.locations;
 
-  // console.log(locations)
   //to close slide out component when clicked outside of component.
   function show() {
     document.getElementById('background-fade').classList.toggle('active');
@@ -6214,6 +6272,8 @@ var SingleTrip = function SingleTrip(_ref) {
     id: "sidebar"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_2__["default"], {
     tripLegs: trip.legs
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    locations: locations
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
 };
 

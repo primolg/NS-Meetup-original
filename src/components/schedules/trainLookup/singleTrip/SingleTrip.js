@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 //components
 import TripLegs from "./TripLegs";
-//other
-import { dateToTime, listLocations, stationSorter } from "../plannerFunctions";
-import { myRequest } from "../../../../../secretKey";
+import Locations from "./Locations";
 
 const SingleTrip = ({trip, locations}) => {
 
-    // console.log(locations)
     //to close slide out component when clicked outside of component.
     function show() {
         document.getElementById('background-fade').classList.toggle('active')
@@ -25,6 +22,9 @@ const SingleTrip = ({trip, locations}) => {
             <div id="sidebar">
                 <TripLegs 
                     tripLegs = {trip.legs}
+                />
+                <Locations
+                    locations = {locations}
                 />
             </div>
         </div>
