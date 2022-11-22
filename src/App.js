@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 //components
 import HomePage from "./components/schedules/trainLookup/TrainPlanner";
     //below components are scrapped for now, but data might be useful at later stage for individual station search.
-import Maintenance from "./components/schedules/x-temp-scrapped";
-import Schedule from "./components/schedules/x-temp-scrapped";
-import StationScreen from "./components/schedules/x-temp-scrapped";
+import Maintenance from "./components/schedules/x-temp-scrapped/Maintenance";
+import Schedule from "./components/schedules/x-temp-scrapped/Schedule";
+import StationScreen from "./components/schedules/x-temp-scrapped/StationScreen";
 
 
 function App(){
