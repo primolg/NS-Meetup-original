@@ -6056,73 +6056,6 @@ var StationScreen = function StationScreen() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/SingleTrip.js":
-/*!************************************************************!*\
-  !*** ./src/components/schedules/trainLookup/SingleTrip.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-
-
- //other
-
-
-
-
-var SingleTrip = function SingleTrip(_ref) {
-  var trip = _ref.trip,
-      locations = _ref.locations;
-  //splits trip legs into main and side stops.
-  var tripLegs;
-  if (trip) tripLegs = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.stationSorter)(trip.legs); //to close slide out component when clicked outside of component.
-
-  function show() {
-    document.getElementById('background-fade').classList.toggle('active');
-    setTimeout(function () {
-      document.getElementById('single-trip').classList.toggle('active');
-    }, 200);
-  }
-
-  if (trip) console.log(trip.legs);
-  return tripLegs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "single-trip"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    onClick: show,
-    id: "background-fade"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "sidebar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "trip-legs"
-  }, tripLegs.mainStops.map(function (station) {
-    var inBetweenStations = tripLegs.sideStops.splice(0, 1);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: station.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "inbetween-stations"
-    }, inBetweenStations[0].map(function (tinyStation) {
-      //add "no in between alternative"
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
-        key: tinyStation.name
-      }, tinyStation.name, " ", (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
-    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
-  })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip);
-
-/***/ }),
-
 /***/ "./src/components/schedules/trainLookup/TrainPlanner.js":
 /*!**************************************************************!*\
   !*** ./src/components/schedules/trainLookup/TrainPlanner.js ***!
@@ -6339,7 +6272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _SingleTrip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SingleTrip */ "./src/components/schedules/trainLookup/SingleTrip.js");
+/* harmony import */ var _singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./singleTrip/SingleTrip */ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js");
 /* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
 /* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
 /* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
@@ -6417,7 +6350,7 @@ var TripsList = function TripsList(_ref) {
   }, []);
   return trips && stationLocations ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "trip-list"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SingleTrip__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__["default"], {
     trip: currentTrip,
     locations: stationLocations
   })), trips.map(function (trip) {
@@ -6567,6 +6500,110 @@ function listLocations(locations) {
 
   return locationsArray;
 }
+
+/***/ }),
+
+/***/ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js":
+/*!***********************************************************************!*\
+  !*** ./src/components/schedules/trainLookup/singleTrip/SingleTrip.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripLegs */ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../secretKey */ "./secretKey.js");
+
+
+ //components
+
+ //other
+
+
+
+
+var SingleTrip = function SingleTrip(_ref) {
+  var trip = _ref.trip,
+      locations = _ref.locations;
+
+  // console.log(locations)
+  //to close slide out component when clicked outside of component.
+  function show() {
+    document.getElementById('background-fade').classList.toggle('active');
+    setTimeout(function () {
+      document.getElementById('single-trip').classList.toggle('active');
+    }, 200);
+  }
+
+  return trip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "single-trip"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    onClick: show,
+    id: "background-fade"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "sidebar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    tripLegs: trip.legs
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip);
+
+/***/ }),
+
+/***/ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js":
+/*!*********************************************************************!*\
+  !*** ./src/components/schedules/trainLookup/singleTrip/TripLegs.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+
+
+ //other
+
+
+
+var TripLegs = function TripLegs(_ref) {
+  var tripLegs = _ref.tripLegs;
+  //splits trip legs into main and side stops.
+  var legs;
+  if (tripLegs) legs = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.stationSorter)(tripLegs);
+  return legs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "trip-legs"
+  }, legs.mainStops.map(function (station) {
+    var inBetweenStations = legs.sideStops.splice(0, 1);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: station.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "inbetween-stations"
+    }, inBetweenStations[0].map(function (tinyStation) {
+      //add "no in between alternative"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
+        key: tinyStation.name
+      }, tinyStation.name, " ", (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
+    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripLegs);
 
 /***/ }),
 

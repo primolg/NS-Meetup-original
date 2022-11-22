@@ -2,10 +2,11 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 //components
-import Maintenance from "./components/Maintenance";
-import Schedule from "./components/schedules/stationScreen/Schedule";
 import HomePage from "./components/schedules/trainLookup/TrainPlanner";
-import StationScreen from "./components/schedules/stationScreen/StationScreen";
+    //below components are scrapped for now, but data might be useful at later stage for individual station search.
+import Maintenance from "./components/schedules/x-temp-scrapped";
+import Schedule from "./components/schedules/x-temp-scrapped";
+import StationScreen from "./components/schedules/x-temp-scrapped";
 
 
 function App(){
