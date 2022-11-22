@@ -5679,427 +5679,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _components_Maintenance__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Maintenance */ "./src/components/Maintenance.js");
-/* harmony import */ var _components_schedules_stationScreen_Schedule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/schedules/stationScreen/Schedule */ "./src/components/schedules/stationScreen/Schedule.js");
-/* harmony import */ var _components_schedules_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/schedules/trainLookup/TrainPlanner */ "./src/components/schedules/trainLookup/TrainPlanner.js");
-/* harmony import */ var _components_schedules_stationScreen_StationScreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/schedules/stationScreen/StationScreen */ "./src/components/schedules/stationScreen/StationScreen.js");
-/* harmony import */ var _components_nav_bar_NavBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/nav-bar/NavBar */ "./src/components/nav-bar/NavBar.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_schedules_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/schedules/trainLookup/TrainPlanner */ "./src/components/schedules/trainLookup/TrainPlanner.js");
+/* harmony import */ var _components_schedules_x_temp_scrapped_Maintenance__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/schedules/x-temp-scrapped/Maintenance */ "./src/components/schedules/x-temp-scrapped/Maintenance.js");
+/* harmony import */ var _components_schedules_x_temp_scrapped_Schedule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/schedules/x-temp-scrapped/Schedule */ "./src/components/schedules/x-temp-scrapped/Schedule.js");
+/* harmony import */ var _components_schedules_x_temp_scrapped_StationScreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/schedules/x-temp-scrapped/StationScreen */ "./src/components/schedules/x-temp-scrapped/StationScreen.js");
 
 
  //components
 
-
+ //below components are scrapped for now, but data might be useful at later stage for individual station search.
 
 
 
 
 
 function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_nav_bar_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "all-else"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
     index: true,
     path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_1__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
     path: "/maintenance",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Maintenance__WEBPACK_IMPORTED_MODULE_1__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_x_temp_scrapped_Maintenance__WEBPACK_IMPORTED_MODULE_2__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
     path: "/schedule",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_stationScreen_Schedule__WEBPACK_IMPORTED_MODULE_2__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_x_temp_scrapped_Schedule__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
     path: "/station/:stationcode",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_stationScreen_StationScreen__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_x_temp_scrapped_StationScreen__WEBPACK_IMPORTED_MODULE_4__["default"], null)
   }))));
 }
 
 ;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
-
-/***/ }),
-
-/***/ "./src/components/Maintenance.js":
-/*!***************************************!*\
-  !*** ./src/components/Maintenance.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../secretKey */ "./secretKey.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
- //other
-
-
-
-var SinglePage = function SinglePage() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState2 = _slicedToArray(_useState, 2),
-      data = _useState2[0],
-      setData = _useState2[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions?isActive=false', _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
-      setData(response.data);
-    });
-  }, []);
-
-  if (data === null) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "center-text"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Loading..."));
-  } else {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, data.map(function (item) {
-      //check for maintenence type and lists accordingly
-      if (item.type === "DISRUPTION") {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          key: item.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Disruption in ", item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, item.expectedDuration ? item.expectedDuration.description : 'unknown'));
-      } else if (item.type === "CALAMITY") {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          key: item.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Calamity in ", item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, item.description));
-      } else if (item.type === "MAINTENANCE") {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          key: item.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Maintenance in ", item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Vanaf ", item.period));
-      }
-    }));
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SinglePage);
-
-/***/ }),
-
-/***/ "./src/components/nav-bar/NavBar.js":
-/*!******************************************!*\
-  !*** ./src/components/nav-bar/NavBar.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-
-
-
-var NavBar = function NavBar() {
-  function show() {
-    document.getElementById('sidebar').classList.toggle('active');
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "sidebar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "toggle-btn",
-    onClick: show
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "links"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    onClick: show,
-    to: "/"
-  }, "Trip Planner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    onClick: show,
-    to: "/maintenance"
-  }, "Maintenance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    onClick: show,
-    to: "/schedule"
-  }, "Schedule")));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
-
-/***/ }),
-
-/***/ "./src/components/schedules/stationScreen/Arrivals.js":
-/*!************************************************************!*\
-  !*** ./src/components/schedules/stationScreen/Arrivals.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
- //other
-
-
-
-var Arrivals = function Arrivals() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState2 = _slicedToArray(_useState, 2),
-      data = _useState2[0],
-      setData = _useState2[1];
-
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
-      stationcode = _useParams.stationcode;
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=".concat(stationcode), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
-      setData(response.data.payload.arrivals);
-    });
-  }, []);
-
-  if (data === null) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "center-text"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Loading..."));
-  } else {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-      className: "center-text"
-    }, "Arrivals"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), data.map(function (train) {
-      var arrivalTime = train.actualDateTime.slice(11, 16);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: train.arrivalStatus === "INCOMING" ? "single-train incoming" : train.arrivalStatus === "ON_STATION" ? "single-train on-station" : "single-train departed",
-        key: train.actualDateTime + train.name
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " uit ", train.origin), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.arrivalStatus === "INCOMING" ? "".concat(train.arrivalStatus, " om ").concat(arrivalTime) : train.arrivalStatus, " op Spoor ", train.plannedTrack));
-    }));
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Arrivals);
-
-/***/ }),
-
-/***/ "./src/components/schedules/stationScreen/Departures.js":
-/*!**************************************************************!*\
-  !*** ./src/components/schedules/stationScreen/Departures.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
- //other
-
-
-
-var Departures = function Departures() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState2 = _slicedToArray(_useState, 2),
-      data = _useState2[0],
-      setData = _useState2[1];
-
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
-      stationcode = _useParams.stationcode;
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=".concat(stationcode), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
-      setData(response.data.payload.departures);
-    });
-  }, []);
-
-  if (data === null) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "center-text"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Loading..."));
-  } else {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-      className: "center-text"
-    }, "Departures"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), data.map(function (train) {
-      var departureTime = train.actualDateTime.slice(11, 16);
-      var routeStations = train.routeStations.map(function (item) {
-        return item.mediumName;
-      });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: train.departureStatus === "INCOMING" ? "single-train incoming" : train.departureStatus === "ON_STATION" ? "single-train on-station" : "single-train departed",
-        key: train.actualDateTime + train.name
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " richting ", train.direction), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.departureStatus === "INCOMING" ? "".concat(train.departureStatus, " at ").concat(departureTime) : train.departureStatus, " op Spoor ", train.plannedTrack), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "stops: ", routeStations.join(', ')));
-    }));
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Departures);
-
-/***/ }),
-
-/***/ "./src/components/schedules/stationScreen/Schedule.js":
-/*!************************************************************!*\
-  !*** ./src/components/schedules/stationScreen/Schedule.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
- //other
-
-
-
-var Schedule = function Schedule() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState2 = _slicedToArray(_useState, 2),
-      stationOptions = _useState2[0],
-      setStationOptions = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      allStations = _useState4[0],
-      setAllStations = _useState4[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (stationOptions) {
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/places-api/v2/places?type=stationV2&q=".concat(stationOptions), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
-        if (response.data.payload.length) {
-          setAllStations(response.data.payload[0].locations);
-        }
-      });
-    }
-  }, [stationOptions]);
-
-  function stationSetter() {
-    setStationOptions(document.getElementById('stationInput').value);
-  }
-
-  if (stationOptions) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-      id: "stationInput"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      onClick: stationSetter,
-      type: "submit"
-    }, "search")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, allStations.map(function (station) {
-      if (station.land === "NL") {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-          key: station.EVACode,
-          href: "/station/" + station.stationCode
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "station-results"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, station.name)));
-      }
-    })));
-  } else {
-    //PRE SEARCH
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-      id: "stationInput"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      onClick: stationSetter,
-      type: "submit"
-    }, "search")));
-  }
-
-  ;
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Schedule);
-
-/***/ }),
-
-/***/ "./src/components/schedules/stationScreen/StationScreen.js":
-/*!*****************************************************************!*\
-  !*** ./src/components/schedules/stationScreen/StationScreen.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Departures__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Departures */ "./src/components/schedules/stationScreen/Departures.js");
-/* harmony import */ var _Arrivals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Arrivals */ "./src/components/schedules/stationScreen/Arrivals.js");
- //components
-
-
-
-
-var StationScreen = function StationScreen() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "schedule-all"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Departures__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Arrivals__WEBPACK_IMPORTED_MODULE_2__["default"], null));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StationScreen);
 
 /***/ }),
 
@@ -6182,7 +5797,13 @@ var HomePage = function HomePage() {
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState14 = _slicedToArray(_useState13, 2),
       submitBool = _useState14[0],
-      setSubmitBool = _useState14[1]; //object to be populated alongside station options in form with station codes 
+      setSubmitBool = _useState14[1]; //Testing purposes, delete when done testing single trip features!! these gives the form a default trip search
+
+
+  if (!departureStation) {
+    setDepartureStation("AC");
+    setArrivalStation("AMRN");
+  } //object to be populated alongside station options in form with station codes 
   //and their full length name. Example: {"Amsterdam Centraal" : "ASD"}
 
 
@@ -6313,9 +5934,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+/* harmony import */ var _singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./singleTrip/SingleTrip */ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js");
+/* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6329,6 +5951,8 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
+ //components
+
  //other
 
 
@@ -6341,45 +5965,75 @@ var TripsList = function TripsList(_ref) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
       _useState2 = _slicedToArray(_useState, 2),
       trips = _useState2[0],
-      setTrips = _useState2[1]; //trip sorting options testing
-  //will probably just use built in api sorting, with visual indication of transfers
+      setTrips = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState4 = _slicedToArray(_useState3, 2),
+      currentTrip = _useState4[0],
+      setCurrentTrip = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState6 = _slicedToArray(_useState5, 2),
+      stationLocations = _useState6[0],
+      setStationLocations = _useState6[1];
+  /*
+  trip sorting options testing
+  will probably just use built in api sorting, with visual indication of transfers
+   if (trips){
+      console.log(trips);
+      console.log('sort by trip length :', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
+      console.log('sort by least transfers:', trips.sort((a,b) => a.transfers - b.transfers);
+      console.log('sort by departure time (default?)', trips.sort((a,b) => dateToTimeNum(a.legs[0].origin.plannedDateTime) - dateToTimeNum(b.legs[0].origin.plannedDateTime)));
+  }
+  */
 
 
-  if (trips) {
-    console.log(trips);
-    console.log('sort by trip length (kinda default?):', trips.sort(function (a, b) {
-      return a.actualDurationInMinutes - b.actualDurationInMinutes;
-    }));
-    console.log('sort by least transfers (trip length secondary):', trips.sort(function (a, b) {
-      return a.transfers - b.transfers;
-    }).sort(function (a, b) {
-      return a.legs.length - b.legs.length;
-    }));
+  function show(idx) {
+    trips[idx].arrivalStationCode = prop.arrivalStation;
+    setCurrentTrip(trips[idx]); //Making this function async messed with the initial css show animation, but timeout seems to do the trick. Better solution out there?
+
+    setTimeout(function () {
+      document.getElementById('single-trip').classList.toggle('active');
+      setTimeout(function () {
+        document.getElementById('background-fade').classList.toggle('active');
+      }, 300);
+    }, 1);
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=".concat(prop.departureStation, "&toStation=").concat(prop.arrivalStation, "&dateTime=").concat(prop.rfcTime, "&searchForArrival=").concat(prop.arrivalBool), _secretKey__WEBPACK_IMPORTED_MODULE_3__.myRequest).then(function (response) {
+    //GET trips
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=".concat(prop.departureStation, "&toStation=").concat(prop.arrivalStation, "&dateTime=").concat(prop.rfcTime, "&searchForArrival=").concat(prop.arrivalBool), _secretKey__WEBPACK_IMPORTED_MODULE_4__.myRequest).then(function (response) {
       setTrips(response.data.trips);
+    }); //GET station locations (displayed in single trips)
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=".concat(prop.arrivalStation), _secretKey__WEBPACK_IMPORTED_MODULE_4__.myRequest).then(function (response) {
+      setStationLocations((0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_5__.listLocations)(response.data.payload));
     });
   }, []);
-  return trips ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return trips && stationLocations ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "trip-list"
-  }, trips.map(function (trip) {
-    var travelTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.minToHrString)(trip.actualDurationInMinutes);
-    var departureTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.dateToTime)(trip.legs[0].origin.plannedDateTime);
-    var arrivalTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_4__.dateToTime)(trip.legs[trip.legs.length - 1].destination.plannedDateTime);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    trip: currentTrip,
+    locations: stationLocations
+  })), trips.map(function (trip) {
+    var travelTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_5__.minToHrString)(trip.actualDurationInMinutes);
+    var departureTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_5__.dateToTime)(trip.legs[0].origin.plannedDateTime);
+    var arrivalTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_5__.dateToTime)(trip.legs[trip.legs.length - 1].destination.plannedDateTime);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      onClick: function onClick() {
+        return show(trip.idx);
+      },
       className: "single-trip",
       key: trip.idx
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "travel-time"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, departureTime, " to ", arrivalTime), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, travelTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, departureTime, " - ", arrivalTime), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, travelTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "travel-time"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "transfers: ", trip.transfers), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, trip.type)));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, trip.transfers, " ", trip.transfers === 1 ? " transfer" : " transfers")));
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "all-cards-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    stroke: "#0b1d65",
+    id: "loading-wheel"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    stroke: "#062655",
     strokeWidth: "2"
   }));
 };
@@ -6398,12 +6052,18 @@ var TripsList = function TripsList(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "dateToTime": () => (/* binding */ dateToTime),
+/* harmony export */   "dateToTimeNum": () => (/* binding */ dateToTimeNum),
+/* harmony export */   "listLocations": () => (/* binding */ listLocations),
 /* harmony export */   "minToHrString": () => (/* binding */ minToHrString),
 /* harmony export */   "monthsToNum": () => (/* binding */ monthsToNum),
+/* harmony export */   "stationSorter": () => (/* binding */ stationSorter),
 /* harmony export */   "timeSorter": () => (/* binding */ timeSorter),
 /* harmony export */   "timesArray": () => (/* binding */ timesArray)
 /* harmony export */ });
-//func returns an array of each quarter of the hour in a day military time
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ //func returns an array of each quarter of the hour in a day military time
+
 function timeTables() {
   var arr = [];
 
@@ -6440,11 +6100,511 @@ function minToHrString(time) {
 } //converts date to RFC3339 time string
 
 function timeSorter(date, time) {
-  return date.toString().slice(11, 15) + "-" + monthsToNum[date.toString().slice(4, 7)] + "-" + date.toString().slice(8, 10) + "T" + time + ":00Z";
-}
+  return date.toString().slice(11, 15) + "-" + monthsToNum[date.toString().slice(4, 7)] + "-" + date.toString().slice(8, 10) + "T" + time + ":0100Z";
+} //takes in js Date() and returns time string (ex: 12:00)
+
 function dateToTime(date) {
   return date.slice(11, 16);
+} //takes in js Date() and returns time Number (ex: 1200)
+
+function dateToTimeNum(date) {
+  return Number(date.slice(11, 13) + date.slice(14, 16));
+} //takes in trip legs and returns an object containing two arrays, 1st containing arrival, destination, 
+// or transfer stations, and the second returning in between stops.
+
+function stationSorter(legs) {
+  var mainStops = [];
+  var sideStops = [];
+
+  for (var singleLeg in legs) {
+    var leg = legs[singleLeg].stops;
+    var sideStopLeg = [];
+
+    for (var i = 0; i < leg.length - 1; i++) {
+      if (i === 0) {
+        mainStops.push(leg[i]);
+      } else {
+        sideStopLeg.push(leg[i]);
+      }
+    }
+
+    sideStops.push(sideStopLeg);
+  }
+
+  mainStops.push(legs[legs.length - 1].stops[legs[legs.length - 1].stops.length - 1]);
+  return {
+    "mainStops": mainStops,
+    "sideStops": sideStops
+  };
+} //takes in locations api response and converts into array with relevant info
+
+function listLocations(locations) {
+  var locationsArray = [];
+
+  for (var loc in locations) {
+    if (locations[loc].type === "station-retail") {
+      locationsArray.unshift({
+        name: locations[loc].name,
+        lng: locations[loc].locations[0].lng,
+        lat: locations[loc].locations[0].lat,
+        type: "retail"
+      });
+    } else if (locations[loc].type === "stationfacility") {
+      locationsArray.push({
+        name: locations[loc].name,
+        lng: locations[loc].locations[0].lng,
+        lat: locations[loc].locations[0].lat,
+        type: "NS-service"
+      });
+    }
+  } //consider adding alphabetical sorting by name?
+
+
+  return locationsArray;
 }
+
+/***/ }),
+
+/***/ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js":
+/*!***********************************************************************!*\
+  !*** ./src/components/schedules/trainLookup/singleTrip/SingleTrip.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripLegs */ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../secretKey */ "./secretKey.js");
+
+
+ //components
+
+ //other
+
+
+
+
+var SingleTrip = function SingleTrip(_ref) {
+  var trip = _ref.trip,
+      locations = _ref.locations;
+
+  // console.log(locations)
+  //to close slide out component when clicked outside of component.
+  function show() {
+    document.getElementById('background-fade').classList.toggle('active');
+    setTimeout(function () {
+      document.getElementById('single-trip').classList.toggle('active');
+    }, 200);
+  }
+
+  return trip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "single-trip"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    onClick: show,
+    id: "background-fade"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "sidebar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    tripLegs: trip.legs
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip);
+
+/***/ }),
+
+/***/ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js":
+/*!*********************************************************************!*\
+  !*** ./src/components/schedules/trainLookup/singleTrip/TripLegs.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+
+
+ //other
+
+
+
+var TripLegs = function TripLegs(_ref) {
+  var tripLegs = _ref.tripLegs;
+  //splits trip legs into main and side stops.
+  var legs;
+  if (tripLegs) legs = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.stationSorter)(tripLegs);
+  return legs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "trip-legs"
+  }, legs.mainStops.map(function (station) {
+    var inBetweenStations = legs.sideStops.splice(0, 1);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: station.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "inbetween-stations"
+    }, inBetweenStations[0].map(function (tinyStation) {
+      //add "no in between alternative"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
+        key: tinyStation.name
+      }, tinyStation.name, " ", (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
+    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripLegs);
+
+/***/ }),
+
+/***/ "./src/components/schedules/x-temp-scrapped/Arrivals.js":
+/*!**************************************************************!*\
+  !*** ./src/components/schedules/x-temp-scrapped/Arrivals.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+ //other
+
+
+
+var Arrivals = function Arrivals() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+      stationcode = _useParams.stationcode;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?station=".concat(stationcode), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
+      setData(response.data.payload.arrivals);
+    });
+  }, []);
+
+  if (data === null) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "center-text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Loading..."));
+  } else {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      className: "center-text"
+    }, "Arrivals"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), data.map(function (train) {
+      var arrivalTime = train.actualDateTime.slice(11, 16);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: train.arrivalStatus === "INCOMING" ? "single-train incoming" : train.arrivalStatus === "ON_STATION" ? "single-train on-station" : "single-train departed",
+        key: train.actualDateTime + train.name
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " uit ", train.origin), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.arrivalStatus === "INCOMING" ? "".concat(train.arrivalStatus, " om ").concat(arrivalTime) : train.arrivalStatus, " op Spoor ", train.plannedTrack));
+    }));
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Arrivals);
+
+/***/ }),
+
+/***/ "./src/components/schedules/x-temp-scrapped/Departures.js":
+/*!****************************************************************!*\
+  !*** ./src/components/schedules/x-temp-scrapped/Departures.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+ //other
+
+
+
+var Departures = function Departures() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
+      stationcode = _useParams.stationcode;
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=".concat(stationcode), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
+      setData(response.data.payload.departures);
+    });
+  }, []);
+
+  if (data === null) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "center-text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Loading..."));
+  } else {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+      className: "center-text"
+    }, "Departures"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), data.map(function (train) {
+      var departureTime = train.actualDateTime.slice(11, 16);
+      var routeStations = train.routeStations.map(function (item) {
+        return item.mediumName;
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: train.departureStatus === "INCOMING" ? "single-train incoming" : train.departureStatus === "ON_STATION" ? "single-train on-station" : "single-train departed",
+        key: train.actualDateTime + train.name
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, train.product.longCategoryName, " richting ", train.direction), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "status: ", train.cancelled ? 'Cancelled' : train.departureStatus === "INCOMING" ? "".concat(train.departureStatus, " at ").concat(departureTime) : train.departureStatus, " op Spoor ", train.plannedTrack), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "stops: ", routeStations.join(', ')));
+    }));
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Departures);
+
+/***/ }),
+
+/***/ "./src/components/schedules/x-temp-scrapped/Maintenance.js":
+/*!*****************************************************************!*\
+  !*** ./src/components/schedules/x-temp-scrapped/Maintenance.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+ //other
+
+
+
+var SinglePage = function SinglePage() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/disruptions?isActive=false', _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
+      setData(response.data);
+    });
+  }, []);
+
+  if (data === null) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "center-text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Loading..."));
+  } else {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, data.map(function (item) {
+      //check for maintenence type and lists accordingly
+      if (item.type === "DISRUPTION") {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          key: item.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Disruption in ", item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, item.expectedDuration ? item.expectedDuration.description : 'unknown'));
+      } else if (item.type === "CALAMITY") {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          key: item.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Calamity in ", item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, item.description));
+      } else if (item.type === "MAINTENANCE") {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          key: item.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Maintenance in ", item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Vanaf ", item.period));
+      }
+    }));
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SinglePage);
+
+/***/ }),
+
+/***/ "./src/components/schedules/x-temp-scrapped/Schedule.js":
+/*!**************************************************************!*\
+  !*** ./src/components/schedules/x-temp-scrapped/Schedule.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+ //other
+
+
+
+var Schedule = function Schedule() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      stationOptions = _useState2[0],
+      setStationOptions = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      allStations = _useState4[0],
+      setAllStations = _useState4[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (stationOptions) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/places-api/v2/places?type=stationV2&q=".concat(stationOptions), _secretKey__WEBPACK_IMPORTED_MODULE_2__.myRequest).then(function (response) {
+        if (response.data.payload.length) {
+          setAllStations(response.data.payload[0].locations);
+        }
+      });
+    }
+  }, [stationOptions]);
+
+  function stationSetter() {
+    setStationOptions(document.getElementById('stationInput').value);
+  }
+
+  if (stationOptions) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      id: "stationInput"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: stationSetter,
+      type: "submit"
+    }, "search")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, allStations.map(function (station) {
+      if (station.land === "NL") {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+          key: station.EVACode,
+          href: "/station/" + station.stationCode
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "station-results"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, station.name)));
+      }
+    })));
+  } else {
+    //PRE SEARCH
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      id: "stationInput"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: stationSetter,
+      type: "submit"
+    }, "search")));
+  }
+
+  ;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Schedule);
+
+/***/ }),
+
+/***/ "./src/components/schedules/x-temp-scrapped/StationScreen.js":
+/*!*******************************************************************!*\
+  !*** ./src/components/schedules/x-temp-scrapped/StationScreen.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Departures__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Departures */ "./src/components/schedules/x-temp-scrapped/Departures.js");
+/* harmony import */ var _Arrivals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Arrivals */ "./src/components/schedules/x-temp-scrapped/Arrivals.js");
+ //components
+
+
+
+
+var StationScreen = function StationScreen() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "schedule-all"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Departures__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Arrivals__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StationScreen);
 
 /***/ }),
 

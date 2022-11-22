@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 //other
-import {myRequest}  from "../../secretKey";
+import {myRequest}  from "../../../../secretKey";
 
 const SinglePage = () => {
 

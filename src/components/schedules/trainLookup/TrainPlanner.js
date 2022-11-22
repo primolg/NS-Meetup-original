@@ -16,24 +16,29 @@ const HomePage = () => {
     //form setters
     const [allStations, setAllStations] = useState(undefined);
     const [selectedDate, setSelectedDate] = useState(date);
-    const [selectedTime, setSelectedTime] = useState(time)
-    const [arrivalBool, setArrivalBool] = useState(false)
-    const [arrivalStation, setArrivalStation] = useState(undefined)
-    const [departureStation, setDepartureStation] = useState(undefined)
-    const [submitBool, setSubmitBool] = useState(false)
+    const [selectedTime, setSelectedTime] = useState(time);
+    const [arrivalBool, setArrivalBool] = useState(false);
+    const [arrivalStation, setArrivalStation] = useState(undefined);
+    const [departureStation, setDepartureStation] = useState(undefined);
+    const [submitBool, setSubmitBool] = useState(false);
+    
+    //Testing purposes, delete when done testing single trip features!! these gives the form a default trip search
+    if (!departureStation){
+        setDepartureStation("AC")
+        setArrivalStation("AMRN")
+    }
 
     //object to be populated alongside station options in form with station codes 
     //and their full length name. Example: {"Amsterdam Centraal" : "ASD"}
     let stationCodes = {}
 
-    
     //items to be passed into tripsList
     const lookupItems = {
         "rfcTime": timeSorter(selectedDate, selectedTime),
         "arrivalBool": arrivalBool,
         "stations": allStations,
         "departureStation": departureStation,
-        "arrivalStation": arrivalStation
+        "arrivalStation": arrivalStation,
     }
 
     //on click to renew tripsList

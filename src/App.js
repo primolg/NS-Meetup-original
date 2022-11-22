@@ -2,17 +2,16 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 //components
-import Maintenance from "./components/Maintenance";
-import Schedule from "./components/schedules/stationScreen/Schedule";
 import HomePage from "./components/schedules/trainLookup/TrainPlanner";
-import StationScreen from "./components/schedules/stationScreen/StationScreen";
-import NavBar from "./components/nav-bar/NavBar";
+    //below components are scrapped for now, but data might be useful at later stage for individual station search.
+import Maintenance from "./components/schedules/x-temp-scrapped/Maintenance";
+import Schedule from "./components/schedules/x-temp-scrapped/Schedule";
+import StationScreen from "./components/schedules/x-temp-scrapped/StationScreen";
 
 
 function App(){
     return(
             <div>
-                <NavBar />
                 <div className="all-else">
                     <Routes>
                         <Route index path="/" element={<HomePage />} />

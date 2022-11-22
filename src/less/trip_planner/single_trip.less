@@ -1,0 +1,39 @@
+//out: false
+#single-trip{
+    display: flex;
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    transition: .4s;
+    z-index: 1;
+    top: 0;
+    right: -100vw;
+    overflow: hidden;
+
+    #sidebar {
+        width: 80vw;
+        height:100vh;
+        background-color: white;
+        z-index: 2;
+
+        #trip-legs{
+            margin: 20px;
+        }
+    }
+    #background-fade {
+        width:20vw;
+        height:100vh;
+        background-color: black;
+        transition: .35s;
+        opacity: 0.0;
+    }
+
+    #background-fade.active{
+        opacity: 0.3;
+    }
+}
+    
+#single-trip.active {
+    width: 100vw;
+    right: 0;
+}
