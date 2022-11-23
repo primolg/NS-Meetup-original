@@ -25,7 +25,7 @@ const HomePage = () => {
     //Testing purposes, delete when done testing single trip features!! these gives the form a default trip search
     if (!departureStation){
         setDepartureStation("AC")
-        setArrivalStation("AMRN")
+        setArrivalStation("AMR")
     }
 
     //object to be populated alongside station options in form with station codes 

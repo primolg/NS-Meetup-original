@@ -5802,7 +5802,7 @@ var HomePage = function HomePage() {
 
   if (!departureStation) {
     setDepartureStation("AC");
-    setArrivalStation("AMRN");
+    setArrivalStation("AMR");
   } //object to be populated alongside station options in form with station codes 
   //and their full length name. Example: {"Amsterdam Centraal" : "ASD"}
 
@@ -6197,10 +6197,10 @@ var Locations = function Locations(_ref) {
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
       _useState2 = _slicedToArray(_useState, 2),
-      coordinates = _useState2[0],
-      setCoordinates = _useState2[1];
+      meetupLocation = _useState2[0],
+      setMeetupLocation = _useState2[1];
 
-  console.log(coordinates);
+  console.log(meetupLocation);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "locations-list"
   }, locations.map(function (location) {
@@ -6211,15 +6211,19 @@ var Locations = function Locations(_ref) {
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: location.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "location",
+      key: location.name
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: location === meetupLocation ? "checked-box" : "",
       onClick: function onClick() {
-        setCoordinates(location.lat + "-" + location.lng);
+        setMeetupLocation(location);
       }
-    }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    }, "__"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: function onClick() {
         setFlip(!flip);
       }
-    }, "+"), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
+    }, flip ? "-" : "+")), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
   }));
 };
 

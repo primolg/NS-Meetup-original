@@ -41,7 +41,7 @@ const TripsList = ({prop}) => {
         //GET trips
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
             ).then(response => {
-            setTrips(response.data.trips)
+                setTrips(response.data.trips)
             })
         //GET station locations (displayed in single trips)
             axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, myRequest
