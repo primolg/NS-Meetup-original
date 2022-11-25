@@ -5679,14 +5679,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _components_schedules_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/schedules/trainLookup/TrainPlanner */ "./src/components/schedules/trainLookup/TrainPlanner.js");
-/* harmony import */ var _components_schedules_x_temp_scrapped_Maintenance__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/schedules/x-temp-scrapped/Maintenance */ "./src/components/schedules/x-temp-scrapped/Maintenance.js");
-/* harmony import */ var _components_schedules_x_temp_scrapped_Schedule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/schedules/x-temp-scrapped/Schedule */ "./src/components/schedules/x-temp-scrapped/Schedule.js");
-/* harmony import */ var _components_schedules_x_temp_scrapped_StationScreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/schedules/x-temp-scrapped/StationScreen */ "./src/components/schedules/x-temp-scrapped/StationScreen.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/trainLookup/TrainPlanner */ "./src/components/trainLookup/TrainPlanner.js");
+/* harmony import */ var _components_tripView_TripView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/tripView/TripView */ "./src/components/tripView/TripView.js");
+/* harmony import */ var _components_x_temp_scrapped_Maintenance__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/x-temp-scrapped/Maintenance */ "./src/components/x-temp-scrapped/Maintenance.js");
+/* harmony import */ var _components_x_temp_scrapped_Schedule__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/x-temp-scrapped/Schedule */ "./src/components/x-temp-scrapped/Schedule.js");
+/* harmony import */ var _components_x_temp_scrapped_StationScreen__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/x-temp-scrapped/StationScreen */ "./src/components/x-temp-scrapped/StationScreen.js");
 
 
  //components
+
 
  //below components are scrapped for now, but data might be useful at later stage for individual station search.
 
@@ -5697,19 +5699,22 @@ __webpack_require__.r(__webpack_exports__);
 function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "all-else"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     index: true,
     path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_1__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_trainLookup_TrainPlanner__WEBPACK_IMPORTED_MODULE_1__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/maintenance",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_x_temp_scrapped_Maintenance__WEBPACK_IMPORTED_MODULE_2__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_x_temp_scrapped_Maintenance__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/schedule",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_x_temp_scrapped_Schedule__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_x_temp_scrapped_Schedule__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/station/:stationcode",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_schedules_x_temp_scrapped_StationScreen__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_x_temp_scrapped_StationScreen__WEBPACK_IMPORTED_MODULE_5__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    path: "/trip/:id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_tripView_TripView__WEBPACK_IMPORTED_MODULE_2__["default"], null)
   }))));
 }
 
@@ -5718,10 +5723,83 @@ function App() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/TrainPlanner.js":
-/*!**************************************************************!*\
-  !*** ./src/components/schedules/trainLookup/TrainPlanner.js ***!
-  \**************************************************************/
+/***/ "./src/components/singleTrip/Locations.js":
+/*!************************************************!*\
+  !*** ./src/components/singleTrip/Locations.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+ //other
+
+var Locations = function Locations(_ref) {
+  var locations = _ref.locations,
+      singleLocation = _ref.singleLocation;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      meetupLocation = _useState2[0],
+      setMeetupLocation = _useState2[1];
+
+  console.log(singleLocation);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (meetupLocation) {
+      singleLocation[0] = meetupLocation;
+    }
+  }, [meetupLocation]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "locations-list"
+  }, locations.map(function (location) {
+    var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+        _useState4 = _slicedToArray(_useState3, 2),
+        flip = _useState4[0],
+        setFlip = _useState4[1];
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: location.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "location",
+      id: location === meetupLocation ? "location" : "",
+      key: location.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: location === meetupLocation ? "checked-box" : "",
+      onClick: function onClick() {
+        setMeetupLocation(location);
+      }
+    }, "__"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: function onClick() {
+        setFlip(!flip);
+      }
+    }, flip ? "-" : "+")), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Locations);
+
+/***/ }),
+
+/***/ "./src/components/singleTrip/SingleTrip.js":
+/*!*************************************************!*\
+  !*** ./src/components/singleTrip/SingleTrip.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5733,11 +5811,135 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _TripsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripsList */ "./src/components/schedules/trainLookup/TripsList.js");
+/* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripLegs */ "./src/components/singleTrip/TripLegs.js");
+/* harmony import */ var _Locations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Locations */ "./src/components/singleTrip/Locations.js");
+
+
+ //components
+
+
+
+
+var SingleTrip = function SingleTrip(_ref) {
+  var trip = _ref.trip,
+      locations = _ref.locations;
+
+  function myFunction() {
+    // Get the text field
+    var copyText = document.getElementById("myInput").prototype; // Select the text field
+
+    console.log(copyText);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    // Copy the text inside the text field
+
+    navigator.clipboard.writeText(copyText.value); // Alert the copied text
+
+    alert("Copied the text: " + copyText.value);
+  }
+
+  var singleLocation = [locations[0]]; //to close slide out component when clicked outside of component.
+
+  function show() {
+    document.getElementById('background-fade').classList.toggle('active');
+    setTimeout(function () {
+      document.getElementById('single-trip').classList.toggle('active');
+    }, 200);
+  }
+
+  return trip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "single-trip"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    onClick: show,
+    id: "background-fade"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "sidebar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    tripLegs: trip.legs
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    locations: locations,
+    singleLocation: singleLocation
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    id: "textt"
+  }, "textt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function onClick() {
+      console.log(document.getElementById("textt"));
+    }
+  }, "Copy text"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip); //navigator.clipboard.writeText(document.getElementById("textt"))
+
+/***/ }),
+
+/***/ "./src/components/singleTrip/TripLegs.js":
+/*!***********************************************!*\
+  !*** ./src/components/singleTrip/TripLegs.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../trainLookup/plannerFunctions */ "./src/components/trainLookup/plannerFunctions.js");
+
+
+ //other
+
+
+
+var TripLegs = function TripLegs(_ref) {
+  var tripLegs = _ref.tripLegs;
+  //splits trip legs into main and side stops.
+  var legs;
+  if (tripLegs) legs = (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.stationSorter)(tripLegs);
+  return legs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "trip-legs"
+  }, legs.mainStops.map(function (station) {
+    var inBetweenStations = legs.sideStops.splice(0, 1);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: station.name
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "inbetween-stations"
+    }, inBetweenStations[0].map(function (tinyStation) {
+      //add "no in between alternative"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
+        key: tinyStation.name
+      }, tinyStation.name, " ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
+    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripLegs);
+
+/***/ }),
+
+/***/ "./src/components/trainLookup/TrainPlanner.js":
+/*!****************************************************!*\
+  !*** ./src/components/trainLookup/TrainPlanner.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TripsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripsList */ "./src/components/trainLookup/TripsList.js");
 /* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-datepicker */ "./node_modules/react-datepicker/dist/react-datepicker.min.js");
 /* harmony import */ var react_datepicker__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_datepicker__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/trainLookup/plannerFunctions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5919,10 +6121,10 @@ var HomePage = function HomePage() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/TripsList.js":
-/*!***********************************************************!*\
-  !*** ./src/components/schedules/trainLookup/TripsList.js ***!
-  \***********************************************************/
+/***/ "./src/components/trainLookup/TripsList.js":
+/*!*************************************************!*\
+  !*** ./src/components/trainLookup/TripsList.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5934,10 +6136,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./singleTrip/SingleTrip */ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js");
+/* harmony import */ var _singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../singleTrip/SingleTrip */ "./src/components/singleTrip/SingleTrip.js");
 /* harmony import */ var react_loading_icons_dist_esm_components_tail_spin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loading-icons/dist/esm/components/tail-spin */ "./node_modules/react-loading-icons/dist/esm/components/tail-spin.js");
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./plannerFunctions */ "./src/components/trainLookup/plannerFunctions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6042,10 +6244,10 @@ var TripsList = function TripsList(_ref) {
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/plannerFunctions.js":
-/*!******************************************************************!*\
-  !*** ./src/components/schedules/trainLookup/plannerFunctions.js ***!
-  \******************************************************************/
+/***/ "./src/components/trainLookup/plannerFunctions.js":
+/*!********************************************************!*\
+  !*** ./src/components/trainLookup/plannerFunctions.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6165,10 +6367,10 @@ function listLocations(locations) {
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/singleTrip/Locations.js":
-/*!**********************************************************************!*\
-  !*** ./src/components/schedules/trainLookup/singleTrip/Locations.js ***!
-  \**********************************************************************/
+/***/ "./src/components/tripView/TripView.js":
+/*!*********************************************!*\
+  !*** ./src/components/tripView/TripView.js ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6178,165 +6380,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
- //other
-
-var Locations = function Locations(_ref) {
-  var locations = _ref.locations;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
-      _useState2 = _slicedToArray(_useState, 2),
-      meetupLocation = _useState2[0],
-      setMeetupLocation = _useState2[1];
-
-  console.log(meetupLocation);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "locations-list"
-  }, locations.map(function (location) {
-    var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-        _useState4 = _slicedToArray(_useState3, 2),
-        flip = _useState4[0],
-        setFlip = _useState4[1];
-
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: location.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "location",
-      key: location.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      className: location === meetupLocation ? "checked-box" : "",
-      onClick: function onClick() {
-        setMeetupLocation(location);
-      }
-    }, "__"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      onClick: function onClick() {
-        setFlip(!flip);
-      }
-    }, flip ? "-" : "+")), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
-  }));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Locations);
-
-/***/ }),
-
-/***/ "./src/components/schedules/trainLookup/singleTrip/SingleTrip.js":
-/*!***********************************************************************!*\
-  !*** ./src/components/schedules/trainLookup/singleTrip/SingleTrip.js ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripLegs */ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js");
-/* harmony import */ var _Locations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Locations */ "./src/components/schedules/trainLookup/singleTrip/Locations.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 
 
  //components
 
+var TripView = function TripView() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useParams)(),
+      id = _useParams.id;
 
-
-
-var SingleTrip = function SingleTrip(_ref) {
-  var trip = _ref.trip,
-      locations = _ref.locations;
-
-  //to close slide out component when clicked outside of component.
-  function show() {
-    document.getElementById('background-fade').classList.toggle('active');
-    setTimeout(function () {
-      document.getElementById('single-trip').classList.toggle('active');
-    }, 200);
-  }
-
-  return trip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "single-trip"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    onClick: show,
-    id: "background-fade"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "sidebar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    tripLegs: trip.legs
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    locations: locations
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, id));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripView);
 
 /***/ }),
 
-/***/ "./src/components/schedules/trainLookup/singleTrip/TripLegs.js":
-/*!*********************************************************************!*\
-  !*** ./src/components/schedules/trainLookup/singleTrip/TripLegs.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _plannerFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../plannerFunctions */ "./src/components/schedules/trainLookup/plannerFunctions.js");
-
-
- //other
-
-
-
-var TripLegs = function TripLegs(_ref) {
-  var tripLegs = _ref.tripLegs;
-  //splits trip legs into main and side stops.
-  var legs;
-  if (tripLegs) legs = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.stationSorter)(tripLegs);
-  return legs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    id: "trip-legs"
-  }, legs.mainStops.map(function (station) {
-    var inBetweenStations = legs.sideStops.splice(0, 1);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: station.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "inbetween-stations"
-    }, inBetweenStations[0].map(function (tinyStation) {
-      //add "no in between alternative"
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
-        key: tinyStation.name
-      }, tinyStation.name, " ", (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
-    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripLegs);
-
-/***/ }),
-
-/***/ "./src/components/schedules/x-temp-scrapped/Arrivals.js":
-/*!**************************************************************!*\
-  !*** ./src/components/schedules/x-temp-scrapped/Arrivals.js ***!
-  \**************************************************************/
+/***/ "./src/components/x-temp-scrapped/Arrivals.js":
+/*!****************************************************!*\
+  !*** ./src/components/x-temp-scrapped/Arrivals.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6349,7 +6412,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../secretKey */ "./secretKey.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6404,10 +6467,10 @@ var Arrivals = function Arrivals() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/x-temp-scrapped/Departures.js":
-/*!****************************************************************!*\
-  !*** ./src/components/schedules/x-temp-scrapped/Departures.js ***!
-  \****************************************************************/
+/***/ "./src/components/x-temp-scrapped/Departures.js":
+/*!******************************************************!*\
+  !*** ./src/components/x-temp-scrapped/Departures.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6420,7 +6483,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../secretKey */ "./secretKey.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6478,10 +6541,10 @@ var Departures = function Departures() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/x-temp-scrapped/Maintenance.js":
-/*!*****************************************************************!*\
-  !*** ./src/components/schedules/x-temp-scrapped/Maintenance.js ***!
-  \*****************************************************************/
+/***/ "./src/components/x-temp-scrapped/Maintenance.js":
+/*!*******************************************************!*\
+  !*** ./src/components/x-temp-scrapped/Maintenance.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6493,7 +6556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../secretKey */ "./secretKey.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6551,10 +6614,10 @@ var SinglePage = function SinglePage() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/x-temp-scrapped/Schedule.js":
-/*!**************************************************************!*\
-  !*** ./src/components/schedules/x-temp-scrapped/Schedule.js ***!
-  \**************************************************************/
+/***/ "./src/components/x-temp-scrapped/Schedule.js":
+/*!****************************************************!*\
+  !*** ./src/components/x-temp-scrapped/Schedule.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6566,7 +6629,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../secretKey */ "./secretKey.js");
+/* harmony import */ var _secretKey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../secretKey */ "./secretKey.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6642,10 +6705,10 @@ var Schedule = function Schedule() {
 
 /***/ }),
 
-/***/ "./src/components/schedules/x-temp-scrapped/StationScreen.js":
-/*!*******************************************************************!*\
-  !*** ./src/components/schedules/x-temp-scrapped/StationScreen.js ***!
-  \*******************************************************************/
+/***/ "./src/components/x-temp-scrapped/StationScreen.js":
+/*!*********************************************************!*\
+  !*** ./src/components/x-temp-scrapped/StationScreen.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6655,8 +6718,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Departures__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Departures */ "./src/components/schedules/x-temp-scrapped/Departures.js");
-/* harmony import */ var _Arrivals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Arrivals */ "./src/components/schedules/x-temp-scrapped/Arrivals.js");
+/* harmony import */ var _Departures__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Departures */ "./src/components/x-temp-scrapped/Departures.js");
+/* harmony import */ var _Arrivals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Arrivals */ "./src/components/x-temp-scrapped/Arrivals.js");
  //components
 
 

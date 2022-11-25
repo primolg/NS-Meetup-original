@@ -4,7 +4,7 @@ import axios from "axios";
 import TripsList from "./TripsList";
 //other
 import DatePicker from 'react-datepicker'
-import {myRequest} from "../../../../secretKey"
+import {myRequest} from "../../../secretKey"
 import {timesArray, monthsToNum, timeSorter, dateToTime} from "./plannerFunctions"
 
 const HomePage = () => {

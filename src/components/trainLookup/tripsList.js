@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 //components
-import SingleTrip from "./singleTrip/SingleTrip";
+import SingleTrip from "../singleTrip/SingleTrip";
 //other
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
-import { myRequest } from "../../../../secretKey";
+import { myRequest } from "../../../secretKey";
 import { minToHrString, dateToTime, listLocations } from "./plannerFunctions";
 
 

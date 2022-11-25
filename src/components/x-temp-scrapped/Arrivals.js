@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //other
-import {myRequest} from "../../../../secretKey"
+import {myRequest} from "../../../secretKey"
 
 const Arrivals = () => {
     

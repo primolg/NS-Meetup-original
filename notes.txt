@@ -5,4 +5,5 @@ features to be added to trip search:
     -search trip by location instead of station
     -handicap accessability icon 
     -swap "from" and "to" values
-    -
+
+start code + destination code + datetime + arivalBool + locationName + lng + lat
