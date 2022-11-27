@@ -3,12 +3,10 @@ import React, { useState, useEffect } from "react";
 const Locations = ({locations, singleLocation}) => {
     
     const [meetupLocation, setMeetupLocation] = useState(undefined)
-    console.log(singleLocation)
 
     useEffect(() => {
         if (meetupLocation){
             singleLocation[0] = meetupLocation
-
         }
     }, [meetupLocation])
 

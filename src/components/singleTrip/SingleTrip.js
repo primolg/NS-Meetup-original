@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
 //components
 import TripLegs from "./TripLegs";
 import Locations from "./Locations";
 
 const SingleTrip = ({trip, locations}) => {
 
-    function myFunction(){
-        // Get the text field
-        let copyText = document.getElementById("myInput").prototype;
-        // Select the text field
-        console.log(copyText)
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-         // Copy the text inside the text field
-        navigator.clipboard.writeText(copyText.value)
-        // Alert the copied text
-        alert("Copied the text: " + copyText.value);
-    }
-    let singleLocation = [locations[0]];
+    const [singleLocation] = useState([locations[0]]);
+    const [tripLink, setTripLink] = useState(undefined);
     //to close slide out component when clicked outside of component.
-    
+
     function show() {
         document.getElementById('background-fade').classList.toggle('active')
         setTimeout(()=>{
             document.getElementById('single-trip').classList.toggle('active');
+            setTripLink(undefined);
         }, 200
         );
     }
-    
+
+
+    function createLink(trip, location){
+        console.log(trip, location[0])
+        const link = "localhost.com/"
+        setTripLink(link)
+    }
+
+
     return trip ? (
         <div id="single-trip">
             <div onClick={show} id="background-fade"></div>
@@ -41,8 +37,9 @@ const SingleTrip = ({trip, locations}) => {
                     locations = {locations}
                     singleLocation = {singleLocation}
                 />
-                <input id="textt">textt</input>
-                <button onClick={() => {console.log(document.getElementById("textt"))}}>Copy text</button>
+                {tripLink ? 
+                <h3>{tripLink}</h3>: 
+                <button onClick={()=>{createLink(trip, singleLocation)}}>hehe</button> }
             </div>
         </div>
     ) : (
@@ -52,5 +49,3 @@ const SingleTrip = ({trip, locations}) => {
 
 
 export default SingleTrip;
-
-//navigator.clipboard.writeText(document.getElementById("textt"))

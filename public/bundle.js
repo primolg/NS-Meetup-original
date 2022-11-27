@@ -5759,7 +5759,6 @@ var Locations = function Locations(_ref) {
       meetupLocation = _useState2[0],
       setMeetupLocation = _useState2[1];
 
-  console.log(singleLocation);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (meetupLocation) {
       singleLocation[0] = meetupLocation;
@@ -5809,11 +5808,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TripLegs */ "./src/components/singleTrip/TripLegs.js");
-/* harmony import */ var _Locations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Locations */ "./src/components/singleTrip/Locations.js");
+/* harmony import */ var _TripLegs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TripLegs */ "./src/components/singleTrip/TripLegs.js");
+/* harmony import */ var _Locations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Locations */ "./src/components/singleTrip/Locations.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
  //components
 
@@ -5824,27 +5831,28 @@ var SingleTrip = function SingleTrip(_ref) {
   var trip = _ref.trip,
       locations = _ref.locations;
 
-  function myFunction() {
-    // Get the text field
-    var copyText = document.getElementById("myInput").prototype; // Select the text field
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([locations[0]]),
+      _useState2 = _slicedToArray(_useState, 1),
+      singleLocation = _useState2[0];
 
-    console.log(copyText);
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-    // Copy the text inside the text field
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState4 = _slicedToArray(_useState3, 2),
+      tripLink = _useState4[0],
+      setTripLink = _useState4[1]; //to close slide out component when clicked outside of component.
 
-    navigator.clipboard.writeText(copyText.value); // Alert the copied text
-
-    alert("Copied the text: " + copyText.value);
-  }
-
-  var singleLocation = [locations[0]]; //to close slide out component when clicked outside of component.
 
   function show() {
     document.getElementById('background-fade').classList.toggle('active');
     setTimeout(function () {
       document.getElementById('single-trip').classList.toggle('active');
+      setTripLink(undefined);
     }, 200);
+  }
+
+  function createLink(trip, location) {
+    console.log(trip, location[0]);
+    var link = "localhost.com/";
+    setTripLink(link);
   }
 
   return trip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5854,21 +5862,19 @@ var SingleTrip = function SingleTrip(_ref) {
     id: "background-fade"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "sidebar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_1__["default"], {
     tripLegs: trip.legs
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_2__["default"], {
     locations: locations,
     singleLocation: singleLocation
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    id: "textt"
-  }, "textt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }), tripLink ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, tripLink) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function onClick() {
-      console.log(document.getElementById("textt"));
+      createLink(trip, singleLocation);
     }
-  }, "Copy text"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
+  }, "hehe"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip); //navigator.clipboard.writeText(document.getElementById("textt"))
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleTrip);
 
 /***/ }),
 
@@ -6177,15 +6183,16 @@ var TripsList = function TripsList(_ref) {
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
       _useState6 = _slicedToArray(_useState5, 2),
       stationLocations = _useState6[0],
-      setStationLocations = _useState6[1];
+      setStationLocations = _useState6[1]; // const tripLookup = `https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`;
+
   /*
   trip sorting options testing
   will probably just use built in api sorting, with visual indication of transfers
-   if (trips){
-      console.log(trips);
-      console.log('sort by trip length :', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
-      console.log('sort by least transfers:', trips.sort((a,b) => a.transfers - b.transfers);
-      console.log('sort by departure time (default?)', trips.sort((a,b) => dateToTimeNum(a.legs[0].origin.plannedDateTime) - dateToTimeNum(b.legs[0].origin.plannedDateTime)));
+  if (trips){
+  console.log(trips);
+  console.log('sort by trip length :', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
+  console.log('sort by least transfers:', trips.sort((a,b) => a.transfers - b.transfers);
+  console.log('sort by departure time (default?)', trips.sort((a,b) => dateToTimeNum(a.legs[0].origin.plannedDateTime) - dateToTimeNum(b.legs[0].origin.plannedDateTime)));
   }
   */
 
@@ -6205,6 +6212,7 @@ var TripsList = function TripsList(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     //GET trips
     axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=".concat(prop.departureStation, "&toStation=").concat(prop.arrivalStation, "&dateTime=").concat(prop.rfcTime, "&searchForArrival=").concat(prop.arrivalBool), _secretKey__WEBPACK_IMPORTED_MODULE_4__.myRequest).then(function (response) {
+      console.log(response);
       setTrips(response.data.trips);
     }); //GET station locations (displayed in single trips)
 
@@ -6216,7 +6224,8 @@ var TripsList = function TripsList(_ref) {
     className: "trip-list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_singleTrip_SingleTrip__WEBPACK_IMPORTED_MODULE_2__["default"], {
     trip: currentTrip,
-    locations: stationLocations
+    locations: stationLocations,
+    lookup: tripLookup
   })), trips.map(function (trip) {
     var travelTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_5__.minToHrString)(trip.actualDurationInMinutes);
     var departureTime = (0,_plannerFunctions__WEBPACK_IMPORTED_MODULE_5__.dateToTime)(trip.legs[0].origin.plannedDateTime);
