@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 //other
-const Locations = ({locations, singleLocation}) => {
+const Locations = ({locations, singleLocation, rerender}) => {
     
     const [meetupLocation, setMeetupLocation] = useState(undefined)
 
@@ -8,8 +8,9 @@ const Locations = ({locations, singleLocation}) => {
         if (meetupLocation){
             singleLocation[0] = meetupLocation
         }
-    }, [meetupLocation])
-
+        rerender()
+    }, [meetupLocation, locations, singleLocation])
+    
     return (
         <div id="locations-list">
             {locations.map(location => {

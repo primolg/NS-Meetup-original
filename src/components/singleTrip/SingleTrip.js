@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //components
 import TripLegs from "./TripLegs";
 import Locations from "./Locations";
+import TextCopy from "./TextCopy";
+//functions
+import { createLink } from "../trainLookup/plannerFunctions";
 
 const SingleTrip = ({trip, locations}) => {
 
     const [singleLocation] = useState([locations[0]]);
     const [tripLink, setTripLink] = useState(undefined);
-    //to close slide out component when clicked outside of component.
+    const [update, setUpdate] = useState(false)
 
+    //to close slide out component when clicked outside of component.
     function show() {
         document.getElementById('background-fade').classList.toggle('active')
         setTimeout(()=>{
@@ -18,13 +22,14 @@ const SingleTrip = ({trip, locations}) => {
         );
     }
 
-
-    function createLink(trip, location){
-        console.log(trip, location[0])
-        const link = "localhost.com/"
-        setTripLink(link)
+    //function to be called inside of locations so this component & the link it passes as tripLink updates.
+    function rerender(){
+        setUpdate(!update)
     }
 
+    useEffect(() => {
+        trip ? setTripLink(createLink(trip, singleLocation[0])) : ""
+    }, [trip, singleLocation, locations, update])
 
     return trip ? (
         <div id="single-trip">
@@ -36,10 +41,14 @@ const SingleTrip = ({trip, locations}) => {
                 <Locations
                     locations = {locations}
                     singleLocation = {singleLocation}
-                />
+                    rerender = {rerender}
+                /> 
                 {tripLink ? 
-                <h3>{tripLink}</h3>: 
-                <button onClick={()=>{createLink(trip, singleLocation)}}>hehe</button> }
+                    <TextCopy
+                        link = {tripLink}    
+                    /> 
+                    : <></>
+                }
             </div>
         </div>
     ) : (

@@ -44,7 +44,6 @@ const TripsList = ({prop}) => {
         //GET trips
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
             ).then(response => {
-                console.log(response)
                 setTrips(response.data.trips)
             })
         //GET station locations (displayed in single trips)
