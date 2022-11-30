@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 //components
-import SingleTrip from "./singleTrip/SingleTrip";
+import SingleTrip from "../singleTrip/SingleTrip";
 //other
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
-import { myRequest } from "../../../../secretKey";
-import { minToHrString, dateToTime, listLocations, stationSorter} from "./plannerFunctions";
+import { myRequest } from "../../../secretKey";
+import { minToHrString, dateToTime, listLocations } from "./plannerFunctions";
 
 
 const TripsList = ({prop}) => {
@@ -13,7 +13,10 @@ const TripsList = ({prop}) => {
     const [currentTrip, setCurrentTrip] = useState(undefined);
     const [stationLocations, setStationLocations] = useState(undefined);
 
-    /*
+    // const tripLookup = `https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`;
+
+
+        /*
     trip sorting options testing
     will probably just use built in api sorting, with visual indication of transfers
 
@@ -41,7 +44,7 @@ const TripsList = ({prop}) => {
         //GET trips
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
             ).then(response => {
-            setTrips(response.data.trips)
+                setTrips(response.data.trips)
             })
         //GET station locations (displayed in single trips)
             axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, myRequest

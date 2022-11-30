@@ -103,3 +103,40 @@ export function listLocations(locations){
 }
 
 
+export function createLink (trip, singleLocation){
+    // const trainNumber = trip.legs[trip.legs.length - 1].product.Number;
+    const trainNumber = trip.legs[trip.legs.length - 1].product.number
+    const dateTime = trip.legs[trip.legs.length - 1].journeyDetail[0].link.uri.split("datetime=")[1]
+    const arrivalStation = trip.arrivalStationCode
+    // console.log(trip.legs[trip.legs.length - 1].journeyDetail[0].link.uri.split("datetime=")[1])
+    const locationName = singleLocation.name.split(" ").join(".");
+    const locationCoordinates = singleLocation.lng + "+" + singleLocation.lat;
+    return "localhost:3000/trip/" + arrivalStation + "=" + trainNumber + "=" + dateTime + "=" + locationName + "+" + locationCoordinates;
+}
+
+export function splitLink(link){
+    //obj to store info 
+    const tripObj = {}
+    //split link into journey ref and meetup info
+    link = link.split("=");
+    //trainNumber & date
+    tripObj.arrivalStation=link[0]
+    tripObj.trainNumber=link[1];
+    tripObj.dateTime=link[2];
+    //split meetup info into meetup name and lng+lat
+    const location = link[3].split("+");
+    tripObj.locName = location[0].split(".").join(" ");
+    tripObj.lng = location[1];
+    tripObj.lat = location[2];
+    return tripObj
+}
+
+export function findStop(stops, station){
+    station = station + "_0"
+    for (let i=0; i < stops.length; i++){
+        if (stops[i].id === station){
+            return stops[i]
+        }
+    }
+    return undefined
+}

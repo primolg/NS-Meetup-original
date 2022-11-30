@@ -154,6 +154,12 @@
 #single-trip #sidebar #trip-legs {
   margin: 20px;
 }
+#single-trip #sidebar #locations-list {
+  margin: 20px;
+}
+#single-trip #sidebar #locations-list .location {
+  display: flex;
+}
 #single-trip #background-fade {
   width: 20vw;
   height: 100vh;
