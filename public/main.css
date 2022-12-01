@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 #train-planner #form {
   display: flex;
@@ -154,11 +154,39 @@
 #single-trip #sidebar #trip-legs {
   margin: 20px;
 }
+#single-trip #sidebar #trip-legs .main-station {
+  margin: 5px 0px;
+}
+#single-trip #sidebar #trip-legs .inbetween-stations {
+  height: fit-content;
+  max-height: 40px;
+  width: 250px;
+  overflow: scroll;
+  margin-left: 10px;
+}
+#single-trip #sidebar #trip-legs .inbetween-stations .inbetween-stations-inner {
+  height: fit-content;
+  animation: slide-up 12s linear infinite alternate;
+}
+@keyframes slide-up {
+  from {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+  to {
+    -webkit-transform: translateY(-65%);
+    transform: translateY(-65%);
+  }
+}
 #single-trip #sidebar #locations-list {
   margin: 20px;
 }
 #single-trip #sidebar #locations-list .location {
   display: flex;
+}
+#single-trip .waaa {
+  max-width: 10px;
+  overflow: hidden;
 }
 #single-trip #background-fade {
   width: 20vw;

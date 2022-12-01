@@ -32,9 +32,9 @@ const TextCopy = ({link}) => {
 
     return(
         <div>
-            <input type="text" value={link} readOnly />
+            {/* <input type="text" value={link} readOnly /> */}
             <button onClick={handleCopyClick}>
-                <span>{isCopied ? 'Copied!' : 'Copy'}</span>
+                <span>{isCopied ? 'Copied!  ' : 'Copy Link'}</span>
             </button>
         </div>
     );

@@ -18,7 +18,36 @@
 
         #trip-legs{
             margin: 20px;
+
+            .main-station{
+                margin: 5px 0px;
+            }
+
+            .inbetween-stations{
+                height: fit-content;
+                max-height:40px;
+                width: 250px;
+                overflow: scroll;
+                margin-left: 10px;
+
+                .inbetween-stations-inner{
+                    @y-transform: -100% + 35px;
+                    height: fit-content;
+                    animation: slide-up 12s linear infinite alternate;
+                    @keyframes slide-up {
+                        from {
+                            -webkit-transform: translateY(5px);
+                            transform: translateY(5px);
+                        }
+                        to {
+                            -webkit-transform: translateY(@y-transform);
+                            transform: translateY(@y-transform);
+                        }
+                    }
+                }
+            }
         }
+
         #locations-list{
             margin: 20px;
 

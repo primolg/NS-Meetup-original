@@ -5984,13 +5984,9 @@ var TextCopy = function TextCopy(_ref) {
     });
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
-    value: link,
-    readOnly: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: handleCopyClick
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, isCopied ? 'Copied!' : 'Copy')));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, isCopied ? 'Copied!  ' : 'Copy Link')));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextCopy);
@@ -6030,14 +6026,19 @@ var TripLegs = function TripLegs(_ref) {
     var inBetweenStations = legs.sideStops.splice(0, 1);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: station.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+      className: "main-station"
+    }, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "inbetween-stations"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: inBetweenStations[0].length > 2 ? "inbetween-stations-inner" : ""
     }, inBetweenStations[0].map(function (tinyStation) {
       //add "no in between alternative"
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
+        id: "inbetween-station",
         key: tinyStation.name
       }, tinyStation.name, " ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
-    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+    }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
 };
 
@@ -6593,7 +6594,7 @@ var TripView = function TripView() {
       setStationInfo((0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.findStop)(response.data.payload.stops, tripInfo.arrivalStation));
     });
   }, []);
-  return stationInfo ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Traveler arrives at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " in ", stationInfo.stop.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Meet up at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " at ", tripInfo.lat + "," + tripInfo.lng)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "loading");
+  return stationInfo ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Traveler arrives at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " in ", stationInfo.stop.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Meet up at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " by ", tripInfo.locName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, tripInfo.lat + "," + tripInfo.lng)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "loading");
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripView);

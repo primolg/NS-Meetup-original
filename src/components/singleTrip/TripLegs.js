@@ -16,15 +16,17 @@ const TripLegs = ({tripLegs}) => {
                         const inBetweenStations = legs.sideStops.splice(0, 1);
                         return (
                             <div key={station.name}>
-                                <h3>{station.name} {station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
+                                <h3 className="main-station">{station.name} {station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
                                 {inBetweenStations.length ? 
                                     <div className="inbetween-stations">
-                                        {inBetweenStations[0].map(tinyStation => {
-                                            //add "no in between alternative"
-                                            return (
-                                                <h5 key={tinyStation.name}>{tinyStation.name} {dateToTime(tinyStation.plannedDepartureDateTime)}</h5>
-                                            )
-                                        })}
+                                        <div className={inBetweenStations[0].length > 2 ? "inbetween-stations-inner" : ""}>
+                                            {inBetweenStations[0].map(tinyStation => {
+                                                //add "no in between alternative"
+                                                return (
+                                                    <h5 id="inbetween-station" key={tinyStation.name}>{tinyStation.name} {dateToTime(tinyStation.plannedDepartureDateTime)}</h5>
+                                                    )
+                                            })}
+                                        </div>
                                     </div> :
                                     <></>}
                             </div>
