@@ -5781,12 +5781,15 @@ var Locations = function Locations(_ref) {
       className: "location",
       id: location === meetupLocation ? "location" : "",
       key: location.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      className: location === meetupLocation ? "checked-box" : "",
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      id: "name-checkbox"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "box-check " + (location === meetupLocation ? "checked-box" : ""),
       onClick: function onClick() {
         setMeetupLocation(location);
       }
-    }, "__"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+      id: "map-flip",
       onClick: function onClick() {
         setFlip(!flip);
       }
@@ -5984,9 +5987,11 @@ var TextCopy = function TextCopy(_ref) {
     });
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "text-copy"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     onClick: handleCopyClick
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, isCopied ? 'Copied!  ' : 'Copy Link')));
+  }, isCopied ? 'Copied!  ' : 'Copy Link'));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextCopy);

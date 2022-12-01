@@ -180,13 +180,43 @@
 }
 #single-trip #sidebar #locations-list {
   margin: 20px;
+  max-height: 500px;
+  overflow: scroll;
 }
 #single-trip #sidebar #locations-list .location {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-#single-trip .waaa {
-  max-width: 10px;
-  overflow: hidden;
+#single-trip #sidebar #locations-list .location #name-checkbox {
+  display: flex;
+  align-items: center;
+}
+#single-trip #sidebar #locations-list .location #name-checkbox .box-check {
+  width: 10px;
+  height: 10px;
+  border: #0a0a48 2px solid;
+  border-radius: 30%;
+  background-color: none;
+}
+#single-trip #sidebar #locations-list .location #name-checkbox .box-check:hover {
+  cursor: pointer;
+}
+#single-trip #sidebar #locations-list .location #name-checkbox .checked-box {
+  background-color: #57509e;
+}
+#single-trip #sidebar #locations-list .location #map-flip:hover {
+  cursor: pointer;
+}
+#single-trip #sidebar .text-copy {
+  display: flex;
+  height: 40px;
+  width: 140px;
+  margin-left: 25%;
+  background-color: #C8DAF3;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
 }
 #single-trip #background-fade {
   width: 20vw;

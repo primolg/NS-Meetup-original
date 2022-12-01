@@ -50,17 +50,49 @@
 
         #locations-list{
             margin: 20px;
+            max-height: 500px;  
+            overflow: scroll;
 
             .location{
                 display: flex;
-            }
+                justify-content: space-between;
+                align-items: center;
+                #name-checkbox{
+                    display: flex;
+                    align-items: center;
 
+                    .box-check{
+                        width:10px;
+                        height:10px;
+                        border: rgb(10, 10, 72) 2px solid;
+                        border-radius: 30%;
+                        background-color: none;
+                    }
+                    .box-check:hover{
+                        cursor: pointer;
+                    }
+                    .checked-box{
+                        background-color: rgb(87, 80, 158);
+                    }
+                }
+                #map-flip:hover{
+                    cursor: pointer;
+                }   
+            }
+        }
+
+        .text-copy{
+            display: flex;
+            height: 40px;
+            width: 140px;
+            margin-left: 25%;
+            background-color: #C8DAF3;
+            border-radius: 10%;
+            justify-content: center;
+            align-items: center;
         }
     }
-    .waaa{
-        max-width: 10px;
-        overflow: hidden;
-    }
+
     #background-fade {
         width:20vw;
         height:100vh;
