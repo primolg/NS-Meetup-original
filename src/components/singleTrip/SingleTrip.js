@@ -37,6 +37,7 @@ const SingleTrip = ({trip, locations}) => {
             <div id="sidebar">
                 <TripLegs 
                     tripLegs = {trip.legs}
+                    rerender = {rerender}
                 />
                 <Locations
                     locations = {locations}

@@ -7,3 +7,4 @@ to-do list & bugs:
     -swap "from" and "to" values
     -time change bug in trip lookup form. I have a feeling it might be on the api's end, but needs looking into.
     -when meetup has multiple words it gets spaced out into the lng and lat spots, needs fixing.
+    -single-trip: link button fails to render when following these steps: open a single trip and copy it's link, then return to trips, and open the same single trip.

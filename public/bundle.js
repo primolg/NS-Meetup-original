@@ -5736,6 +5736,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../trainLookup/plannerFunctions */ "./src/components/trainLookup/plannerFunctions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5750,6 +5751,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
  //other
 
+
+
 var Locations = function Locations(_ref) {
   var locations = _ref.locations,
       singleLocation = _ref.singleLocation,
@@ -5763,9 +5766,10 @@ var Locations = function Locations(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (meetupLocation) {
       singleLocation[0] = meetupLocation;
+      rerender();
+    } else {
+      setMeetupLocation(locations[0]);
     }
-
-    rerender();
   }, [meetupLocation, locations, singleLocation]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "locations-list"
@@ -5781,16 +5785,19 @@ var Locations = function Locations(_ref) {
       className: "location",
       id: location === meetupLocation ? "location" : "",
       key: location.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      className: location === meetupLocation ? "checked-box" : "",
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      id: "name-checkbox"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "box-check " + (location === meetupLocation ? "checked-box" : ""),
       onClick: function onClick() {
         setMeetupLocation(location);
       }
-    }, "__"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name.length > 22 ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.cutWord)(location.name, 21) : location.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+      id: "map-flip",
       onClick: function onClick() {
         setFlip(!flip);
       }
-    }, flip ? "-" : "+")), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
+    }, flip ? "x" : "+")), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, location.lat, ", ", location.lng) : "");
   }));
 };
 
@@ -5878,7 +5885,8 @@ var SingleTrip = function SingleTrip(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "sidebar"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    tripLegs: trip.legs
+    tripLegs: trip.legs,
+    rerender: rerender
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_2__["default"], {
     locations: locations,
     singleLocation: singleLocation,
@@ -5984,13 +5992,11 @@ var TextCopy = function TextCopy(_ref) {
     });
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
-    value: link,
-    readOnly: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "text-copy"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     onClick: handleCopyClick
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, isCopied ? 'Copied!' : 'Copy')));
+  }, isCopied ? 'Copied!  ' : 'Copy Link'));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextCopy);
@@ -6010,10 +6016,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../trainLookup/plannerFunctions */ "./src/components/trainLookup/plannerFunctions.js");
+/* harmony import */ var _trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../trainLookup/plannerFunctions */ "./src/components/trainLookup/plannerFunctions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
  //other
 
@@ -6023,21 +6037,39 @@ var TripLegs = function TripLegs(_ref) {
   var tripLegs = _ref.tripLegs;
   //splits trip legs into main and side stops.
   var legs;
-  if (tripLegs) legs = (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.stationSorter)(tripLegs);
+  if (tripLegs) legs = (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.stationSorter)(tripLegs);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      legScroll = _useState2[0],
+      setLegScroll = _useState2[1];
+
   return legs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "trip-legs"
   }, legs.mainStops.map(function (station) {
     var inBetweenStations = legs.sideStops.splice(0, 1);
+    var mainStation = station.name.length > 17 ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.cutWord)(station.name, 17) : station.name;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: station.name
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station.name, " ", station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(station.plannedArrivalDateTime)), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "inbetween-stations"
+      key: mainStation
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "main-station"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, mainStation), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(station.plannedArrivalDateTime))), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "inbetween-stations",
+      onClick: inBetweenStations[0].length > 3 ? function () {
+        return setLegScroll(!legScroll);
+      } : ""
+    }, inBetweenStations[0].length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: inBetweenStations[0].length > 3 && legScroll ? "inbetween-stations-inner" : ""
     }, inBetweenStations[0].map(function (tinyStation) {
       //add "no in between alternative"
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
+      var name = tinyStation.name.length > 23 ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.cutWord)(tinyStation.name, 23) : tinyStation.name;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        id: "inbetween-station",
         key: tinyStation.name
-      }, tinyStation.name, " ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(tinyStation.plannedDepartureDateTime));
-    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(tinyStation.plannedDepartureDateTime)));
+    })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      id: "inbetween-station"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "no stops"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
 };
 
@@ -6380,6 +6412,7 @@ var TripsList = function TripsList(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "createLink": () => (/* binding */ createLink),
+/* harmony export */   "cutWord": () => (/* binding */ cutWord),
 /* harmony export */   "dateToTime": () => (/* binding */ dateToTime),
 /* harmony export */   "dateToTimeNum": () => (/* binding */ dateToTimeNum),
 /* harmony export */   "findStop": () => (/* binding */ findStop),
@@ -6530,6 +6563,9 @@ function findStop(stops, station) {
 
   return undefined;
 }
+function cutWord(word, length) {
+  return word.slice(0, length) + "...";
+}
 
 /***/ }),
 
@@ -6593,7 +6629,7 @@ var TripView = function TripView() {
       setStationInfo((0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.findStop)(response.data.payload.stops, tripInfo.arrivalStation));
     });
   }, []);
-  return stationInfo ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Traveler arrives at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " in ", stationInfo.stop.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Meet up at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " at ", tripInfo.lat + "," + tripInfo.lng)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "loading");
+  return stationInfo ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, "Traveler arrives at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " in ", stationInfo.stop.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Meet up at ", (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.dateToTime)(stationInfo.arrivals[0].actualTime), " by ", tripInfo.locName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, tripInfo.lat + "," + tripInfo.lng)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "loading");
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TripView);

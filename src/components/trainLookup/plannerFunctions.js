@@ -140,3 +140,7 @@ export function findStop(stops, station){
     }
     return undefined
 }
+
+export function cutWord(word, length){
+    return word.slice(0, length) + "..."
+}
