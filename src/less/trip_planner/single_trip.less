@@ -21,14 +21,28 @@
 
             .main-station{
                 margin: 5px 0px;
+                display: flex;
+                justify-content: space-between;
+                max-width: 100%;
             }
 
             .inbetween-stations{
                 height: fit-content;
-                max-height:40px;
-                width: 250px;
+                max-height:47px;
+                width: 240px;
                 overflow: scroll;
                 margin-left: 10px;
+
+                #inbetween-station{
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 100%;
+
+                    h5{
+                        color: rgb(136, 136, 136);
+                    }
+                }
+                
 
                 .inbetween-stations-inner{
                     @y-transform: -100% + 35px;
@@ -36,8 +50,8 @@
                     animation: slide-up 12s linear infinite alternate;
                     @keyframes slide-up {
                         from {
-                            -webkit-transform: translateY(5px);
-                            transform: translateY(5px);
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
                         }
                         to {
                             -webkit-transform: translateY(@y-transform);
@@ -67,6 +81,7 @@
                         border: rgb(10, 10, 72) 2px solid;
                         border-radius: 30%;
                         background-color: none;
+                        margin-right: 5px;
                     }
                     .box-check:hover{
                         cursor: pointer;
@@ -74,6 +89,9 @@
                     .checked-box{
                         background-color: rgb(87, 80, 158);
                     }
+                }
+                #map-flip{
+                    margin-right: 5px;
                 }
                 #map-flip:hover{
                     cursor: pointer;

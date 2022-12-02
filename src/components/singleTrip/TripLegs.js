@@ -1,32 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
 //other
-import { dateToTime, stationSorter } from "./../trainLookup/plannerFunctions";
+import { dateToTime, stationSorter, cutWord } from "./../trainLookup/plannerFunctions";
 
 const TripLegs = ({tripLegs}) => {
 
     //splits trip legs into main and side stops.
     let legs;
     if (tripLegs) legs = stationSorter(tripLegs)
+    const [legScroll, setLegScroll] = useState(true)
     
     return legs ? (
         <div id="trip-legs">
                     {legs.mainStops.map(station => {
                         const inBetweenStations = legs.sideStops.splice(0, 1);
+                        const mainStation = station.name.length > 17 ? cutWord(station.name, 17) : station.name;
                         return (
-                            <div key={station.name}>
-                                <h3 className="main-station">{station.name} {station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
+                            <div key={mainStation}>
+                                <div className="main-station">
+                                    <h3>{mainStation}</h3>
+                                    <h3>{station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
+                                </div>
                                 {inBetweenStations.length ? 
                                     <div className="inbetween-stations">
-                                        <div className={inBetweenStations[0].length > 2 ? "inbetween-stations-inner" : ""}>
-                                            {inBetweenStations[0].map(tinyStation => {
-                                                //add "no in between alternative"
-                                                return (
-                                                    <h5 id="inbetween-station" key={tinyStation.name}>{tinyStation.name} {dateToTime(tinyStation.plannedDepartureDateTime)}</h5>
-                                                    )
-                                            })}
-                                        </div>
+                                        {inBetweenStations[0].length ?
+                                            <div className={(inBetweenStations[0].length > 3) && legScroll ? "inbetween-stations-inner" : ""} onClick={() => setLegScroll(!legScroll)}>
+                                                {inBetweenStations[0].map(tinyStation => {
+                                                    //add "no in between alternative"
+                                                    const name = tinyStation.name.length > 23 ? cutWord(tinyStation.name, 23) : tinyStation.name
+                                                    return (
+                                                        <div id="inbetween-station" key={tinyStation.name}>
+                                                            <h5>{name}</h5>
+                                                            <h5>{dateToTime(tinyStation.plannedDepartureDateTime)}</h5>
+                                                        </div>
+                                                        )
+                                                    })}
+                                            </div> :
+                                            <div id="inbetween-station">
+                                                <h5>no stops</h5>
+                                            </div>
+                                        }
                                     </div> :
                                     <></>}
                             </div>
