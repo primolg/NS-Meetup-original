@@ -5885,7 +5885,8 @@ var SingleTrip = function SingleTrip(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "sidebar"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TripLegs__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    tripLegs: trip.legs
+    tripLegs: trip.legs,
+    rerender: rerender
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Locations__WEBPACK_IMPORTED_MODULE_2__["default"], {
     locations: locations,
     singleLocation: singleLocation,
@@ -6053,12 +6054,12 @@ var TripLegs = function TripLegs(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "main-station"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, mainStation), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(station.plannedArrivalDateTime))), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "inbetween-stations"
-    }, inBetweenStations[0].length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: inBetweenStations[0].length > 3 && legScroll ? "inbetween-stations-inner" : "",
-      onClick: function onClick() {
+      className: "inbetween-stations",
+      onClick: inBetweenStations[0].length > 3 ? function () {
         return setLegScroll(!legScroll);
-      }
+      } : ""
+    }, inBetweenStations[0].length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: inBetweenStations[0].length > 3 && legScroll ? "inbetween-stations-inner" : ""
     }, inBetweenStations[0].map(function (tinyStation) {
       //add "no in between alternative"
       var name = tinyStation.name.length > 23 ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.cutWord)(tinyStation.name, 23) : tinyStation.name;

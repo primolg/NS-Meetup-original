@@ -21,9 +21,9 @@ const TripLegs = ({tripLegs}) => {
                                     <h3>{station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
                                 </div>
                                 {inBetweenStations.length ? 
-                                    <div className="inbetween-stations">
+                                    <div className="inbetween-stations" onClick={inBetweenStations[0].length > 3 ? () => setLegScroll(!legScroll) : ""}>
                                         {inBetweenStations[0].length ?
-                                            <div className={(inBetweenStations[0].length > 3) && legScroll ? "inbetween-stations-inner" : ""} onClick={() => setLegScroll(!legScroll)}>
+                                            <div className={(inBetweenStations[0].length > 3) && legScroll ? "inbetween-stations-inner" : ""}>
                                                 {inBetweenStations[0].map(tinyStation => {
                                                     //add "no in between alternative"
                                                     const name = tinyStation.name.length > 23 ? cutWord(tinyStation.name, 23) : tinyStation.name
