@@ -6651,9 +6651,11 @@ var TripLegs = function TripLegs(_ref) {
       className: "main-station"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, mainStation), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, station !== null && station !== void 0 && station.plannedDepartureDateTime ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(station.plannedDepartureDateTime) : (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_1__.dateToTime)(station.plannedArrivalDateTime))), inBetweenStations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "inbetween-stations",
-      onClick: inBetweenStations[0].length > 3 ? function () {
-        return setLegScroll(!legScroll);
-      } : ""
+      onClick: function onClick() {
+        inBetweenStations[0].length > 3 ? function () {
+          return setLegScroll(!legScroll);
+        } : "";
+      }
     }, inBetweenStations[0].length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: inBetweenStations[0].length > 3 && legScroll ? "inbetween-stations-inner" : ""
     }, inBetweenStations[0].map(function (tinyStation) {
@@ -6751,6 +6753,12 @@ var Locations = function Locations(_ref) {
       meetupLocation = _useState2[0],
       setMeetupLocation = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(undefined),
+      _useState4 = _slicedToArray(_useState3, 2),
+      activeMap = _useState4[0],
+      setActiveMap = _useState4[1];
+
+  console.log(activeMap);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (meetupLocation) {
       singleLocation[0] = meetupLocation;
@@ -6762,10 +6770,10 @@ var Locations = function Locations(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "locations-list"
   }, locations.map(function (location) {
-    var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-        _useState4 = _slicedToArray(_useState3, 2),
-        flip = _useState4[0],
-        setFlip = _useState4[1];
+    var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+        _useState6 = _slicedToArray(_useState5, 2),
+        flip = _useState6[0],
+        setFlip = _useState6[1];
 
     var locationInfo = {
       address: location.name,
@@ -6785,12 +6793,17 @@ var Locations = function Locations(_ref) {
       onClick: function onClick() {
         setMeetupLocation(location);
       }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name.length > 22 ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.cutWord)(location.name, 21) : location.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, location.name.length > 22 ? (0,_trainLookup_plannerFunctions__WEBPACK_IMPORTED_MODULE_2__.cutWord)(location.name, 21) : location.name)), activeMap === location.name ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
+      id: "map-flip",
+      onClick: function onClick(event) {
+        event.preventDefault(), setFlip(false), setActiveMap(undefined);
+      }
+    }, "-") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
       id: "map-flip",
       onClick: function onClick() {
-        setFlip(!flip);
+        setFlip(true), setActiveMap(location.name);
       }
-    }, flip ? "x" : "+")), flip ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Map__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }, "+")), activeMap === location.name ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Map__WEBPACK_IMPORTED_MODULE_1__["default"], {
       location: locationInfo
     }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
   }));
@@ -6826,7 +6839,8 @@ __webpack_require__.r(__webpack_exports__);
 var Map = function Map(_ref) {
   var location = _ref.location;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "map"
+    className: "map",
+    id: location.name
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "google-map"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(google_map_react__WEBPACK_IMPORTED_MODULE_1__["default"], {

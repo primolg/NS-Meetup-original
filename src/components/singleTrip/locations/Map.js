@@ -7,7 +7,7 @@ import { mapKey } from "../../../../secretKey";
 
 const Map = ({location}) => {
     return (
-        <div className="map">
+        <div className="map" id={location.name}>
             <div className="google-map">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: mapKey }}
