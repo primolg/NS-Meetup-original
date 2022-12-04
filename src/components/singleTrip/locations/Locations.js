@@ -5,9 +5,10 @@ import Map from "./Map";
 import {cutWord} from "../../trainLookup/plannerFunctions";
 
 const Locations = ({locations, singleLocation, rerender}) => {
-    
     const [meetupLocation, setMeetupLocation] = useState(undefined)
-
+    const [activeMap, setActiveMap] = useState(undefined)
+    
+    console.log(activeMap)
     useEffect(() => {
         if (meetupLocation){
             singleLocation[0] = meetupLocation
@@ -26,6 +27,7 @@ const Locations = ({locations, singleLocation, rerender}) => {
                     lat: location.lat,
                     lng: location.lng,
                   };
+
                 return (
                     <div key={location.name}>
                         <div className="location" id={location === meetupLocation ? "location" : ""} key={location.name}>
@@ -33,13 +35,17 @@ const Locations = ({locations, singleLocation, rerender}) => {
                                 <div className={"box-check " + (location === meetupLocation ? "checked-box" : "")} onClick={()=>{setMeetupLocation(location)}}></div>
                                 <h3>{location.name.length > 22 ? cutWord(location.name, 21) : location.name}</h3>
                             </div>
-                            <h3 id="map-flip" onClick={()=>{setFlip(!flip)}}>{flip ? "x" : "+"}</h3>
+                            {activeMap === location.name ?
+                            <h3 id="map-flip" onClick={(event)=>{event.preventDefault(), setFlip(false), setActiveMap(undefined)}}>-</h3>
+                            : <h3 id="map-flip" onClick={()=>{setFlip(true), setActiveMap(location.name)}}>+</h3>
+                            }
                         </div>
-                            {flip ? 
+                        {activeMap === location.name ? 
                             <Map 
                                 location={locationInfo}
-                            /> 
-                             : <></>}
+                            />
+                            : <></>
+                        }
                     </div>
                 )
             })}
