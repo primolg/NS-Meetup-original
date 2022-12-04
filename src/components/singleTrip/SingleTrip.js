@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 //components
 import TripLegs from "./TripLegs";
-import Locations from "./Locations";
+import Locations from "./locations/Locations";
 import TextCopy from "./TextCopy";
 //functions
 import { createLink } from "../trainLookup/plannerFunctions";
