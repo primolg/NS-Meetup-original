@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //components
-s
+
 //functions
 import { splitLink, findStop, dateToTime } from "../trainLookup/plannerFunctions";
 //other
