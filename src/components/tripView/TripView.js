@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //components
-import Map from "./Map";
-import LocationPin from "./LocationPin";
+s
 //functions
 import { splitLink, findStop, dateToTime } from "../trainLookup/plannerFunctions";
 //other
@@ -31,9 +30,6 @@ const TripView = () => {
             <h4></h4>
             <h5>Traveler arrives at {dateToTime(stationInfo.arrivals[0].actualTime)} in {stationInfo.stop.name}</h5>
             <h4>Meet up at {dateToTime(stationInfo.arrivals[0].actualTime)} by {tripInfo.locName}</h4>
-            <Map 
-                location={locationInfo}
-            />
         </div>
     ) : (
         <div>
