@@ -12,10 +12,8 @@ const TripsList = ({prop}) => {
     const [trips, setTrips] = useState(undefined);
     const [currentTrip, setCurrentTrip] = useState(undefined);
     const [stationLocations, setStationLocations] = useState(undefined);
-
-    // const tripLookup = `https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`;
-
-
+    const [errorMsg, setErrorMsg] = useState(false);
+    
         /*
     trip sorting options testing
     will probably just use built in api sorting, with visual indication of transfers
@@ -45,6 +43,9 @@ const TripsList = ({prop}) => {
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
             ).then(response => {
                 setTrips(response.data.trips)
+            }).catch(error => {
+                console.log("Error code:",error.response.data.code, " Message:", error.response.data.message)
+                setErrorMsg(true)
             })
         //GET station locations (displayed in single trips)
             axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, myRequest
@@ -85,9 +86,9 @@ const TripsList = ({prop}) => {
                 })}
             </div>
         ) : (
-            <div id="loading-wheel">
-                <TailSpin stroke="#062655" strokeWidth="2" />
-            </div>
+                <div id="loading-wheel">
+                    {!errorMsg ? <TailSpin stroke="#062655" strokeWidth="2" /> : "No trips found, please check search values."}
+                </div>
         )
 }
 

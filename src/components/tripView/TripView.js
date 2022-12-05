@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+//components
+import Map from "./Map";
+import LocationPin from "./LocationPin";
 //functions
 import { splitLink, findStop, dateToTime } from "../trainLookup/plannerFunctions";
 //other
-import {myRequest} from "../../../secretKey"
+import {myRequest} from "./../../../secretKey";
 
 const TripView = () => {
     const {id} = useParams()
     const tripInfo = splitLink(id)
     const [stationInfo, setStationInfo] = useState(undefined);
-    if (stationInfo) {
-        console.log(stationInfo)
-        console.log(tripInfo)
-    }
+    const locationInfo = {
+        address: tripInfo.locName,
+        lat: Number(tripInfo.lat),
+        lng: Number(tripInfo.lng),
+    };
     useEffect(() => {
         //GET trips
             axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/journey?train=${tripInfo.trainNumber}&dateTime=${tripInfo.dateTime}`, myRequest
@@ -23,11 +27,13 @@ const TripView = () => {
     }, [])
 
     return stationInfo ? (
-        <div>
+        <div className="trip-view">
             <h4></h4>
             <h5>Traveler arrives at {dateToTime(stationInfo.arrivals[0].actualTime)} in {stationInfo.stop.name}</h5>
             <h4>Meet up at {dateToTime(stationInfo.arrivals[0].actualTime)} by {tripInfo.locName}</h4>
-            <h4>{tripInfo.lat +"," + tripInfo.lng}</h4>
+            <Map 
+                location={locationInfo}
+            />
         </div>
     ) : (
         <div>

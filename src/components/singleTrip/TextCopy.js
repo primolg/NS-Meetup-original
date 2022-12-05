@@ -31,9 +31,11 @@ const TextCopy = ({link}) => {
     }
 
     return(
-        <div className="text-copy">
-            {/* <input type="text" value={link} readOnly /> */}
-            <h2 onClick={handleCopyClick}>{isCopied ? 'Copied!  ' : 'Copy Link'}</h2>
+        <div id="text-copy-outer">        
+            <div className="text-copy">
+                {/* <input type="text" value={link} readOnly /> */}
+                <h3 onClick={handleCopyClick}>{isCopied ? 'Copied!  ' : 'Copy Link'}</h3>
+            </div>
         </div>
     );
 };

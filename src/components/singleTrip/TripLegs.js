@@ -13,15 +13,15 @@ const TripLegs = ({tripLegs}) => {
         <div id="trip-legs">
                     {legs.mainStops.map(station => {
                         const inBetweenStations = legs.sideStops.splice(0, 1);
-                        const mainStation = station.name.length > 17 ? cutWord(station.name, 17) : station.name;
+                        const mainStation = station.name.length > 16 ? cutWord(station.name, 14) : station.name;
                         return (
                             <div key={mainStation}>
                                 <div className="main-station">
                                     <h3>{mainStation}</h3>
-                                    <h3>{station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
+                                    <h3 id="main-station-time">{station?.plannedDepartureDateTime ? dateToTime(station.plannedDepartureDateTime) : dateToTime(station.plannedArrivalDateTime)}</h3>
                                 </div>
                                 {inBetweenStations.length ? 
-                                    <div className="inbetween-stations" onClick={() => {inBetweenStations[0].length > 3 ? () => setLegScroll(!legScroll) : ""}}>
+                                    <div className="inbetween-stations" onClick={() => {if (inBetweenStations[0].length > 3) setLegScroll(!legScroll)}}>
                                         {inBetweenStations[0].length ?
                                             <div className={(inBetweenStations[0].length > 3) && legScroll ? "inbetween-stations-inner" : ""}>
                                                 {inBetweenStations[0].map(tinyStation => {

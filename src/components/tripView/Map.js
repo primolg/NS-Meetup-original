@@ -3,10 +3,9 @@ import GoogleMapReact from 'google-map-react'
 //components
 import LocationPin from "./LocationPin";
 //other
-import { mapKey } from "../../../../secretKey";
+import { mapKey } from "./../../../secretKey";
 
 const Map = ({location}) => {
-    console.log(location)
     return (
         <div className="map" id={location.name}>
             <div className="google-map">
@@ -16,12 +15,12 @@ const Map = ({location}) => {
                 defaultZoom={16}
             >
                 <LocationPin
-                    text={location.address}
+                    name={location.address}
                 />
             </GoogleMapReact>
             </div>
         </div>
-    )
+    ) 
 }
 
 

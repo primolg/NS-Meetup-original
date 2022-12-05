@@ -1,13 +1,19 @@
 //out: false
+@main-blue: #2560B7;
+@dark-blue: #062655;
+@light-blue: #A5BFE4;
+@lightest-blue: #F9FCFF;
 
 #train-planner{
     height: 100%;
     width: 100%;
     max-width: 100%;
-    max-height: 800px;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    overflow: scroll;
     
     #form{
         margin-top: 25px;
@@ -21,22 +27,39 @@
         border-radius: 1.5em;
         flex-direction:column;
 
-        .station-input{
-            font-size:large;
-            width: 75%;
-            height: 1.5em;
-            border-radius: 0.5em;
-            outline: none;
-            padding-left:0.5em;
-            margin-bottom: 0.5em;
-        }
-
-
-        .date-and-time{
+        #stations-and-swap{
             display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin-bottom: 0.8em;
+
+            #stations{
+                width: 100%;
+                .station-input{
+                    font-size:large;
+                    width: 95%;
+                    height: 1.5em;
+                    border:none;
+                    border-radius: 0.5em;
+                    outline: none;
+                    padding-left:0.5em;
+                    margin-bottom: 0.7em;
+                }
+            }
+
+            h1{
+                color: white;
+                margin-top: 0.35em;
+            }
+            h1:hover{
+                cursor: pointer;
+            }
+        }
+            
+            
+            .date-and-time{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 0.8em;
             
 
             .selector{
@@ -44,7 +67,7 @@
                 font-size:large;
                 width:40%;
                 height: 1.5em;
-                margin-top: 0.1em;
+                border:none;
                 border-radius: 0.5em;
                 outline: none;
                 padding-left:0.5em;
@@ -55,11 +78,12 @@
 
             .selector2{
                 font-size:large;
-                width: 93%;
                 height: 1.5em;
+                border:none;
                 border-radius: 0.5em;
                 outline: none;
                 padding-left:0.5em;
+                margin-left:10px;
             }
             .selector2:hover{
                 cursor: pointer;
@@ -76,12 +100,12 @@
                 align-items: center;
                 margin-right: 1.3em;
                 margin-left: 0.5em;
+                
 
                 .arrivalBoolbtn{
                     max-width:min-content;
                     margin-right: 0.5em;
                     text-decoration: underline;
-                    font-size: large;
                 }
                 
                 .arrivalBoolbtn:hover{
@@ -98,19 +122,31 @@
             }
             
             .submit-btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 30%;
                 height: 1.8em;
-                font-size: large;
                 color: #1C3F73;
                 background-color: #C8DAF3;
                 border-radius: 0.5em;
+                
+                h3{
+                    color:@dark-blue;
+                    font-weight: 500;
+                }
             }
 
-            button:hover{
+            .submit-btn:hover{
                 cursor: pointer;
             }
         }
-        
-
+    }
+    #footer{
+        height: 50px;
+        width: 100%;
+        background-color: #A5BFE4;
+        margin-top: 20px;
+        bottom: 0;
     }
 }
