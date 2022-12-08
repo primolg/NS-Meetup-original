@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 //components
-
+import Map from "./../singleTrip/locations/Map";
 //functions
-import { splitLink, findStop, dateToTime } from "../trainLookup/plannerFunctions";
+import { splitLink, dateToTime, findStop} from "../trainLookup/plannerFunctions";
 //other
 import {myRequest} from "./../../../secretKey";
 
@@ -26,14 +26,18 @@ const TripView = () => {
     }, [])
 
     return stationInfo ? (
-        <div className="trip-view">
-            <h4></h4>
+        <div id="trip-view">
+            <h4>hehe</h4>
             <h5>Traveler arrives at {dateToTime(stationInfo.arrivals[0].actualTime)} in {stationInfo.stop.name}</h5>
             <h4>Meet up at {dateToTime(stationInfo.arrivals[0].actualTime)} by {tripInfo.locName}</h4>
+            <Map
+                location={locationInfo}
+                defaultZoom={17}
+            />
         </div>
     ) : (
-        <div>
-            loading
+        <div className="masonclass">
+            hehehehe
         </div>
     )
 };

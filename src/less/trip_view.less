@@ -3,3 +3,46 @@
 @dark-blue: #062655;
 @light-blue: #A5BFE4;
 @lightest-blue: #F9FCFF;
+
+#trip-view{
+    height:100vh;
+    width:100vw;
+
+    .map{
+        margin-top: 10px;
+        margin-bottom: 15px;
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 20px;
+            padding-left: 10px;
+            text-align: center;
+        }
+
+        .google-map {
+        width: 80%;
+        height: 20vh;
+        border: solid @light-blue 2px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-left: 13%;
+        }
+
+        .pin {
+            display: flex;
+            align-items: center;
+            width: 180px;
+        }
+        
+        .pin-icon {
+            font-size: 2.5rem;
+        }
+        
+        .pin-text {
+            font-size: 1.0em;
+        }
+
+    }
+    
+}

@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import GoogleMapReact from 'google-map-react'
 //components
-import LocationPin from "./LocationPin";
+import TripPin from "./TripPin";
 //other
-import { mapKey } from "../../../../secretKey";
+import { mapKey } from "../../../secretKey";
 
-const Map = ({location, defaultZoom}) => {
+const TripMap = ({location}) => {
     return (
-        <div className="map" id={location.address}>
+        <div className="map">
             <div className="google-map">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: mapKey }}
                 defaultCenter={location}
-                defaultZoom={defaultZoom}
+                defaultZoom={16}
             >
-                <LocationPin
-                    lat={location.lat}
-                    lng={location.lng}
+                <TripPin
                     text={location.address}
                 />
             </GoogleMapReact>
@@ -26,5 +24,5 @@ const Map = ({location, defaultZoom}) => {
 }
 
 
-export default Map;
+export default TripMap;
 

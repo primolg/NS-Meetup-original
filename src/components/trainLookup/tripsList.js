@@ -4,7 +4,7 @@ import axios from "axios";
 import SingleTrip from "../singleTrip/SingleTrip";
 //other
 import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
-import { myRequest } from "../../../secretKey";
+import { myRequest } from "./../../../secretKey";
 import { minToHrString, dateToTime, listLocations } from "./plannerFunctions";
 
 

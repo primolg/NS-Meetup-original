@@ -42,7 +42,8 @@ const Locations = ({locations, singleLocation, rerender}) => {
                             </div>
                             {activeMap === location.name ? 
                                 <Map 
-                                location={locationInfo}
+                                    location={locationInfo}
+                                    defaultZoom={17}
                                 />
                                 : <></>
                             }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Icon } from '@iconify/react'
 import locationIcon from '@iconify/icons-mdi/map-marker'
 
-const LocationPin = ({text}) => {
+const TripPin = ({text}) => {
     return (
         <div className="pin">
             <Icon icon={locationIcon} className="pin-icon" />
@@ -12,5 +12,5 @@ const LocationPin = ({text}) => {
 }
 
 
-export default LocationPin;
+export default TripPin;
 
