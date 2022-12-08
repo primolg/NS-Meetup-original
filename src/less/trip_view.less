@@ -5,8 +5,23 @@
 @lightest-blue: #F9FCFF;
 
 #trip-view{
-    height:100vh;
-    width:100vw;
+    height:80vh;
+    width:80vw;
+    padding: 10vw;
+    max-width: 400px;
+    max-height: 80vh;
+
+    #travel-info{
+        width: 100%;
+
+        h3{
+            font-weight: 400;
+        }
+        .emph-date{
+            font-weight: 600;
+        }
+    }
+    
 
     .map{
         margin-top: 10px;
@@ -21,12 +36,12 @@
         }
 
         .google-map {
-        width: 80%;
-        height: 20vh;
-        border: solid @light-blue 2px;
+        width: 100%;
+        height: 40vh;
+        border: solid @light-blue 5px;
         border-radius: 12px;
         overflow: hidden;
-        margin-left: 13%;
+        // margin-left: 13%;
         }
 
         .pin {
@@ -40,7 +55,8 @@
         }
         
         .pin-text {
-            font-size: 1.0em;
+            font-size: 1.5em;
+            font-weight: 600;
         }
 
     }

@@ -79,62 +79,64 @@ const HomePage = () => {
         return (
             <div id="train-planner">
                 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css" />
-                <div id="form">
-                    <div id="stations-and-swap">
-                        <div id="stations">
-                            <input list="station1" className="station-input" id="departureStation" placeholder="from" onChange={(event)=>{setDepartureStation(event.target.value ? event.target.value : "")}} value={departureStation ? departureStation : ""}></input>
-                                <datalist id="station1">
+                <div>
+                    <div id="form">
+                        <div id="stations-and-swap">
+                            <div id="stations">
+                                <input list="station1" className="station-input" id="departureStation" placeholder="from" onChange={(event)=>{setDepartureStation(event.target.value ? event.target.value : "")}} value={departureStation ? departureStation : ""}></input>
+                                    <datalist id="station1">
+                                        {allStations.map(station => {
+                                            if (station.namen && station.land==="NL"){
+                                                stationCodes[station.namen.lang] = station.code
+                                                return (
+                                                    <option key={station.code}>{station.namen.lang}</option>
+                                                    )
+                                                }
+                                            })}
+                                    </datalist>
+                                <input list="station2" className="station-input" id="arrivalStation" placeholder="to" onChange={(event)=>{setArrivalStation(event.target.value ? event.target.value : null)}} value={arrivalStation ? arrivalStation : ""}></input>
+                                <datalist id="station2">
                                     {allStations.map(station => {
                                         if (station.namen && station.land==="NL"){
-                                            stationCodes[station.namen.lang] = station.code
                                             return (
-                                                <option key={station.code}>{station.namen.lang}</option>
+                                                <option key={station.EVACode}>{station.namen.lang}</option>
                                                 )
                                             }
                                         })}
                                 </datalist>
-                            <input list="station2" className="station-input" id="arrivalStation" placeholder="to" onChange={(event)=>{setArrivalStation(event.target.value ? event.target.value : null)}} value={arrivalStation ? arrivalStation : ""}></input>
-                            <datalist id="station2">
-                                {allStations.map(station => {
-                                    if (station.namen && station.land==="NL"){
-                                        return (
-                                            <option key={station.EVACode}>{station.namen.lang}</option>
-                                            )
-                                        }
-                                    })}
-                            </datalist>
+                            </div>
+                            <h1 onClick={swapStations}>⇅</h1>
                         </div>
-                        <h1 onClick={swapStations}>⇅</h1>
-                    </div>
 
-                    <div className="date-and-time">
-                        <select id="time-selector" className="selector" onChange={(event)=>{setSelectedTime(event.target.value)}}>
-                            <option>{selectedTime}</option>
-                                {timesArray.map(time => {
-                                    return (
-                                        <option key={time}>{time}</option>
-                                        )
-                                    })}
-                        </select> 
-                        <DatePicker className="selector2" selected={selectedDate} onChange={(event)=>{setSelectedDate(event)}}/>
-                    </div>
-                    <div className="arrival-departure-submit-btn">
-                        <div className="dep-arr">
-                            <h3 className={arrivalBool ? "selected-arrival-inactive arrivalBoolbtn" : "selected-arrival-active arrivalBoolbtn"} onClick={()=>setArrivalBool(false)}>departure</h3>
-                            <h3 className={arrivalBool ? "selected-arrival-active arrivalBoolbtn" : "selected-arrival-inactive arrivalBoolbtn"} onClick={()=>setArrivalBool(true)}>arrival</h3>
+                        <div className="date-and-time">
+                            <select id="time-selector" className="selector" onChange={(event)=>{setSelectedTime(event.target.value)}}>
+                                <option>{selectedTime}</option>
+                                    {timesArray.map(time => {
+                                        return (
+                                            <option key={time}>{time}</option>
+                                            )
+                                        })}
+                            </select> 
+                            <DatePicker className="selector2" selected={selectedDate} onChange={(event)=>{setSelectedDate(event)}}/>
                         </div>
-                        <div className="submit-btn" onClick={setSearchBool}>
-                            <h3>search</h3>
+                        <div className="arrival-departure-submit-btn">
+                            <div className="dep-arr">
+                                <h3 className={arrivalBool ? "selected-arrival-inactive arrivalBoolbtn" : "selected-arrival-active arrivalBoolbtn"} onClick={()=>setArrivalBool(false)}>departure</h3>
+                                <h3 className={arrivalBool ? "selected-arrival-active arrivalBoolbtn" : "selected-arrival-inactive arrivalBoolbtn"} onClick={()=>setArrivalBool(true)}>arrival</h3>
+                            </div>
+                            <div className="submit-btn" onClick={setSearchBool}>
+                                <h3>search</h3>
+                            </div>
                         </div>
+                        
                     </div>
-                    
+                    {submitBool ? 
+                        <TripsList 
+                            prop = {lookupItems}
+                        /> :
+                        <></>
+                    }
                 </div>
-                {submitBool ? 
-                    <TripsList 
-                        prop = {lookupItems}
-                    /> :
-                    <></>
-                }
                 <div id="footer">
                     <h4>{"information about information B-)"}</h4>
                 </div>
