@@ -6,6 +6,7 @@ import TripsList from "./TripsList";
 import DatePicker from 'react-datepicker'
 import {myRequest} from "../../../secretKey"
 import {timesArray, monthsToNum, timeSorter, dateToTime} from "./plannerFunctions"
+import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 
 const HomePage = () => {
     //time grab
@@ -69,7 +70,13 @@ const HomePage = () => {
 
 
     useEffect(() => {
-        axios.get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations', myRequest
+        axios.get('https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations', {
+            method: 'GET',
+            headers: {
+                'X-Host-Override': 'gateway.apiportal.ns.nl',
+                'Ocp-Apim-Subscription-Key': myRequest
+            }
+        }
         ).then(response => {
             setAllStations(response.data.payload)
         })
@@ -137,15 +144,12 @@ const HomePage = () => {
                         <></>
                     }
                 </div>
-                <div id="footer">
-                    <h4>{"information about information B-)"}</h4>
-                </div>
             </div>   
         );
     } else {
         return (
-            <div>
-                <h1>loading...</h1>
+            <div id="loading-wheel">
+                <TailSpin stroke="#062655" strokeWidth="2" />
             </div>
         )
     }

@@ -23,7 +23,7 @@
   overflow: scroll;
 }
 #train-planner #form {
-  margin-top: 25px;
+  margin-top: 5vh;
   display: flex;
   justify-content: center;
   width: 80vw;
@@ -132,20 +132,13 @@
 #train-planner #form .arrival-departure-submit-btn .submit-btn:hover {
   cursor: pointer;
 }
-#train-planner #footer {
-  height: 50px;
-  width: 100%;
-  background-color: #A5BFE4;
-  margin-top: 20px;
-  bottom: 0;
-}
 .trip-list {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 77vw;
   max-width: 19.5em;
-  height: 30em;
+  height: 60vh;
   max-height: 58%;
   overflow: scroll;
   background-color: #F9FCFF;
@@ -169,7 +162,11 @@
   justify-content: space-between;
 }
 #loading-wheel {
-  margin-top: -10vh;
+  display: flex;
+  margin-top: 40%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 #single-trip {
   display: flex;
@@ -247,7 +244,7 @@
   font-weight: 300;
 }
 #single-trip #sidebar #locations #locations-list {
-  max-height: 335px;
+  max-height: 40vh;
   overflow: scroll;
   margin-top: 10px;
 }

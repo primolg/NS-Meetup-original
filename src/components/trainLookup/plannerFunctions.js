@@ -43,7 +43,7 @@ export function timeSorter(date, time){
         + "-" + monthsToNum[date.toString().slice(4,7)] 
         + "-" + date.toString().slice(8, 10)
         + "T" + time
-        + ":0100Z" 
+        + "+0100" 
     )
 }
 

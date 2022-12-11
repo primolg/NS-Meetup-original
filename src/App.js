@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 //components
-import HomePage from "./components/trainLookup/TrainPlanner";
+import HomePage from "./components/trainLookup/HomePage";
 import TripView from "./components/tripView/TripView";
 
 

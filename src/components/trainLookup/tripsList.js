@@ -9,27 +9,15 @@ import { minToHrString, dateToTime, listLocations } from "./plannerFunctions";
 
 
 const TripsList = ({prop}) => {
+
     const [trips, setTrips] = useState(undefined);
     const [currentTrip, setCurrentTrip] = useState(undefined);
     const [stationLocations, setStationLocations] = useState(undefined);
     const [errorMsg, setErrorMsg] = useState(false);
-    
-        /*
-    trip sorting options testing
-    will probably just use built in api sorting, with visual indication of transfers
-
-    if (trips){
-        console.log(trips);
-        console.log('sort by trip length :', trips.sort((a,b) => a.actualDurationInMinutes - b.actualDurationInMinutes));
-        console.log('sort by least transfers:', trips.sort((a,b) => a.transfers - b.transfers);
-        console.log('sort by departure time (default?)', trips.sort((a,b) => dateToTimeNum(a.legs[0].origin.plannedDateTime) - dateToTimeNum(b.legs[0].origin.plannedDateTime)));
-    }
-    */
 
     function show (idx) {
         trips[idx].arrivalStationCode = prop.arrivalStation;
         setCurrentTrip(trips[idx]);
-        //Making this function async messed with the initial css show animation, but timeout seems to do the trick. Better solution out there?
         setTimeout(()=>{
             document.getElementById('single-trip').classList.toggle('active');
             setTimeout(()=>{
@@ -38,17 +26,31 @@ const TripsList = ({prop}) => {
             )
         }, 1);
     }
+
     useEffect(() => {
         //GET trips
-            axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, myRequest
+            axios.get(`https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=${prop.departureStation}&toStation=${prop.arrivalStation}&dateTime=${prop.rfcTime}&searchForArrival=${prop.arrivalBool}`, {
+                method: 'GET',
+                headers: {
+                    'X-Host-Override': 'gateway.apiportal.ns.nl',
+                    'Ocp-Apim-Subscription-Key': myRequest
+                }
+            }
             ).then(response => {
                 setTrips(response.data.trips)
             }).catch(error => {
                 console.log("Error code:",error.response.data.code, " Message:", error.response.data.message)
                 setErrorMsg(true)
             })
+            console.log(process.env.NS_API_KEY)
         //GET station locations (displayed in single trips)
-            axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, myRequest
+            axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, {
+                method: 'GET',
+                headers: {
+                    'X-Host-Override': 'gateway.apiportal.ns.nl',
+                    'Ocp-Apim-Subscription-Key': myRequest,
+                }
+            }
             ).then(response => {
                 setStationLocations(listLocations(response.data.payload));
             })
@@ -87,7 +89,7 @@ const TripsList = ({prop}) => {
             </div>
         ) : (
                 <div id="loading-wheel">
-                    {!errorMsg ? <TailSpin stroke="#062655" strokeWidth="2" /> : "No trips found, please check search values."}
+                    <h4>{!errorMsg ? <TailSpin stroke="#062655" strokeWidth="2" /> : "No trips found, please check search values."}</h4>
                 </div>
         )
 }
