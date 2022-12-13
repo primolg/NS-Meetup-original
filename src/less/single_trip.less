@@ -4,7 +4,6 @@
 @light-blue: #A5BFE4;
 @lightest-blue: #F9FCFF;
 
-
 #single-trip{
     display: flex;
     position: absolute;
@@ -50,7 +49,6 @@
                 height: fit-content;
                 max-height:47px;
                 width: 93%;
-                // max-width: 100%;
                 overflow: scroll;
                 margin-left: 10px;
 
@@ -92,7 +90,7 @@
             }
 
             #locations-list{
-                max-height: 335px;  
+                max-height: 40vh;  
                 overflow: scroll;
                 margin-top: 10px;
                 
@@ -173,48 +171,47 @@
     #background-fade.active{
         opacity: 0.3;
     }
+    .map{
+        margin-top: 10px;
+        margin-bottom: 15px;
+    
+        h2 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 20px;
+            padding-left: 10px;
+            text-align: center;
+        }
+    
+        .google-map {
+          width: 80%;
+          height: 20vh;
+          border: solid @light-blue 2px;
+          border-radius: 12px;
+          overflow: hidden;
+          margin-left: 13%;
+        }
+    
+        .pin {
+            display: flex;
+            align-items: center;
+            width: 180px;
+          }
+          
+          .pin-icon {
+            font-size: 2.5rem;
+          }
+          
+          .pin-text {
+            font-size: 1.0em;
+          }
+    
+    }
 }
     
 #single-trip.active {
     width: 100vw;
     right: 0;
-}
-
-.map{
-    margin-top: 10px;
-    margin-bottom: 15px;
-
-    h2 {
-        text-transform: uppercase;
-        font-size: 1rem;
-        padding: 20px;
-        padding-left: 10px;
-        text-align: center;
-    }
-
-    .google-map {
-      width: 80%;
-      height: 20vh;
-      border: solid @light-blue 2px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-left: 13%;
-    }
-
-    .pin {
-      display: flex;
-      align-items: center;
-      width: 32px;
-      color: @dark-blue;
-    }
-    .pin-icon {
-      font-size: 2rem;
-    }
-    
-    .pin-text {
-      font-size: 0.6em;
-    }
-
 }
   
   

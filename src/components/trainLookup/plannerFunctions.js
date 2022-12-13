@@ -43,7 +43,7 @@ export function timeSorter(date, time){
         + "-" + monthsToNum[date.toString().slice(4,7)] 
         + "-" + date.toString().slice(8, 10)
         + "T" + time
-        + ":0100Z" 
+        + "+0100" 
     )
 }
 
@@ -111,7 +111,7 @@ export function createLink (trip, singleLocation){
     // console.log(trip.legs[trip.legs.length - 1].journeyDetail[0].link.uri.split("datetime=")[1])
     const locationName = singleLocation.name.split(" ").join(".");
     const locationCoordinates = singleLocation.lng + "+" + singleLocation.lat;
-    return "localhost:3000/trip/" + arrivalStation + "=" + trainNumber + "=" + dateTime + "=" + locationName + "+" + locationCoordinates;
+    return "localhost:3000/" + arrivalStation + "=" + trainNumber + "=" + dateTime + "=" + locationName + "+" + locationCoordinates;
 }
 
 export function splitLink(link){

@@ -1,2 +1,0 @@
-components in this folder were made when I first started developing the application, but have since been scrapped.
-They are being kept since I might want to incorporate parts of them at a later stage (s/a individual station info).
