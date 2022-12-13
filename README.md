@@ -8,8 +8,5 @@ As of right now I'm building the trip planner, maintenence checker, and other ba
 Design mock up: https://www.figma.com/file/kQCIIG8BBR0zBS4HcNcVZP/NS-Reis-Planner?node-id=0%3A1;
 
 ### Getting started
-
-```
-run ...
-```
+"run start"
 

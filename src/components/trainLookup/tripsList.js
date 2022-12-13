@@ -9,7 +9,7 @@ import { minToHrString, dateToTime, listLocations } from "./plannerFunctions";
 
 
 const TripsList = ({prop}) => {
-
+    
     const [trips, setTrips] = useState(undefined);
     const [currentTrip, setCurrentTrip] = useState(undefined);
     const [stationLocations, setStationLocations] = useState(undefined);
@@ -42,7 +42,6 @@ const TripsList = ({prop}) => {
                 console.log("Error code:",error.response.data.code, " Message:", error.response.data.message)
                 setErrorMsg(true)
             })
-            console.log(process.env.NS_API_KEY)
         //GET station locations (displayed in single trips)
             axios.get(`https://gateway.apiportal.ns.nl/places-api/v2/places?limit=150&radius=1000&lang=nl&details=false&station_code=${prop.arrivalStation}`, {
                 method: 'GET',
